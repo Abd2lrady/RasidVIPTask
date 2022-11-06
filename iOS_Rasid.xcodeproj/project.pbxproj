@@ -34,6 +34,8 @@
 		3C36724A2917E29800DBCA4C /* RemoteBranchsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672492917E29800DBCA4C /* RemoteBranchsRepository.swift */; };
 		3C36724C2917E2F200DBCA4C /* BranchsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36724B2917E2F200DBCA4C /* BranchsService.swift */; };
 		3C36724E2917E4EF00DBCA4C /* BranchDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36724D2917E4EF00DBCA4C /* BranchDetails.swift */; };
+		3C3672522917F0C200DBCA4C /* BranchsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672502917F0C200DBCA4C /* BranchsViewController.swift */; };
+		3C3672532917F0C200DBCA4C /* BranchsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3672512917F0C200DBCA4C /* BranchsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,8 @@
 		3C3672492917E29800DBCA4C /* RemoteBranchsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteBranchsRepository.swift; sourceTree = "<group>"; };
 		3C36724B2917E2F200DBCA4C /* BranchsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsService.swift; sourceTree = "<group>"; };
 		3C36724D2917E4EF00DBCA4C /* BranchDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchDetails.swift; sourceTree = "<group>"; };
+		3C3672502917F0C200DBCA4C /* BranchsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsViewController.swift; sourceTree = "<group>"; };
+		3C3672512917F0C200DBCA4C /* BranchsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BranchsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 		3C3672102917A16000DBCA4C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3C36724F2917F0AC00DBCA4C /* Branchs */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -297,6 +302,23 @@
 			path = RemoteBranchs;
 			sourceTree = "<group>";
 		};
+		3C36724F2917F0AC00DBCA4C /* Branchs */ = {
+			isa = PBXGroup;
+			children = (
+				3C3672542917F6BB00DBCA4C /* view */,
+			);
+			path = Branchs;
+			sourceTree = "<group>";
+		};
+		3C3672542917F6BB00DBCA4C /* view */ = {
+			isa = PBXGroup;
+			children = (
+				3C3672502917F0C200DBCA4C /* BranchsViewController.swift */,
+				3C3672512917F0C200DBCA4C /* BranchsViewController.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -363,6 +385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C3672532917F0C200DBCA4C /* BranchsViewController.xib in Resources */,
 				3C3672302917AA7600DBCA4C /* Cairo-Medium.ttf in Resources */,
 				3C3671FA29179FB000DBCA4C /* LaunchScreen.storyboard in Resources */,
 				3C3671F729179FB000DBCA4C /* Assets.xcassets in Resources */,
@@ -379,6 +402,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		3C3672182917A4CB00DBCA4C /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -397,6 +421,7 @@
 		};
 		3C3672192917A4D800DBCA4C /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -431,6 +456,7 @@
 				3C3671F229179FAE00DBCA4C /* ViewController.swift in Sources */,
 				3C3671EE29179FAE00DBCA4C /* AppDelegate.swift in Sources */,
 				3C3672052917A0A200DBCA4C /* SceneDelegate + Extension.swift in Sources */,
+				3C3672522917F0C200DBCA4C /* BranchsViewController.swift in Sources */,
 				3C3671F029179FAE00DBCA4C /* SceneDelegate.swift in Sources */,
 				3C36724A2917E29800DBCA4C /* RemoteBranchsRepository.swift in Sources */,
 				3C3672162917A40A00DBCA4C /* Constants.swift in Sources */,
