@@ -27,6 +27,9 @@
 		3C3672392917ACEC00DBCA4C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672352917ACEC00DBCA4C /* APIClient.swift */; };
 		3C36723A2917ACEC00DBCA4C /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672372917ACEC00DBCA4C /* APIRouter.swift */; };
 		3C36723B2917ACEC00DBCA4C /* APIRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672382917ACEC00DBCA4C /* APIRouterProtocol.swift */; };
+		3C36723D2917DA7900DBCA4C /* BranchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36723C2917DA7800DBCA4C /* BranchEntity.swift */; };
+		3C3672402917DB8200DBCA4C /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36723F2917DB8200DBCA4C /* ServerResponse.swift */; };
+		3C3672442917DCBF00DBCA4C /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672432917DCBF00DBCA4C /* Branch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,9 @@
 		3C3672352917ACEC00DBCA4C /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		3C3672372917ACEC00DBCA4C /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		3C3672382917ACEC00DBCA4C /* APIRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouterProtocol.swift; sourceTree = "<group>"; };
+		3C36723C2917DA7800DBCA4C /* BranchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchEntity.swift; sourceTree = "<group>"; };
+		3C36723F2917DB8200DBCA4C /* ServerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
+		3C3672432917DCBF00DBCA4C /* Branch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +201,9 @@
 		3C3672112917A16600DBCA4C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3C36723E2917DB7100DBCA4C /* Entities */,
+				3C36723F2917DB8200DBCA4C /* ServerResponse.swift */,
+				3C3672432917DCBF00DBCA4C /* Branch.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -250,6 +259,14 @@
 				3C3672382917ACEC00DBCA4C /* APIRouterProtocol.swift */,
 			);
 			path = APIRouter;
+			sourceTree = "<group>";
+		};
+		3C36723E2917DB7100DBCA4C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				3C36723C2917DA7800DBCA4C /* BranchEntity.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,8 +392,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C36723D2917DA7900DBCA4C /* BranchEntity.swift in Sources */,
 				3C36721F2917A8E100DBCA4C /* Fonts.swift in Sources */,
 				3C36723A2917ACEC00DBCA4C /* APIRouter.swift in Sources */,
+				3C3672402917DB8200DBCA4C /* ServerResponse.swift in Sources */,
 				3C3672032917A08800DBCA4C /* AppDelegate + Extension.swift in Sources */,
 				3C36721D2917A8A900DBCA4C /* Assets.swift in Sources */,
 				3C3671F229179FAE00DBCA4C /* ViewController.swift in Sources */,
@@ -386,6 +405,7 @@
 				3C3672162917A40A00DBCA4C /* Constants.swift in Sources */,
 				3C36723B2917ACEC00DBCA4C /* APIRouterProtocol.swift in Sources */,
 				3C3672392917ACEC00DBCA4C /* APIClient.swift in Sources */,
+				3C3672442917DCBF00DBCA4C /* Branch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

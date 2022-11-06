@@ -22,7 +22,8 @@ class ViewController: UIViewController {
         APIClient.shared.request(for: .getBranchs(facilityId: facilityID)) { result in
             switch result {
             case .success(let data):
-                print(data)
+                let branchs = try? JSONDecoder().decode(ServerResponse<[BranchEntity]>.self, from: data)
+                print(branchs)
             case .failure(let error):
                 print(error.localizedDescription)
             }
