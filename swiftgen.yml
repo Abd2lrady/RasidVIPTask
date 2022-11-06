@@ -1,0 +1,20 @@
+input_dir: iOS_Rasid/Resources/Assets
+output_dir: iOS_Rasid/Resources/Assets
+
+
+xcassets:
+  - inputs: Images
+    outputs:
+        templateName: swift5
+        output: Images/Assets.swift
+        params:
+            enumName: Assets
+      
+fonts:
+  - inputs: Fonts/Cairo
+    outputs:
+        templateName: swift5
+        output: Fonts/Fonts.swift
+        params:
+            enumName: Fonts
+            

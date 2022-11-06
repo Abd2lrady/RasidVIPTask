@@ -15,6 +15,14 @@
 		3C3672032917A08800DBCA4C /* AppDelegate + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672022917A08800DBCA4C /* AppDelegate + Extension.swift */; };
 		3C3672052917A0A200DBCA4C /* SceneDelegate + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672042917A0A200DBCA4C /* SceneDelegate + Extension.swift */; };
 		3C3672162917A40A00DBCA4C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672152917A40A00DBCA4C /* Constants.swift */; };
+		3C36721B2917A5D600DBCA4C /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3C36721A2917A5D600DBCA4C /* swiftgen.yml */; };
+		3C36721D2917A8A900DBCA4C /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36721C2917A8A900DBCA4C /* Assets.swift */; };
+		3C36721F2917A8E100DBCA4C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36721E2917A8E100DBCA4C /* Fonts.swift */; };
+		3C3672292917AA7600DBCA4C /* Cairo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C3672212917AA7600DBCA4C /* Cairo-Light.ttf */; };
+		3C36722A2917AA7600DBCA4C /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C3672222917AA7600DBCA4C /* Cairo-Black.ttf */; };
+		3C36722D2917AA7600DBCA4C /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C3672252917AA7600DBCA4C /* Cairo-Bold.ttf */; };
+		3C36722F2917AA7600DBCA4C /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C3672272917AA7600DBCA4C /* Cairo-Regular.ttf */; };
+		3C3672302917AA7600DBCA4C /* Cairo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C3672282917AA7600DBCA4C /* Cairo-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +36,14 @@
 		3C3672022917A08800DBCA4C /* AppDelegate + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate + Extension.swift"; sourceTree = "<group>"; };
 		3C3672042917A0A200DBCA4C /* SceneDelegate + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneDelegate + Extension.swift"; sourceTree = "<group>"; };
 		3C3672152917A40A00DBCA4C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3C36721A2917A5D600DBCA4C /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		3C36721C2917A8A900DBCA4C /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		3C36721E2917A8E100DBCA4C /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		3C3672212917AA7600DBCA4C /* Cairo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Light.ttf"; sourceTree = "<group>"; };
+		3C3672222917AA7600DBCA4C /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
+		3C3672252917AA7600DBCA4C /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
+		3C3672272917AA7600DBCA4C /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
+		3C3672282917AA7600DBCA4C /* Cairo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +60,7 @@
 		3C3671E129179FAE00DBCA4C = {
 			isa = PBXGroup;
 			children = (
+				3C36721A2917A5D600DBCA4C /* swiftgen.yml */,
 				3C3671EC29179FAE00DBCA4C /* iOS_Rasid */,
 				3C3671EB29179FAE00DBCA4C /* Products */,
 			);
@@ -138,6 +155,7 @@
 		3C36720D2917A10000DBCA4C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3C36721C2917A8A900DBCA4C /* Assets.swift */,
 				3C3671F629179FB000DBCA4C /* Assets.xcassets */,
 			);
 			path = Images;
@@ -146,6 +164,8 @@
 		3C36720E2917A10600DBCA4C /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				3C3672202917AA1D00DBCA4C /* Cairo */,
+				3C36721E2917A8E100DBCA4C /* Fonts.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -193,6 +213,18 @@
 			path = Clients;
 			sourceTree = "<group>";
 		};
+		3C3672202917AA1D00DBCA4C /* Cairo */ = {
+			isa = PBXGroup;
+			children = (
+				3C3672222917AA7600DBCA4C /* Cairo-Black.ttf */,
+				3C3672252917AA7600DBCA4C /* Cairo-Bold.ttf */,
+				3C3672212917AA7600DBCA4C /* Cairo-Light.ttf */,
+				3C3672282917AA7600DBCA4C /* Cairo-Medium.ttf */,
+				3C3672272917AA7600DBCA4C /* Cairo-Regular.ttf */,
+			);
+			path = Cairo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,6 +232,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C3671FE29179FB000DBCA4C /* Build configuration list for PBXNativeTarget "iOS_Rasid" */;
 			buildPhases = (
+				3C3672192917A4D800DBCA4C /* SwiftLint */,
+				3C3672182917A4CB00DBCA4C /* SwiftGen */,
 				3C3671E629179FAE00DBCA4C /* Sources */,
 				3C3671E729179FAE00DBCA4C /* Frameworks */,
 				3C3671E829179FAE00DBCA4C /* Resources */,
@@ -251,19 +285,66 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C3672302917AA7600DBCA4C /* Cairo-Medium.ttf in Resources */,
 				3C3671FA29179FB000DBCA4C /* LaunchScreen.storyboard in Resources */,
 				3C3671F729179FB000DBCA4C /* Assets.xcassets in Resources */,
+				3C36722F2917AA7600DBCA4C /* Cairo-Regular.ttf in Resources */,
+				3C36722A2917AA7600DBCA4C /* Cairo-Black.ttf in Resources */,
+				3C3672292917AA7600DBCA4C /* Cairo-Light.ttf in Resources */,
+				3C36722D2917AA7600DBCA4C /* Cairo-Bold.ttf in Resources */,
+				3C36721B2917A5D600DBCA4C /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C3672182917A4CB00DBCA4C /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftgen > /dev/null; then\n  swiftgen\nelse\n  echo \"warning: Swiftgen not installed\"\nfi\n";
+		};
+		3C3672192917A4D800DBCA4C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C3671E629179FAE00DBCA4C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C36721F2917A8E100DBCA4C /* Fonts.swift in Sources */,
 				3C3672032917A08800DBCA4C /* AppDelegate + Extension.swift in Sources */,
+				3C36721D2917A8A900DBCA4C /* Assets.swift in Sources */,
 				3C3671F229179FAE00DBCA4C /* ViewController.swift in Sources */,
 				3C3671EE29179FAE00DBCA4C /* AppDelegate.swift in Sources */,
 				3C3672052917A0A200DBCA4C /* SceneDelegate + Extension.swift in Sources */,
