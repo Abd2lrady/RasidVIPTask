@@ -14,7 +14,6 @@ extension SceneDelegate {
         let view = ViewController()
         let navigator = UINavigationController(rootViewController: view)
 
-
         window.rootViewController = navigator
         self.window = window
         self.window?.makeKeyAndVisible()

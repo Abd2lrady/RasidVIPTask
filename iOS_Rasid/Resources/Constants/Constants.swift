@@ -6,9 +6,11 @@
 //
 
 import Foundation
-
+// swiftlint: disable type_name  nesting
 enum Constants {
     enum API {
-        static let baseURL = ""
+        enum Branches {
+            static let baseURL = "jackdashapi-develope.fintechrsa.com"
+        }
     }
 }
