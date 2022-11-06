@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+let repo = BranchsService()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -19,13 +19,12 @@ class ViewController: UIViewController {
     func getFacilites() {
         let facilityID = 2179
         
-        APIClient.shared.request(for: .getBranchs(facilityId: facilityID)) { result in
+        repo.getBranchs(for: facilityID) { result in
             switch result {
-            case .success(let data):
-                let branchs = try? JSONDecoder().decode(ServerResponse<[BranchEntity]>.self, from: data)
-                print(branchs)
+            case .success(let facilities):
+                print(facilities)
             case .failure(let error):
-                print(error.localizedDescription)
+                print(error)
             }
         }
         
