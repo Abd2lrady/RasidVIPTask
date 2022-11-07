@@ -8,6 +8,7 @@
 import UIKit
 
 class BranchsTableViewDelegate: NSObject {
+    var loadMoreRequest: (() -> Void)?
     var branchs: [Branch.ViewModel]
     
     init(branchs: [Branch.ViewModel]) {
@@ -27,4 +28,18 @@ extension BranchsTableViewDelegate: UITableViewDataSource {
         cell.configCell(with: branchs[indexPath.row])
       return cell
     }
+}
+
+extension BranchsTableViewDelegate: UITableViewDelegate {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let dragOffestY = scrollView.contentOffset.y
+        let totalContentHeight = scrollView.contentSize.height
+        let container = scrollView.frame.size.height
+        
+        if dragOffestY > ((totalContentHeight - container) + 100) {
+            loadMoreRequest?()
+        }
+
+    }
+    
 }

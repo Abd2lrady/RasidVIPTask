@@ -27,6 +27,12 @@ internal struct Colors {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#0065b0"></span>
   /// Alpha: 100% <br/> (0x0065b0ff)
   internal static let branchCellSellersCount = Colors(rgbaValue: 0x0065b0ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#0065b0"></span>
+  /// Alpha: 100% <br/> (0x0065b0ff)
+  internal static let branchsReportButtonBG = Colors(rgbaValue: 0x0065b0ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ffffff"></span>
+  /// Alpha: 100% <br/> (0xffffffff)
+  internal static let branchsReportButtonTitle = Colors(rgbaValue: 0xffffffff)
 }
 // swiftlint:enable identifier_name line_length type_body_length
 

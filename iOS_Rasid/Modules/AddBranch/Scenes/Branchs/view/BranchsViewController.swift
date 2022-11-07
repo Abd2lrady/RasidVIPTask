@@ -13,9 +13,9 @@ class BranchsViewController: UIViewController {
     @IBOutlet weak var reportButton: UIButton!
     @IBOutlet weak var addBranchButton: UIButton!
     
-    lazy var branchTableViewDelegate = BranchsTableViewDelegate(branchs: [Branch.ViewModel(branchName: "السعودية",
-                                                                                           managerName: "احمدعبدالراضى",
-                                                                                           sellersCount: "5"),
+    lazy var branchsTableViewDelegate = BranchsTableViewDelegate(branchs: [Branch.ViewModel(branchName: "السعودية",
+                                                                                            managerName: "احمد",
+                                                                                            sellersCount: "5"),
                                                                           Branch.ViewModel(branchName: "fintech",
                                                                                            managerName: "abdelrady",
                                                                                            sellersCount: "5"),
@@ -25,6 +25,7 @@ class BranchsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configBranchsTableView()
+        configUI()
         // Do any additional setup after loading the view.
     }
     
@@ -32,12 +33,51 @@ class BranchsViewController: UIViewController {
 
 extension BranchsViewController {
     func configBranchsTableView() {
-        branchsTableView.backgroundColor = .clear
         let cellNib = UINib(nibName: "\(BranchCell.self)",
                             bundle: .main)
         branchsTableView.register(cellNib,
                                   forCellReuseIdentifier: BranchCell.reuseID)
         
-        branchsTableView.dataSource = branchTableViewDelegate
+        branchsTableView.dataSource = branchsTableViewDelegate
+        branchsTableView.delegate = branchsTableViewDelegate
+        branchsTableViewDelegate.loadMoreRequest = {
+            print("load more branchs")
+
+        }
+    }
+    
+    func configUI() {
+        branchsTableView.backgroundColor = .clear
+        
+        addBranchButton.setImage(Images.addBranchButtonIc.image,
+                                 for: .normal)
+        addBranchButton.addTarget(self,
+                                  action: #selector(addBranchTapped),
+                                  for: .touchUpInside)
+        
+        reportButton.layer.cornerRadius = 5
+        reportButton.backgroundColor = Colors.branchsReportButtonBG.color
+        let reportButtonTitleString = "اصدار تقرير"
+        let reportButtonTitleAtrributes = [NSAttributedString.Key.font:
+                                            Fonts.Cairo.regular.font(size: 16),
+                                           NSAttributedString.Key.foregroundColor:
+                                            Colors.branchsReportButtonTitle.color]
+        let reportButtonAttributedTitle = NSAttributedString(string: reportButtonTitleString,
+                                                             attributes: reportButtonTitleAtrributes)
+        reportButton.setAttributedTitle(reportButtonAttributedTitle,
+                                        for: .normal)
+        reportButton.addTarget(self,
+                               action: #selector(reportTapped),
+                               for: .touchUpInside)
+    }
+    
+    @objc
+    func reportTapped() {
+        print("report button tapped")
+    }
+    
+    @objc
+    func addBranchTapped() {
+        print("add Branch button tapped")
     }
 }
