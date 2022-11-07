@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BranchsViewController" customModule="iOS_Rasid" customModuleProvider="target">
             <connections>
                 <outlet property="addBranchButton" destination="5Gg-By-WKz" id="q34-nP-dht"/>
+                <outlet property="branchsTabelViewHeaderLabel" destination="7st-v9-27N" id="XNo-MA-A8p"/>
                 <outlet property="branchsTableView" destination="gZf-f0-hIj" id="ziR-Nt-MHD"/>
                 <outlet property="reportButton" destination="OeY-CL-xhm" id="eYl-m5-Ggx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -41,8 +42,14 @@
                         <constraint firstAttribute="height" constant="105" id="nkD-YN-D9e"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7st-v9-27N" userLabel="branchsTabelHeaderLabel">
+                    <rect key="frame" x="16" y="207" width="42" height="20.333333333333343"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gZf-f0-hIj" userLabel="branchsTableView">
-                    <rect key="frame" x="5" y="183" width="380" height="359"/>
+                    <rect key="frame" x="5" y="245.33333333333334" width="380" height="296.66666666666663"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gg-By-WKz" userLabel="addButton">
@@ -70,15 +77,17 @@
                 <constraint firstItem="iGu-Wy-7IS" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="0qE-zG-B0a"/>
                 <constraint firstItem="5Gg-By-WKz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="9PT-sj-nhm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Z8U-yg-HOl" secondAttribute="trailing" constant="16" id="Dne-ON-aFQ"/>
+                <constraint firstItem="7st-v9-27N" firstAttribute="top" secondItem="Z8U-yg-HOl" secondAttribute="bottom" constant="32" id="Fda-zB-Odt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5Gg-By-WKz" secondAttribute="bottom" constant="16" id="MSK-PS-fZ4"/>
                 <constraint firstItem="OeY-CL-xhm" firstAttribute="top" secondItem="gZf-f0-hIj" secondAttribute="bottom" constant="48" id="RJ8-fd-BcT"/>
                 <constraint firstItem="iGu-Wy-7IS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cNI-qG-xhn"/>
                 <constraint firstItem="OeY-CL-xhm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cdj-sv-Na3"/>
-                <constraint firstItem="gZf-f0-hIj" firstAttribute="top" secondItem="Z8U-yg-HOl" secondAttribute="bottom" constant="8" id="eEY-7f-1gh"/>
                 <constraint firstItem="Z8U-yg-HOl" firstAttribute="leading" secondItem="V9x-Oh-4Ct" secondAttribute="leading" constant="-24" id="lLY-3l-Ekh"/>
                 <constraint firstItem="Z8U-yg-HOl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ms0-Wy-3hv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gZf-f0-hIj" secondAttribute="trailing" constant="5" id="nQE-t8-4x3"/>
+                <constraint firstItem="gZf-f0-hIj" firstAttribute="top" secondItem="7st-v9-27N" secondAttribute="bottom" constant="18" id="oR4-k4-lIA"/>
                 <constraint firstItem="gZf-f0-hIj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="oTn-fW-Vdb"/>
+                <constraint firstItem="7st-v9-27N" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="toN-gO-9TV"/>
                 <constraint firstItem="5Gg-By-WKz" firstAttribute="top" secondItem="OeY-CL-xhm" secondAttribute="bottom" constant="100" id="upR-do-uCg"/>
                 <constraint firstItem="Z8U-yg-HOl" firstAttribute="top" secondItem="iGu-Wy-7IS" secondAttribute="bottom" constant="40" id="xqM-Qk-keQ"/>
                 <constraint firstItem="V9x-Oh-4Ct" firstAttribute="bottom" secondItem="Z8U-yg-HOl" secondAttribute="bottom" id="zYI-pj-K0m"/>

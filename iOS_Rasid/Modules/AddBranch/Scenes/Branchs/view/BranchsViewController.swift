@@ -12,6 +12,7 @@ class BranchsViewController: UIViewController {
     @IBOutlet weak var branchsTableView: UITableView!
     @IBOutlet weak var reportButton: UIButton!
     @IBOutlet weak var addBranchButton: UIButton!
+    @IBOutlet weak var branchsTabelViewHeaderLabel: UILabel!
     
     lazy var branchsTableViewDelegate = BranchsTableViewDelegate(branchs: [Branch.ViewModel(branchName: "السعودية",
                                                                                             managerName: "احمد",
@@ -54,6 +55,10 @@ extension BranchsViewController {
     func configUI() {
         branchsTableView.backgroundColor = .clear
         
+        branchsTabelViewHeaderLabel.font = Fonts.Cairo.regular.font(size: 16)
+        branchsTabelViewHeaderLabel.textColor = Colors.branchsBranchsListHeader.color
+        branchsTabelViewHeaderLabel.text = Strings.branchListHeader
+
         addBranchButton.setImage(Images.addBranchButtonIc.image,
                                  for: .normal)
         addBranchButton.addTarget(self,
@@ -62,7 +67,7 @@ extension BranchsViewController {
         
         reportButton.layer.cornerRadius = 5
         reportButton.backgroundColor = Colors.branchsReportButtonBG.color
-        let reportButtonTitleString = "اصدار تقرير"
+        let reportButtonTitleString = Strings.reportButtonTitleString
         let reportButtonTitleAtrributes = [NSAttributedString.Key.font:
                                             Fonts.Cairo.regular.font(size: 16),
                                            NSAttributedString.Key.foregroundColor:

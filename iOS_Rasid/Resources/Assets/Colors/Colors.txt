@@ -3,3 +3,4 @@ branchCell.branchName: #515151
 branchCell.sellersCount: #0065B0
 branchs.reportButtonTitle: #ffffff
 branchs.reportButtonBG: #0065B0
+branchs.branchsListHeader: #515151
