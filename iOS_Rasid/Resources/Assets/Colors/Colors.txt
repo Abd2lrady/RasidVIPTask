@@ -1,0 +1,3 @@
+branchCell.ManagerName: #ACACAC
+branchCell.branchName: #515151
+branchCell.sellersCount: #0065B0

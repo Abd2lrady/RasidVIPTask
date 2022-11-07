@@ -16,5 +16,9 @@ enum Branch {
         let branchs: [BranchEntity]
     }
     
-    struct ViewModel {}
+    struct ViewModel {
+        let branchName: String
+        let managerName: String
+        let sellersCount: String
+    }
 }
