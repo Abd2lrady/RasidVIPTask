@@ -9,6 +9,7 @@ import UIKit
 
 class BranchsTableViewDelegate: NSObject {
     var loadMoreRequest: (() -> Void)?
+    var showBranchDetails: ((Int?) -> Void)?
     var branchs: [Branch.ViewModel]
     
     init(branchs: [Branch.ViewModel]) {
@@ -25,7 +26,14 @@ extension BranchsTableViewDelegate: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BranchCell.reuseID,
                                                        for: indexPath) as? BranchCell
         else { fatalError("can`t dequeue branch cell") }
-        cell.configCell(with: branchs[indexPath.row])
+        
+        cell.configCell(with: branchs[indexPath.row],
+                        at: indexPath.row)
+
+        cell.viewDetailsTapped = { index in
+            self.showBranchDetails?(index)
+        }
+        
       return cell
     }
 }

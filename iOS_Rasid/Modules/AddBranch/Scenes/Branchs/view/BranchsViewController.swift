@@ -44,6 +44,11 @@ extension BranchsViewController {
             print("load more branchs")
 
         }
+        branchsTableViewDelegate.showBranchDetails = { indx in
+            print("needs to show details for cell index \(indx)")
+            // 1- get branch id from interactor
+            // 2- navigate to details with id
+        }
     }
     
     func configUI() {

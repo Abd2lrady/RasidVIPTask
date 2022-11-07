@@ -10,6 +10,8 @@ import UIKit
 class BranchCell: UITableViewCell {
     static let reuseID = "BranchCell"
     
+    var viewDetailsTapped: ((Int?) -> Void)?
+    var cellIndex: Int?
     @IBOutlet weak var branchNameLabel: UILabel!
     @IBOutlet weak var managerNameLabel: UILabel!
     @IBOutlet weak var sellersCountLabel: UILabel!
@@ -33,16 +35,18 @@ class BranchCell: UITableViewCell {
 
 extension BranchCell {
     
-    func configCell(with branch: Branch.ViewModel) {
+    func configCell(with branch: Branch.ViewModel, at index: Int) {
         branchNameLabel.text = branch.branchName
         managerNameLabel.text = branch.managerName
         sellersCountLabel.text = branch.sellersCount
+        cellIndex = index
     }
     
     func clearCell() {
         branchNameLabel.text = ""
         managerNameLabel.text = ""
         sellersCountLabel.text = ""
+        cellIndex = nil
     }
     
     func configCellUI() {
@@ -57,6 +61,11 @@ extension BranchCell {
         
         showBranchDetailsButton.setImage(Images.showBranchDetailsButtonIc.image,
                                          for: .normal)
-        
+        showBranchDetailsButton.addTarget(self, action: #selector(showDetailsButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc
+    func showDetailsButtonTapped() {
+        viewDetailsTapped?(cellIndex)
     }
 }
