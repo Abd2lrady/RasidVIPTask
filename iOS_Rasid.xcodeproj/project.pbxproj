@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3C3671EE29179FAE00DBCA4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3671ED29179FAE00DBCA4C /* AppDelegate.swift */; };
 		3C3671F029179FAE00DBCA4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3671EF29179FAE00DBCA4C /* SceneDelegate.swift */; };
-		3C3671F229179FAE00DBCA4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3671F129179FAE00DBCA4C /* ViewController.swift */; };
 		3C3671F729179FB000DBCA4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C3671F629179FB000DBCA4C /* Assets.xcassets */; };
 		3C3671FA29179FB000DBCA4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C3671F829179FB000DBCA4C /* LaunchScreen.storyboard */; };
 		3C3672032917A08800DBCA4C /* AppDelegate + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672022917A08800DBCA4C /* AppDelegate + Extension.swift */; };
@@ -43,13 +42,16 @@
 		3CF43AB729191E1C00A4F4B5 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3CF43AB629191E1C00A4F4B5 /* Colors.txt */; };
 		3CF43ABB29192D2000A4F4B5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CF43ABD29192D2000A4F4B5 /* Localizable.strings */; };
 		3CF43AC129192FC700A4F4B5 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF43AC029192FC700A4F4B5 /* Strings.swift */; };
+		3CF43AC7291931BF00A4F4B5 /* BranchsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF43AC6291931BF00A4F4B5 /* BranchsInteractor.swift */; };
+		3CF43AC92919322600A4F4B5 /* BranchsViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF43AC82919322600A4F4B5 /* BranchsViewControllerProtocol.swift */; };
+		3CF43ACB291932A100A4F4B5 /* BranchsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF43ACA291932A100A4F4B5 /* BranchsPresenter.swift */; };
+		3CF43ACE29194A6400A4F4B5 /* BranchsConfigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF43ACD29194A6400A4F4B5 /* BranchsConfigrator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C3671EA29179FAE00DBCA4C /* iOS_Rasid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Rasid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3671ED29179FAE00DBCA4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C3671EF29179FAE00DBCA4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3C3671F129179FAE00DBCA4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3C3671F629179FB000DBCA4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C3671F929179FB000DBCA4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C3671FB29179FB000DBCA4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +87,10 @@
 		3CF43ABE29192D4100A4F4B5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3CF43ABF29192D4100A4F4B5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3CF43AC029192FC700A4F4B5 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		3CF43AC6291931BF00A4F4B5 /* BranchsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsInteractor.swift; sourceTree = "<group>"; };
+		3CF43AC82919322600A4F4B5 /* BranchsViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsViewControllerProtocol.swift; sourceTree = "<group>"; };
+		3CF43ACA291932A100A4F4B5 /* BranchsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsPresenter.swift; sourceTree = "<group>"; };
+		3CF43ACD29194A6400A4F4B5 /* BranchsConfigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsConfigrator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +132,6 @@
 				3C3672142917A21000DBCA4C /* Clients */,
 				3C3672132917A20700DBCA4C /* Services */,
 				3C3672072917A0C900DBCA4C /* Modules */,
-				3C3671F129179FAE00DBCA4C /* ViewController.swift */,
 			);
 			path = iOS_Rasid;
 			sourceTree = "<group>";
@@ -325,19 +330,21 @@
 		3C36724F2917F0AC00DBCA4C /* Branchs */ = {
 			isa = PBXGroup;
 			children = (
-				3C3672542917F6BB00DBCA4C /* view */,
+				3CF43ACC29194A4B00A4F4B5 /* Configrator */,
+				3CF43AC42919316C00A4F4B5 /* Presenter */,
+				3CF43AC32919315A00A4F4B5 /* Interactor */,
+				3C3672542917F6BB00DBCA4C /* View */,
 			);
 			path = Branchs;
 			sourceTree = "<group>";
 		};
-		3C3672542917F6BB00DBCA4C /* view */ = {
+		3C3672542917F6BB00DBCA4C /* View */ = {
 			isa = PBXGroup;
 			children = (
 				3CD59B3A2918ECAF005BEEF3 /* BranchsTableView */,
-				3C3672502917F0C200DBCA4C /* BranchsViewController.swift */,
-				3C3672512917F0C200DBCA4C /* BranchsViewController.xib */,
+				3CF43AC52919319300A4F4B5 /* ViewController */,
 			);
-			path = view;
+			path = View;
 			sourceTree = "<group>";
 		};
 		3C3672562918E50E00DBCA4C /* BranchCell */ = {
@@ -380,6 +387,40 @@
 				3CF43ABD29192D2000A4F4B5 /* Localizable.strings */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		3CF43AC32919315A00A4F4B5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3CF43AC6291931BF00A4F4B5 /* BranchsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3CF43AC42919316C00A4F4B5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3CF43ACA291932A100A4F4B5 /* BranchsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3CF43AC52919319300A4F4B5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3C3672502917F0C200DBCA4C /* BranchsViewController.swift */,
+				3C3672512917F0C200DBCA4C /* BranchsViewController.xib */,
+				3CF43AC82919322600A4F4B5 /* BranchsViewControllerProtocol.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3CF43ACC29194A4B00A4F4B5 /* Configrator */ = {
+			isa = PBXGroup;
+			children = (
+				3CF43ACD29194A6400A4F4B5 /* BranchsConfigrator.swift */,
+			);
+			path = Configrator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,13 +557,15 @@
 				3CD59B412918F39D005BEEF3 /* Colors.swift in Sources */,
 				3C36721F2917A8E100DBCA4C /* Fonts.swift in Sources */,
 				3C36724E2917E4EF00DBCA4C /* BranchDetails.swift in Sources */,
+				3CF43AC92919322600A4F4B5 /* BranchsViewControllerProtocol.swift in Sources */,
 				3C36723A2917ACEC00DBCA4C /* APIRouter.swift in Sources */,
 				3C3672402917DB8200DBCA4C /* ServerResponse.swift in Sources */,
+				3CF43ACE29194A6400A4F4B5 /* BranchsConfigrator.swift in Sources */,
 				3C3672032917A08800DBCA4C /* AppDelegate + Extension.swift in Sources */,
+				3CF43ACB291932A100A4F4B5 /* BranchsPresenter.swift in Sources */,
 				3CD59B3D2918ECDF005BEEF3 /* BranchsTableViewDelegate.swift in Sources */,
 				3C36721D2917A8A900DBCA4C /* Assets.swift in Sources */,
 				3C3672472917E1CB00DBCA4C /* BranchsGateway.swift in Sources */,
-				3C3671F229179FAE00DBCA4C /* ViewController.swift in Sources */,
 				3C3672592918E54300DBCA4C /* BranchCell.swift in Sources */,
 				3C3671EE29179FAE00DBCA4C /* AppDelegate.swift in Sources */,
 				3C3672052917A0A200DBCA4C /* SceneDelegate + Extension.swift in Sources */,
@@ -534,6 +577,7 @@
 				3C36723B2917ACEC00DBCA4C /* APIRouterProtocol.swift in Sources */,
 				3C3672392917ACEC00DBCA4C /* APIClient.swift in Sources */,
 				3C3672442917DCBF00DBCA4C /* Branch.swift in Sources */,
+				3CF43AC7291931BF00A4F4B5 /* BranchsInteractor.swift in Sources */,
 				3CF43AC129192FC700A4F4B5 /* Strings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

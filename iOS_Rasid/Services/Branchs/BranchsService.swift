@@ -7,6 +7,7 @@
 
 import Foundation
 class BranchsService {
+    var page = 1
     let remoteBranchRepository: BranchsGateway
     init(remoteBranchRepository: BranchsGateway = RemoteBranchsRepository()) {
         self.remoteBranchRepository = remoteBranchRepository
@@ -14,8 +15,11 @@ class BranchsService {
 }
 
 extension BranchsService: BranchsGateway {
-    func getBranchs(for facilityId: Int, completionHandler: @escaping (Result<[BranchEntity], Error>) -> Void) {
-        remoteBranchRepository.getBranchs(for: facilityId) { result in
+    func getBranchs(for facilityId: Int,
+                    page: Int,
+                    completionHandler: @escaping (Result<[BranchEntity], Error>) -> Void) {
+
+        remoteBranchRepository.getBranchs(for: facilityId, page: page) { result in
             switch result {
             case .success(let branchs):
                 completionHandler(.success(branchs))
@@ -25,7 +29,21 @@ extension BranchsService: BranchsGateway {
             }
         }
     }
-    
+        
+    func getMoreBranchs(for facilityId: Int, completionHandler: @escaping (Result<[BranchEntity], Error>) -> Void) {
+        page += 1
+        remoteBranchRepository.getBranchs(for: facilityId,
+                                          page: page) { result in
+            switch result {
+            case .success(let branchs):
+                completionHandler(.success(branchs))
+                print(branchs)
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+        }
+    }
+
     func getBranchDetails(for branchId: Int,
                           completionHandler: @escaping (Result<[BranchDetailsEntity], Error>) -> Void) {
          

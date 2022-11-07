@@ -44,7 +44,7 @@ extension BranchsTableViewDelegate: UITableViewDelegate {
         let totalContentHeight = scrollView.contentSize.height
         let container = scrollView.frame.size.height
         
-        if dragOffestY > ((totalContentHeight - container) + 100) {
+        if dragOffestY > ((totalContentHeight - container) + 50) {
             loadMoreRequest?()
         }
 

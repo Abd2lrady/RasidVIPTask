@@ -13,7 +13,7 @@ class BranchsViewController: UIViewController {
     @IBOutlet weak var reportButton: UIButton!
     @IBOutlet weak var addBranchButton: UIButton!
     @IBOutlet weak var branchsTabelViewHeaderLabel: UILabel!
-    
+    var interactor: BranchsInteractorProtocol?
     lazy var branchsTableViewDelegate = BranchsTableViewDelegate(branchs: [Branch.ViewModel(branchName: "السعودية",
                                                                                             managerName: "احمد",
                                                                                             sellersCount: "5"),
@@ -27,7 +27,7 @@ class BranchsViewController: UIViewController {
         super.viewDidLoad()
         configBranchsTableView()
         configUI()
-        // Do any additional setup after loading the view.
+        interactor?.getBranchs(request: .loadBranchs)
     }
     
 }
@@ -42,8 +42,8 @@ extension BranchsViewController {
         branchsTableView.dataSource = branchsTableViewDelegate
         branchsTableView.delegate = branchsTableViewDelegate
         branchsTableViewDelegate.loadMoreRequest = {
+            self.interactor?.getBranchs(request: .loadMoreBranchs)
             print("load more branchs")
-
         }
         branchsTableViewDelegate.showBranchDetails = { indx in
             print("needs to show details for cell index \(indx)")

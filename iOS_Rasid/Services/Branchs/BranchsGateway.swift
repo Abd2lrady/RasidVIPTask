@@ -10,6 +10,7 @@ import Foundation
 protocol BranchsGateway {
     
     func getBranchs(for facilityId: Int,
+                    page: Int,
                     completionHandler: @escaping (Result<[BranchEntity], Error>) -> Void)
     func getBranchDetails(for branchId: Int,
                           completionHandler: @escaping (Result<[BranchDetailsEntity], Error>) -> Void)

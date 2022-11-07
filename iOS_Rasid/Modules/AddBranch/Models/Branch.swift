@@ -10,6 +10,7 @@ import Foundation
 enum Branch {
     enum Request {
         case loadBranchs
+        case loadMoreBranchs
     }
     
     struct Response {

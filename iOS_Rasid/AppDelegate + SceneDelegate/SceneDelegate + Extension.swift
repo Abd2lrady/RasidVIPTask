@@ -10,8 +10,8 @@ import UIKit
 extension SceneDelegate {
     func bootApp(scene: UIWindowScene) {
         let window = UIWindow(windowScene: scene)
-        
-        let view = BranchsViewController()
+        let facilityID = 2179
+        let view = BranchsConfigrator.configrate(facilityId: facilityID)
         let navigator = UINavigationController(rootViewController: view)
 
         window.rootViewController = navigator

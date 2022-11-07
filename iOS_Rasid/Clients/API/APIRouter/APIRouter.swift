@@ -9,7 +9,7 @@ import Foundation
 
 enum APIRouter {
     
-    case getBranchs(facilityId: Int)
+    case getBranchs(facilityId: Int, page: Int)
     case getBranchDetails(facilityId: Int, branchId: Int)
 }
 
@@ -31,7 +31,7 @@ extension APIRouter: APIRouterProtocol {
     
     var path: String {
         switch self {
-        case .getBranchs(let facilityId):
+        case .getBranchs(let facilityId, _):
             return "/api/vendor/facility/\(facilityId)/branches"
         case .getBranchDetails(let facilityId, let branchId):
             return "/api/vendor/facility/\(facilityId)/branches/\(branchId)"
@@ -47,7 +47,9 @@ extension APIRouter: APIRouterProtocol {
     
     var parameters: [String: Any] {
         switch self {
-        case .getBranchs, .getBranchDetails:
+        case .getBranchs(_, let page):
+            return ["page": page]
+        case .getBranchDetails:
             return [:]
         }
     }

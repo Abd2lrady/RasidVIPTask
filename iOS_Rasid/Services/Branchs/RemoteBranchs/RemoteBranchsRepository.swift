@@ -11,6 +11,7 @@ class RemoteBranchsRepository {
     
     let client: APIClient
     let decoder: JSONDecoder
+    var setTotalPages: ((Int?) -> Void)?
     
     init(client: APIClient = APIClient.shared,
          decoder: JSONDecoder = JSONDecoder()) {
@@ -23,14 +24,16 @@ class RemoteBranchsRepository {
 extension RemoteBranchsRepository: BranchsGateway {
         
     func getBranchs(for facilityId: Int,
+                    page: Int = 1,
                     completionHandler: @escaping (Result<[BranchEntity], Error>) -> Void) {
-        client.request(for: .getBranchs(facilityId: facilityId)) { [weak self] result in
+        client.request(for: .getBranchs(facilityId: facilityId, page: page)) { [weak self] result in
             switch result {
             case .success(let data):
                 do {
                     let response = try self?.decoder.decode(ServerResponse<[BranchEntity]>.self,
                                                             from: data)
                     completionHandler(.success(response?.data ?? [BranchEntity]()))
+                    self?.setTotalPages?(response?.meta.total)
                 } catch {
                     completionHandler(.failure(error))
                 }
