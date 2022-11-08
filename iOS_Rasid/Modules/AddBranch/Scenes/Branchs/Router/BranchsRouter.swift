@@ -27,7 +27,10 @@ class BranchsRouter {
 
 extension BranchsRouter: BranchsRouterProtocol {
     func routeToBranchDetails(branchId: Int) {
-         
+
     }
     
+    private func navToBranchDetails(destination: UIViewController) {
+        
+    }
 }
