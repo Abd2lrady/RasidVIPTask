@@ -15,6 +15,9 @@ class BranchsConfigrator {
         let interactor = BranchsInteractor(presenter: presenter,
                                            service: service,
                                            facilityId: facilityId)
+        let router = BranchsRouter(view: view,
+                                   dataStore: interactor)
+        view.router = router
         view.interactor = interactor
         return view
     }

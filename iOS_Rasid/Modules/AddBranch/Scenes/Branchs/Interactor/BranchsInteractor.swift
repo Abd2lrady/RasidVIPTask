@@ -19,7 +19,7 @@ protocol BranchsDataStore {
 class BranchsInteractor {
     let presenter: BranchsPresenterProtocol
     let service: BranchsGateway
-    var branchs = [BranchEntity]()
+    var branchs: [BranchEntity]? = [BranchEntity]()
     var facilityId: Int
     var currentPage: Int = 1
     var totalPages: Int?
@@ -33,7 +33,7 @@ class BranchsInteractor {
     }
 }
 
-extension BranchsInteractor: BranchsInteractorProtocol {
+extension BranchsInteractor: BranchsInteractorProtocol, BranchsDataStore {
     func getBranchs(request: Branch.Request) {
         switch request {
         case .loadBranchs:

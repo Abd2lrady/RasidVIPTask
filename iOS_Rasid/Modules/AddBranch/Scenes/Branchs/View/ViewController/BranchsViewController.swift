@@ -14,6 +14,7 @@ class BranchsViewController: UIViewController {
     @IBOutlet weak var addBranchButton: UIButton!
     @IBOutlet weak var branchsTabelViewHeaderLabel: UILabel!
     var interactor: BranchsInteractorProtocol?
+    var router: BranchsRouter?
     lazy var branchsTableViewDelegate = BranchsTableViewDelegate(branchs: [Branch.ViewModel(branchName: "السعودية",
                                                                                             managerName: "احمد",
                                                                                             sellersCount: "5"),
