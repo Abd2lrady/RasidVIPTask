@@ -12,6 +12,7 @@ extension SceneDelegate {
         let window = UIWindow(windowScene: scene)
         let facilityID = 2179
         let view = BranchsConfigrator.configrate(facilityId: facilityID)
+//        let view = BranchDetailsViewController()
         let navigator = UINavigationController(rootViewController: view)
 
         window.rootViewController = navigator

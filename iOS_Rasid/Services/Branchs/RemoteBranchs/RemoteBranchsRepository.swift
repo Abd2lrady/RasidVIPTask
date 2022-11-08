@@ -44,9 +44,24 @@ extension RemoteBranchsRepository: BranchsGateway {
         }
     }
     
-    func getBranchDetails(for branchId: Int,
-                          completionHandler: @escaping (Result<[BranchDetailsEntity], Error>) -> Void) {
-         
+    func getBranchDetails(facilityId: Int,
+                          branchId: Int,
+                          completionHandler: @escaping (Result<BranchDetailsEntity?, Error>) -> Void) {
+        client.request(for: .getBranchDetails(facilityId: facilityId, branchId: branchId)) { [weak self] result in
+            switch result {
+            case .success(let data):
+                do {
+                    let response = try self?.decoder.decode(ServerResponse<BranchDetailsEntity>.self,
+                                                            from: data)
+                    completionHandler(.success(response?.data))
+                } catch {
+                    completionHandler(.failure(error))
+                }
+                
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+        }
     }
 
 }

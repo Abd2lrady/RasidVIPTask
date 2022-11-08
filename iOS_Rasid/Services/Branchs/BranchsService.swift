@@ -44,9 +44,19 @@ extension BranchsService: BranchsGateway {
         }
     }
 
-    func getBranchDetails(for branchId: Int,
-                          completionHandler: @escaping (Result<[BranchDetailsEntity], Error>) -> Void) {
-         
+    func getBranchDetails(facilityId: Int,
+                          branchId: Int,
+                          completionHandler: @escaping (Result<BranchDetailsEntity?, Error>) -> Void) {
+        remoteBranchRepository.getBranchDetails(facilityId: facilityId,
+                                                branchId: branchId) { result in
+            switch result {
+            case .success(let branchs):
+                completionHandler(.success(branchs))
+                print(branchs)
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+        }
     }
     
 }

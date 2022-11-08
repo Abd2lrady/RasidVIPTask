@@ -27,6 +27,15 @@ internal struct Colors {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#0065b0"></span>
   /// Alpha: 100% <br/> (0x0065b0ff)
   internal static let branchCellSellersCount = Colors(rgbaValue: 0x0065b0ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#0065b0"></span>
+  /// Alpha: 100% <br/> (0x0065b0ff)
+  internal static let branchDetailsDataLabels = Colors(rgbaValue: 0x0065b0ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#0065b0"></span>
+  /// Alpha: 100% <br/> (0x0065b0ff)
+  internal static let branchDetailsEditBranchButton = Colors(rgbaValue: 0x0065b0ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#515151"></span>
+  /// Alpha: 100% <br/> (0x515151ff)
+  internal static let branchDetailsTitleLabels = Colors(rgbaValue: 0x515151ff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#515151"></span>
   /// Alpha: 100% <br/> (0x515151ff)
   internal static let branchsBranchsListHeader = Colors(rgbaValue: 0x515151ff)

@@ -4,3 +4,8 @@ branchCell.sellersCount: #0065B0
 branchs.reportButtonTitle: #ffffff
 branchs.reportButtonBG: #0065B0
 branchs.branchsListHeader: #515151
+branchDetails.TitleLabels: #515151
+branchDetails.DataLabels: #0065B0
+branchDetails.EditBranchButton: #0065B0
+
+

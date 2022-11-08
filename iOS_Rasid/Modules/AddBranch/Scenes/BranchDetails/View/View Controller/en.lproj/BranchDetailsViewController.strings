@@ -1,0 +1,54 @@
+
+/* Class = "UILabel"; text = "Branch Name"; ObjectID = "0F0-tD-MBJ"; */
+"0F0-tD-MBJ.text" = "Branch Name";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BSY-RP-yR8"; */
+"BSY-RP-yR8.text" = "Label";
+
+/* Class = "UILabel"; text = "Seller Count"; ObjectID = "CYn-MN-AcI"; */
+"CYn-MN-AcI.text" = "Seller Count";
+
+/* Class = "UILabel"; text = "Branch Manager Name"; ObjectID = "Cmk-df-5aO"; */
+"Cmk-df-5aO.text" = "Branch Manager Name";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Fy1-1h-S7B"; */
+"Fy1-1h-S7B.text" = "Label";
+
+/* Class = "UILabel"; text = "Street"; ObjectID = "OaB-FA-jEV"; */
+"OaB-FA-jEV.text" = "Street";
+
+/* Class = "UILabel"; text = "Phone Number"; ObjectID = "Ukg-Ya-fny"; */
+"Ukg-Ya-fny.text" = "Phone Number";
+
+/* Class = "UILabel"; text = "City"; ObjectID = "VVZ-qb-AWW"; */
+"VVZ-qb-AWW.text" = "City";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VY9-8m-3mv"; */
+"VY9-8m-3mv.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Yq4-Wy-Wyf"; */
+"Yq4-Wy-Wyf.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Z04-Vc-azA"; */
+"Z04-Vc-azA.text" = "Label";
+
+/* Class = "UILabel"; text = "Nighbourhood"; ObjectID = "bId-Tp-Nim"; */
+"bId-Tp-Nim.text" = "Nighbourhood";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dev-Ag-pa4"; */
+"dev-Ag-pa4.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "l09-fu-mlD"; */
+"l09-fu-mlD.text" = "Label";
+
+/* Class = "UILabel"; text = "Distrect"; ObjectID = "rHj-PC-O6i"; */
+"rHj-PC-O6i.text" = "Distrect";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "raK-wA-cVP"; */
+"raK-wA-cVP.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "raK-wA-cVP"; */
+"raK-wA-cVP.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uPK-QR-yYS"; */
+"uPK-QR-yYS.text" = "Label";
