@@ -18,6 +18,7 @@ class BranchDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
+        interactor?.getBranchDetails(request: BranchDetails.Request.getDetails)
         // Do any additional setup after loading the view.
     }
 

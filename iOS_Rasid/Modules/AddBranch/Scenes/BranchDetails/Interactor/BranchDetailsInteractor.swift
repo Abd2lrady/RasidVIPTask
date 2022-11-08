@@ -14,7 +14,7 @@ protocol BranchDetailsInteractorProtocol {
 protocol BranchDetailsDataStore {
     var details: BranchDetailsEntity? { get set }
     var facilityID: Int { get set }
-    var branchID: Int { get set }
+    var branchId: Int { get set }
 }
 
 class BranchDetailsInteractor {
@@ -22,7 +22,7 @@ class BranchDetailsInteractor {
     var service: BranchsGateway
     var details: BranchDetailsEntity?
     var facilityID: Int
-    var branchID: Int
+    var branchId: Int
     
     init(presenter: BranchDetailsPresenterProtocol,
          service: BranchsGateway,
@@ -31,7 +31,7 @@ class BranchDetailsInteractor {
         self.presenter = presenter
         self.service = service
         self.facilityID = facilityID
-        self.branchID = branchID
+        self.branchId = branchID
     }
 }
 
@@ -41,8 +41,9 @@ extension BranchDetailsInteractor: BranchDetailsInteractorProtocol,
     func getBranchDetails(request: BranchDetails.Request) {
         
         switch request {
-        case .getDetails(let facilityID, let branchId):
-            getBranchDetails(facilityId: facilityID, branchId: branchId)
+        case .getDetails:
+            getBranchDetails(facilityId: self.facilityID,
+                             branchId: self.branchId)
         }
         
     }
@@ -55,7 +56,11 @@ extension BranchDetailsInteractor: BranchDetailsInteractorProtocol,
             switch result {
             case .success(let response):
                 self?.details = response
-                print(response)
+                guard let response = response
+                else {return}
+                self?.presenter.presentBranchDetails(response: BranchDetails.Response(details: response))
+                self?.presenter.presentBranchDetails(response: BranchDetails.Response(details: response))
+//                print(response)
             case .failure(let error):
                 print(error.localizedDescription)
             }

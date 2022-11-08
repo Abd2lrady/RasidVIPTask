@@ -11,5 +11,5 @@ struct ServerResponse<ResponseType: Codable>: Codable {
     let status: Bool
     let message: String
     let data: ResponseType
-    let meta: Meta
+    let meta: Meta?
 }

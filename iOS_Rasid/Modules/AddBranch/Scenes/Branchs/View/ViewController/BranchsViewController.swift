@@ -46,10 +46,13 @@ extension BranchsViewController {
             self.interactor?.getBranchs(request: .loadMoreBranchs)
             print("load more branchs")
         }
-        branchsTableViewDelegate.showBranchDetails = { indx in
+        branchsTableViewDelegate.showBranchDetails = { [weak self] indx in
             print("needs to show details for cell index \(indx)")
             // 1- get branch id from interactor
+            let branchId = self?.router?.dataStore.branchs?[indx ?? 0].id
             // 2- navigate to details with id
+            self?.router?.routeToBranchDetails(facilityId: self?.router?.dataStore.facilityId ?? 0,
+                                               branchId: branchId ?? 0)
         }
     }
     

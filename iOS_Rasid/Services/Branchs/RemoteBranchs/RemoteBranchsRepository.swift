@@ -33,7 +33,7 @@ extension RemoteBranchsRepository: BranchsGateway {
                     let response = try self?.decoder.decode(ServerResponse<[BranchEntity]>.self,
                                                             from: data)
                     completionHandler(.success(response?.data ?? [BranchEntity]()))
-                    self?.setTotalPages?(response?.meta.total)
+                    self?.setTotalPages?(response?.meta?.total)
                 } catch {
                     completionHandler(.failure(error))
                 }

@@ -28,7 +28,7 @@ class BranchsRouter {
 extension BranchsRouter: BranchsRouterProtocol {
     func routeToBranchDetails(facilityId: Int,
                               branchId: Int) {
-        guard let service = (view?.interactor as? BranchDetailsInteractor)?.service
+        guard let service = (view?.interactor as? BranchsInteractor)?.service
         else { fatalError("wrong service") }
         let view = BranchDetailsConfigrator.configrate(service: service,
                                                        facilityId: facilityId,
