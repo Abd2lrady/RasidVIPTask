@@ -31,6 +31,6 @@ extension BranchsRouter: BranchsRouterProtocol {
     }
     
     private func navToBranchDetails(destination: UIViewController) {
-        
+         
     }
 }
