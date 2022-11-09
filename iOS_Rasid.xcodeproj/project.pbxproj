@@ -22,7 +22,6 @@
 		3C36722D2917AA7600DBCA4C /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C3672252917AA7600DBCA4C /* Cairo-Bold.ttf */; };
 		3C36722F2917AA7600DBCA4C /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C3672272917AA7600DBCA4C /* Cairo-Regular.ttf */; };
 		3C3672302917AA7600DBCA4C /* Cairo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C3672282917AA7600DBCA4C /* Cairo-Medium.ttf */; };
-		3C3672332917AC2300DBCA4C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3C3672322917AC2300DBCA4C /* Alamofire */; };
 		3C3672392917ACEC00DBCA4C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672352917ACEC00DBCA4C /* APIClient.swift */; };
 		3C36723A2917ACEC00DBCA4C /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672372917ACEC00DBCA4C /* APIRouter.swift */; };
 		3C36723B2917ACEC00DBCA4C /* APIRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672382917ACEC00DBCA4C /* APIRouterProtocol.swift */; };
@@ -32,11 +31,13 @@
 		3C3672472917E1CB00DBCA4C /* BranchsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672462917E1CB00DBCA4C /* BranchsGateway.swift */; };
 		3C36724A2917E29800DBCA4C /* RemoteBranchsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672492917E29800DBCA4C /* RemoteBranchsRepository.swift */; };
 		3C36724C2917E2F200DBCA4C /* BranchsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36724B2917E2F200DBCA4C /* BranchsService.swift */; };
-		3C36724E2917E4EF00DBCA4C /* BranchDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36724D2917E4EF00DBCA4C /* BranchDetails.swift */; };
+		3C36724E2917E4EF00DBCA4C /* BranchDetailsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36724D2917E4EF00DBCA4C /* BranchDetailsEntity.swift */; };
 		3C3672522917F0C200DBCA4C /* BranchsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672502917F0C200DBCA4C /* BranchsViewController.swift */; };
 		3C3672532917F0C200DBCA4C /* BranchsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3672512917F0C200DBCA4C /* BranchsViewController.xib */; };
 		3C3672592918E54300DBCA4C /* BranchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672572918E54300DBCA4C /* BranchCell.swift */; };
 		3C36725A2918E54300DBCA4C /* BranchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3672582918E54300DBCA4C /* BranchCell.xib */; };
+		3CB8B1A6291A472E005E7497 /* BranchsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8B1A5291A472E005E7497 /* BranchsRouter.swift */; };
+		3CB8B1B1291A48A8005E7497 /* BranchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8B1AF291A48A8005E7497 /* BranchDetailsViewController.swift */; };
 		3CD59B3D2918ECDF005BEEF3 /* BranchsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD59B3C2918ECDF005BEEF3 /* BranchsTableViewDelegate.swift */; };
 		3CD59B412918F39D005BEEF3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD59B402918F39D005BEEF3 /* Colors.swift */; };
 		3CF43AB729191E1C00A4F4B5 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3CF43AB629191E1C00A4F4B5 /* Colors.txt */; };
@@ -46,6 +47,14 @@
 		3CF43AC92919322600A4F4B5 /* BranchsViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF43AC82919322600A4F4B5 /* BranchsViewControllerProtocol.swift */; };
 		3CF43ACB291932A100A4F4B5 /* BranchsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF43ACA291932A100A4F4B5 /* BranchsPresenter.swift */; };
 		3CF43ACE29194A6400A4F4B5 /* BranchsConfigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF43ACD29194A6400A4F4B5 /* BranchsConfigrator.swift */; };
+		3CF48FFE291A5F1A002E55A8 /* BranchDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CF49000291A5F1A002E55A8 /* BranchDetailsViewController.xib */; };
+		3CF4900E291A7506002E55A8 /* BranchDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF4900D291A7506002E55A8 /* BranchDetailsPresenter.swift */; };
+		3CF49010291A7665002E55A8 /* BranchDetailsViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF4900F291A7665002E55A8 /* BranchDetailsViewControllerProtocol.swift */; };
+		3CF49012291A76D6002E55A8 /* BranchDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF49011291A76D6002E55A8 /* BranchDetails.swift */; };
+		3CF49015291A7F82002E55A8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3CF49014291A7F82002E55A8 /* Alamofire */; };
+		3CF4901A291A8604002E55A8 /* BranchDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF49019291A8604002E55A8 /* BranchDetailsInteractor.swift */; };
+		3CF4901D291A8B1B002E55A8 /* BranchDetailsConfigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF4901C291A8B1B002E55A8 /* BranchDetailsConfigrator.swift */; };
+		3CF49020291A8CE5002E55A8 /* BranchDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF4901F291A8CE5002E55A8 /* BranchDetailsRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,11 +84,13 @@
 		3C3672462917E1CB00DBCA4C /* BranchsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsGateway.swift; sourceTree = "<group>"; };
 		3C3672492917E29800DBCA4C /* RemoteBranchsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteBranchsRepository.swift; sourceTree = "<group>"; };
 		3C36724B2917E2F200DBCA4C /* BranchsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsService.swift; sourceTree = "<group>"; };
-		3C36724D2917E4EF00DBCA4C /* BranchDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchDetails.swift; sourceTree = "<group>"; };
+		3C36724D2917E4EF00DBCA4C /* BranchDetailsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchDetailsEntity.swift; sourceTree = "<group>"; };
 		3C3672502917F0C200DBCA4C /* BranchsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsViewController.swift; sourceTree = "<group>"; };
 		3C3672512917F0C200DBCA4C /* BranchsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BranchsViewController.xib; sourceTree = "<group>"; };
 		3C3672572918E54300DBCA4C /* BranchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchCell.swift; sourceTree = "<group>"; };
 		3C3672582918E54300DBCA4C /* BranchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BranchCell.xib; sourceTree = "<group>"; };
+		3CB8B1A5291A472E005E7497 /* BranchsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchsRouter.swift; sourceTree = "<group>"; };
+		3CB8B1AF291A48A8005E7497 /* BranchDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchDetailsViewController.swift; sourceTree = "<group>"; };
 		3CD59B3C2918ECDF005BEEF3 /* BranchsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsTableViewDelegate.swift; sourceTree = "<group>"; };
 		3CD59B402918F39D005BEEF3 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3CF43AB629191E1C00A4F4B5 /* Colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
@@ -91,6 +102,15 @@
 		3CF43AC82919322600A4F4B5 /* BranchsViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsViewControllerProtocol.swift; sourceTree = "<group>"; };
 		3CF43ACA291932A100A4F4B5 /* BranchsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsPresenter.swift; sourceTree = "<group>"; };
 		3CF43ACD29194A6400A4F4B5 /* BranchsConfigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsConfigrator.swift; sourceTree = "<group>"; };
+		3CF48FFF291A5F1A002E55A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BranchDetailsViewController.xib; sourceTree = "<group>"; };
+		3CF4900A291A60A9002E55A8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/BranchDetailsViewController.strings; sourceTree = "<group>"; };
+		3CF4900D291A7506002E55A8 /* BranchDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchDetailsPresenter.swift; sourceTree = "<group>"; };
+		3CF4900F291A7665002E55A8 /* BranchDetailsViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchDetailsViewControllerProtocol.swift; sourceTree = "<group>"; };
+		3CF49011291A76D6002E55A8 /* BranchDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchDetails.swift; sourceTree = "<group>"; };
+		3CF49017291A7FD8002E55A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BranchDetailsViewController.strings; sourceTree = "<group>"; };
+		3CF49019291A8604002E55A8 /* BranchDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchDetailsInteractor.swift; sourceTree = "<group>"; };
+		3CF4901C291A8B1B002E55A8 /* BranchDetailsConfigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchDetailsConfigrator.swift; sourceTree = "<group>"; };
+		3CF4901F291A8CE5002E55A8 /* BranchDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchDetailsRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C3672332917AC2300DBCA4C /* Alamofire in Frameworks */,
+				3CF49015291A7F82002E55A8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +251,7 @@
 		3C3672102917A16000DBCA4C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3CB8B1A7291A4750005E7497 /* BranchDetails */,
 				3C36724F2917F0AC00DBCA4C /* Branchs */,
 			);
 			path = Scenes;
@@ -242,6 +263,7 @@
 				3C36723E2917DB7100DBCA4C /* Entities */,
 				3C36723F2917DB8200DBCA4C /* ServerResponse.swift */,
 				3C3672432917DCBF00DBCA4C /* Branch.swift */,
+				3CF49011291A76D6002E55A8 /* BranchDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,7 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				3C36723C2917DA7800DBCA4C /* BranchEntity.swift */,
-				3C36724D2917E4EF00DBCA4C /* BranchDetails.swift */,
+				3C36724D2917E4EF00DBCA4C /* BranchDetailsEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -330,6 +352,7 @@
 		3C36724F2917F0AC00DBCA4C /* Branchs */ = {
 			isa = PBXGroup;
 			children = (
+				3CB8B1A4291A472E005E7497 /* Router */,
 				3CF43ACC29194A4B00A4F4B5 /* Configrator */,
 				3CF43AC42919316C00A4F4B5 /* Presenter */,
 				3CF43AC32919315A00A4F4B5 /* Interactor */,
@@ -354,6 +377,52 @@
 				3C3672582918E54300DBCA4C /* BranchCell.xib */,
 			);
 			path = BranchCell;
+			sourceTree = "<group>";
+		};
+		3CB8B1A4291A472E005E7497 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3CB8B1A5291A472E005E7497 /* BranchsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3CB8B1A7291A4750005E7497 /* BranchDetails */ = {
+			isa = PBXGroup;
+			children = (
+				3CF4901E291A8CD2002E55A8 /* Router */,
+				3CF4901B291A8AFC002E55A8 /* Configrator */,
+				3CF49018291A85EA002E55A8 /* Interactor */,
+				3CB8B1A9291A4767005E7497 /* Presenter */,
+				3CB8B1A8291A4762005E7497 /* View */,
+			);
+			path = BranchDetails;
+			sourceTree = "<group>";
+		};
+		3CB8B1A8291A4762005E7497 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3CB8B1AA291A482B005E7497 /* View Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3CB8B1A9291A4767005E7497 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3CF4900D291A7506002E55A8 /* BranchDetailsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3CB8B1AA291A482B005E7497 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3CB8B1AF291A48A8005E7497 /* BranchDetailsViewController.swift */,
+				3CF49000291A5F1A002E55A8 /* BranchDetailsViewController.xib */,
+				3CF4900F291A7665002E55A8 /* BranchDetailsViewControllerProtocol.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 		3CD59B3A2918ECAF005BEEF3 /* BranchsTableView */ = {
@@ -423,6 +492,30 @@
 			path = Configrator;
 			sourceTree = "<group>";
 		};
+		3CF49018291A85EA002E55A8 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3CF49019291A8604002E55A8 /* BranchDetailsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3CF4901B291A8AFC002E55A8 /* Configrator */ = {
+			isa = PBXGroup;
+			children = (
+				3CF4901C291A8B1B002E55A8 /* BranchDetailsConfigrator.swift */,
+			);
+			path = Configrator;
+			sourceTree = "<group>";
+		};
+		3CF4901E291A8CD2002E55A8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3CF4901F291A8CE5002E55A8 /* BranchDetailsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -442,7 +535,7 @@
 			);
 			name = iOS_Rasid;
 			packageProductDependencies = (
-				3C3672322917AC2300DBCA4C /* Alamofire */,
+				3CF49014291A7F82002E55A8 /* Alamofire */,
 			);
 			productName = iOS_Rasid;
 			productReference = 3C3671EA29179FAE00DBCA4C /* iOS_Rasid.app */;
@@ -474,7 +567,7 @@
 			);
 			mainGroup = 3C3671E129179FAE00DBCA4C;
 			packageReferences = (
-				3C3672312917AC2300DBCA4C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3CF49013291A7F82002E55A8 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 3C3671EB29179FAE00DBCA4C /* Products */;
 			projectDirPath = "";
@@ -502,6 +595,7 @@
 				3C36725A2918E54300DBCA4C /* BranchCell.xib in Resources */,
 				3C36722D2917AA7600DBCA4C /* Cairo-Bold.ttf in Resources */,
 				3C36721B2917A5D600DBCA4C /* swiftgen.yml in Resources */,
+				3CF48FFE291A5F1A002E55A8 /* BranchDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,15 +650,20 @@
 				3C36723D2917DA7900DBCA4C /* BranchEntity.swift in Sources */,
 				3CD59B412918F39D005BEEF3 /* Colors.swift in Sources */,
 				3C36721F2917A8E100DBCA4C /* Fonts.swift in Sources */,
-				3C36724E2917E4EF00DBCA4C /* BranchDetails.swift in Sources */,
+				3C36724E2917E4EF00DBCA4C /* BranchDetailsEntity.swift in Sources */,
 				3CF43AC92919322600A4F4B5 /* BranchsViewControllerProtocol.swift in Sources */,
+				3CB8B1B1291A48A8005E7497 /* BranchDetailsViewController.swift in Sources */,
 				3C36723A2917ACEC00DBCA4C /* APIRouter.swift in Sources */,
+				3CF49020291A8CE5002E55A8 /* BranchDetailsRouter.swift in Sources */,
+				3CF4901A291A8604002E55A8 /* BranchDetailsInteractor.swift in Sources */,
 				3C3672402917DB8200DBCA4C /* ServerResponse.swift in Sources */,
 				3CF43ACE29194A6400A4F4B5 /* BranchsConfigrator.swift in Sources */,
 				3C3672032917A08800DBCA4C /* AppDelegate + Extension.swift in Sources */,
+				3CF49010291A7665002E55A8 /* BranchDetailsViewControllerProtocol.swift in Sources */,
 				3CF43ACB291932A100A4F4B5 /* BranchsPresenter.swift in Sources */,
 				3CD59B3D2918ECDF005BEEF3 /* BranchsTableViewDelegate.swift in Sources */,
 				3C36721D2917A8A900DBCA4C /* Assets.swift in Sources */,
+				3CF49012291A76D6002E55A8 /* BranchDetails.swift in Sources */,
 				3C3672472917E1CB00DBCA4C /* BranchsGateway.swift in Sources */,
 				3C3672592918E54300DBCA4C /* BranchCell.swift in Sources */,
 				3C3671EE29179FAE00DBCA4C /* AppDelegate.swift in Sources */,
@@ -574,7 +673,10 @@
 				3C36724A2917E29800DBCA4C /* RemoteBranchsRepository.swift in Sources */,
 				3C3672162917A40A00DBCA4C /* Constants.swift in Sources */,
 				3C36724C2917E2F200DBCA4C /* BranchsService.swift in Sources */,
+				3CF4901D291A8B1B002E55A8 /* BranchDetailsConfigrator.swift in Sources */,
+				3CF4900E291A7506002E55A8 /* BranchDetailsPresenter.swift in Sources */,
 				3C36723B2917ACEC00DBCA4C /* APIRouterProtocol.swift in Sources */,
+				3CB8B1A6291A472E005E7497 /* BranchsRouter.swift in Sources */,
 				3C3672392917ACEC00DBCA4C /* APIClient.swift in Sources */,
 				3C3672442917DCBF00DBCA4C /* Branch.swift in Sources */,
 				3CF43AC7291931BF00A4F4B5 /* BranchsInteractor.swift in Sources */,
@@ -601,6 +703,16 @@
 				3CF43ABF29192D4100A4F4B5 /* ar */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		3CF49000291A5F1A002E55A8 /* BranchDetailsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3CF48FFF291A5F1A002E55A8 /* Base */,
+				3CF4900A291A60A9002E55A8 /* ar */,
+				3CF49017291A7FD8002E55A8 /* en */,
+			);
+			name = BranchDetailsViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -798,7 +910,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3C3672312917AC2300DBCA4C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		3CF49013291A7F82002E55A8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -809,9 +921,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3C3672322917AC2300DBCA4C /* Alamofire */ = {
+		3CF49014291A7F82002E55A8 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3C3672312917AC2300DBCA4C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 3CF49013291A7F82002E55A8 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

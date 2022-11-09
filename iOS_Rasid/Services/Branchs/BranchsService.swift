@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 class BranchsService {
     var page = 1
     let remoteBranchRepository: BranchsGateway
@@ -23,7 +24,7 @@ extension BranchsService: BranchsGateway {
             switch result {
             case .success(let branchs):
                 completionHandler(.success(branchs))
-                print(branchs)
+//                print(branchs)
             case .failure(let error):
                 completionHandler(.failure(error))
             }
@@ -37,7 +38,7 @@ extension BranchsService: BranchsGateway {
             switch result {
             case .success(let branchs):
                 completionHandler(.success(branchs))
-                print(branchs)
+//                print(branchs)
             case .failure(let error):
                 completionHandler(.failure(error))
             }
@@ -52,7 +53,7 @@ extension BranchsService: BranchsGateway {
             switch result {
             case .success(let branchs):
                 completionHandler(.success(branchs))
-                print(branchs)
+//                print(branchs)
             case .failure(let error):
                 completionHandler(.failure(error))
             }

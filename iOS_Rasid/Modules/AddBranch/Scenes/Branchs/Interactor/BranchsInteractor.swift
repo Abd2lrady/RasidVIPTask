@@ -47,7 +47,7 @@ extension BranchsInteractor: BranchsInteractorProtocol, BranchsDataStore {
 //            }
             loadMoreBranchs(facilityId: self.facilityId,
                             page: self.currentPage)
-            print("current page \(currentPage) from \(totalPages)")
+//            print("current page \(currentPage) from \(totalPages)")
 
         }
     }
