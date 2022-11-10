@@ -15,14 +15,35 @@ class AddBranchViewController: UIViewController {
     @IBOutlet var dataTextField: [UITextField]!
     let pickerView = UIPickerView()
     let pickerDelegate = PickerViewDelegate(titles: [])
+    
+    var interactor: AddBranchInteractorProtocol?
+    
+    private var pickerField: Fields?
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = pickerDelegate
         pickerView.dataSource = pickerDelegate
+        pickerDelegate.selectedTitle = { selected in
+            switch self.pickerField {
+            case .city:
+                self.dataTextField[Fields.city.rawValue].text = selected
+                self.dataTextField[Fields.city.rawValue].resignFirstResponder()
+            case .branchManger:
+                self.dataTextField[Fields.branchManger.rawValue].text = selected
+                self.dataTextField[Fields.branchManger.rawValue].resignFirstResponder()
+            case .distrect:
+                self.dataTextField[Fields.distrect.rawValue].text = selected
+                self.dataTextField[Fields.distrect.rawValue].resignFirstResponder()
+            default:
+                print("error field selected")
+        }
+        
+    }
         configUI()
-     }
+}
     
     @IBAction func selectManagerButtonTapped(_ sender: Any) {
+        pickerField = .branchManger
         dataTextField[Fields.branchManger.rawValue].becomeFirstResponder()
         pickerDelegate.titles = pickerDelegate.managers
         pickerView.reloadAllComponents()
@@ -31,6 +52,7 @@ class AddBranchViewController: UIViewController {
     }
     
     @IBAction func selectDistrectButtonTapped(_ sender: Any) {
+        pickerField = .distrect
         dataTextField[Fields.distrect.rawValue].becomeFirstResponder()
         pickerDelegate.titles = pickerDelegate.distrect
         pickerView.reloadAllComponents()
@@ -40,12 +62,12 @@ class AddBranchViewController: UIViewController {
     }
     
     @IBAction func selectCityButtonTapped(_ sender: Any) {
+        pickerField = .city
         dataTextField[Fields.city.rawValue].becomeFirstResponder()
         pickerDelegate.titles = pickerDelegate.cities
         pickerView.reloadAllComponents()
 
         print("select cites button tapped")
-
     }
 }
 
@@ -121,6 +143,25 @@ extension AddBranchViewController {
     
     @objc
     func addBranchButtonTapped() {
+        let name = dataTextField[Fields.branchName.rawValue].text
+        let manager = dataTextField[Fields.branchManger.rawValue].text
+        let phone = dataTextField[Fields.phoneNumber.rawValue].text
+        let sellerCount = dataTextField[Fields.sellerCount.rawValue].text
+        let distrect = dataTextField[Fields.distrect.rawValue].text
+        let city = dataTextField[Fields.city.rawValue].text
+        let noughborhood = dataTextField[Fields.noughborhood.rawValue].text
+        let street = dataTextField[Fields.street.rawValue].text
+        
+        let body = AddBranch.RequestBody(name: name,
+                                         manager: manager,
+                                         phoneNumber: phone,
+                                         sellersCount: sellerCount,
+                                         distrect: distrect,
+                                         city: city,
+                                         street: street,
+                                         neihbourhood: noughborhood)
+        interactor?.sendNewBranchDetailsBody(request: .addBranch(body))
+        
         print("add branch button tapped")
     }
     

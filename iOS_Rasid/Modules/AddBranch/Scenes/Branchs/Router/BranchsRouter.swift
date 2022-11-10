@@ -10,6 +10,8 @@ import UIKit
 protocol BranchsRouterProtocol {
     func routeToBranchDetails(facilityId: Int,
                               branchId: Int)
+    func routeToAddBranch(facilityID: Int?)
+    
 }
 
 class BranchsRouter {
@@ -26,6 +28,18 @@ class BranchsRouter {
 }
 
 extension BranchsRouter: BranchsRouterProtocol {
+        func routeToAddBranch(facilityID: Int?) {
+            guard let id = facilityID
+            else { fatalError("facility ID not founded") }
+
+            guard let service = (view?.interactor as? BranchsInteractor)?.service
+            else { fatalError("wrong service") }
+
+            let view = AddBranchConfigrator.configureconfigrate(service: service,
+                                                                facilityId: id)
+            navToAddBranch(destination: view)
+        }
+    
     func routeToBranchDetails(facilityId: Int,
                               branchId: Int) {
         guard let service = (view?.interactor as? BranchsInteractor)?.service
@@ -41,4 +55,9 @@ extension BranchsRouter: BranchsRouterProtocol {
         view?.navigationController?.pushViewController(destination,
                                                        animated: true)
     }
+    
+    private func navToAddBranch(destination: UIViewController) {
+        view?.navigationController?.pushViewController(destination, animated: true)
+    }
+
 }

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3C02F7D2291CFA7800DB6636 /* PickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C02F7D1291CFA7800DB6636 /* PickerViewDelegate.swift */; };
+		3C02F7D6291D230600DB6636 /* AddBranchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C02F7D5291D230600DB6636 /* AddBranchPresenter.swift */; };
+		3C02F7D8291D231600DB6636 /* AddBranchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C02F7D7291D231600DB6636 /* AddBranchInteractor.swift */; };
+		3C02F7DA291D279E00DB6636 /* AddBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C02F7D9291D279E00DB6636 /* AddBranch.swift */; };
+		3C02F7DC291D3ECA00DB6636 /* AddBranchViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C02F7DB291D3ECA00DB6636 /* AddBranchViewControllerProtocol.swift */; };
+		3C02F7DF291D3FCC00DB6636 /* AddBranchConfigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C02F7DE291D3FCC00DB6636 /* AddBranchConfigrator.swift */; };
 		3C3671EE29179FAE00DBCA4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3671ED29179FAE00DBCA4C /* AppDelegate.swift */; };
 		3C3671F029179FAE00DBCA4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3671EF29179FAE00DBCA4C /* SceneDelegate.swift */; };
 		3C3671F729179FB000DBCA4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C3671F629179FB000DBCA4C /* Assets.xcassets */; };
@@ -64,6 +69,11 @@
 
 /* Begin PBXFileReference section */
 		3C02F7D1291CFA7800DB6636 /* PickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewDelegate.swift; sourceTree = "<group>"; };
+		3C02F7D5291D230600DB6636 /* AddBranchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBranchPresenter.swift; sourceTree = "<group>"; };
+		3C02F7D7291D231600DB6636 /* AddBranchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBranchInteractor.swift; sourceTree = "<group>"; };
+		3C02F7D9291D279E00DB6636 /* AddBranch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBranch.swift; sourceTree = "<group>"; };
+		3C02F7DB291D3ECA00DB6636 /* AddBranchViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBranchViewControllerProtocol.swift; sourceTree = "<group>"; };
+		3C02F7DE291D3FCC00DB6636 /* AddBranchConfigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBranchConfigrator.swift; sourceTree = "<group>"; };
 		3C3671EA29179FAE00DBCA4C /* iOS_Rasid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Rasid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3671ED29179FAE00DBCA4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C3671EF29179FAE00DBCA4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +159,30 @@
 				3C02F7D1291CFA7800DB6636 /* PickerViewDelegate.swift */,
 			);
 			path = PickerView;
+			sourceTree = "<group>";
+		};
+		3C02F7D3291D22E600DB6636 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3C02F7D7291D231600DB6636 /* AddBranchInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3C02F7D4291D22EE00DB6636 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3C02F7D5291D230600DB6636 /* AddBranchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3C02F7DD291D3FB400DB6636 /* Configrator */ = {
+			isa = PBXGroup;
+			children = (
+				3C02F7DE291D3FCC00DB6636 /* AddBranchConfigrator.swift */,
+			);
+			path = Configrator;
 			sourceTree = "<group>";
 		};
 		3C3671E129179FAE00DBCA4C = {
@@ -292,6 +326,7 @@
 				3C36723F2917DB8200DBCA4C /* ServerResponse.swift */,
 				3C3672432917DCBF00DBCA4C /* Branch.swift */,
 				3CF49011291A76D6002E55A8 /* BranchDetails.swift */,
+				3C02F7D9291D279E00DB6636 /* AddBranch.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -410,6 +445,9 @@
 		3CA30312291BD5C800DCECBF /* AddBranch */ = {
 			isa = PBXGroup;
 			children = (
+				3C02F7DD291D3FB400DB6636 /* Configrator */,
+				3C02F7D4291D22EE00DB6636 /* Presenter */,
+				3C02F7D3291D22E600DB6636 /* Interactor */,
 				3CA30313291BD5ED00DCECBF /* View */,
 			);
 			path = AddBranch;
@@ -429,6 +467,7 @@
 				3C02F7CF291CFA5C00DB6636 /* Delegate */,
 				3CA30315291BD60D00DCECBF /* AddBranchViewController.swift */,
 				3CA30316291BD60D00DCECBF /* AddBranchViewController.xib */,
+				3C02F7DB291D3ECA00DB6636 /* AddBranchViewControllerProtocol.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -732,6 +771,7 @@
 				3CD59B412918F39D005BEEF3 /* Colors.swift in Sources */,
 				3C36721F2917A8E100DBCA4C /* Fonts.swift in Sources */,
 				3C36724E2917E4EF00DBCA4C /* BranchDetailsEntity.swift in Sources */,
+				3C02F7DF291D3FCC00DB6636 /* AddBranchConfigrator.swift in Sources */,
 				3CF43AC92919322600A4F4B5 /* BranchsViewControllerProtocol.swift in Sources */,
 				3CB8B1B1291A48A8005E7497 /* BranchDetailsViewController.swift in Sources */,
 				3C36723A2917ACEC00DBCA4C /* APIRouter.swift in Sources */,
@@ -740,11 +780,15 @@
 				3C3672402917DB8200DBCA4C /* ServerResponse.swift in Sources */,
 				3CF43ACE29194A6400A4F4B5 /* BranchsConfigrator.swift in Sources */,
 				3C3672032917A08800DBCA4C /* AppDelegate + Extension.swift in Sources */,
+				3C02F7D6291D230600DB6636 /* AddBranchPresenter.swift in Sources */,
+				3C02F7D8291D231600DB6636 /* AddBranchInteractor.swift in Sources */,
 				3CF49010291A7665002E55A8 /* BranchDetailsViewControllerProtocol.swift in Sources */,
 				3CF43ACB291932A100A4F4B5 /* BranchsPresenter.swift in Sources */,
 				3CD59B3D2918ECDF005BEEF3 /* BranchsTableViewDelegate.swift in Sources */,
+				3C02F7DA291D279E00DB6636 /* AddBranch.swift in Sources */,
 				3C36721D2917A8A900DBCA4C /* Assets.swift in Sources */,
 				3C02F7D2291CFA7800DB6636 /* PickerViewDelegate.swift in Sources */,
+				3C02F7DC291D3ECA00DB6636 /* AddBranchViewControllerProtocol.swift in Sources */,
 				3CF49012291A76D6002E55A8 /* BranchDetails.swift in Sources */,
 				3C3672472917E1CB00DBCA4C /* BranchsGateway.swift in Sources */,
 				3C3672592918E54300DBCA4C /* BranchCell.swift in Sources */,

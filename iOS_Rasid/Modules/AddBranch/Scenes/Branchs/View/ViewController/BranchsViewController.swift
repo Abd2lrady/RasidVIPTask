@@ -92,6 +92,7 @@ extension BranchsViewController {
     
     @objc
     func addBranchTapped() {
+        router?.routeToAddBranch(facilityID: self.router?.dataStore.facilityId)
         print("add Branch button tapped")
     }
 }

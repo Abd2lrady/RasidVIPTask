@@ -13,6 +13,8 @@ class PickerViewDelegate: NSObject, UIPickerViewDelegate, UIPickerViewDataSource
     let distrect = ["المنطقة الاولى", "المنطقة الثانية"]
     let managers = ["احمد", "محمد"]
 
+var selectedTitle: ((String) -> Void)?
+    
     init(titles: [String]) {
         
         self.titles = titles
@@ -34,6 +36,11 @@ class PickerViewDelegate: NSObject, UIPickerViewDelegate, UIPickerViewDataSource
                                             Fonts.Cairo.regular.font(size: 16),
             .foregroundColor: Colors.addBranchTitleLabels.color.cgColor]
         return NSAttributedString(string: titles[row], attributes: atrributes)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedTitle?(titles[row])
+        pickerView.endEditing(true)
     }
     
 }

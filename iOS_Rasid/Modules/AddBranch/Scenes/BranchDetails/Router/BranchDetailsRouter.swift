@@ -5,16 +5,23 @@
 //  Created by Fintech on 08/11/2022.
 //
 
-import Foundation
+import UIKit
+
+protocol BranchDetailsRouterProtocol {
+}
 
 class BranchDetailsRouter {
     
-    weak var view: BranchDetailsViewControllerProtocol?
+    weak var view: BranchDetailsViewController?
     var dataStore: BranchDetailsDataStore
     
-    init(view: BranchDetailsViewControllerProtocol?,
+    init(view: BranchDetailsViewController?,
          dataStore: BranchDetailsDataStore) {
         self.view = view
         self.dataStore = dataStore
     }
+    
+}
+
+extension BranchDetailsRouter: BranchDetailsRouterProtocol {
 }
