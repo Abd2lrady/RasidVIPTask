@@ -9,3 +9,25 @@
 "branchListHeader" = "Branchs";
 "reportButtonTitleString" = "Make Report";
 "branchDetailsEditButtonTitle" = "Edit";
+"addBranch.Title" = "Add Branch";
+"addBranch.ButtonTitle" = "Add";
+
+"addBranch.BranchNameTitle" = "Branch Name";
+"addBranch.BranchManagerTitle" = "Branch Manager";
+"addBranch.PhoneTitle" = "Phone Number";
+"addBranch.SellersCountTitle" = "Sellers Count";
+"addBranch.DistrectTitle" = "Distrect";
+"addBranch.CityTitle" = "City";
+"addBranch.StreetTitle" = "Street";
+"addBranch.NouborhoodTitle" = "Nouborhood";
+
+"addBranch.NamePlaceholder" = "Enter Branch Name";
+"addBranch.ManagerPlaceholder" = "Choose Branch Manager";
+"addBranch.PhonePlaceholder" = "Enter Phone Number";
+"addBranch.SellersCountPlaceholder" = "Enter Sellers Count";
+"addBranch.DistrectPlaceholder" = "Choose Distrect";
+"addBranch.CityPlaceholder" = "Choose City";
+"addBranch.StreetPlaceholder" = "Choose Street";
+"addBranch.NouborhoodPlaceholder" = "Choose Nouborhood";
+
+

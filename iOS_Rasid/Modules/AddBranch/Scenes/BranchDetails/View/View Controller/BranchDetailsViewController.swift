@@ -53,7 +53,9 @@ extension BranchDetailsViewController {
                                             for: .normal)
         editBranchButton.addTarget(self,
                                    action: #selector(editBranchButtonTapped),
-                                   for: .touchUpInside)    }
+                                   for: .touchUpInside)
+        
+    }
     
     @objc
     func editBranchButtonTapped() {

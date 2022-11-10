@@ -28,6 +28,7 @@ internal enum Images {
   internal static let addBranchButtonIc = ImageAsset(name: "addBranchButton_ic")
   internal static let locationCellIc = ImageAsset(name: "locationCell_ic")
   internal static let logoIc = ImageAsset(name: "logo_ic")
+  internal static let pickerButtonIc = ImageAsset(name: "pickerButton_ic")
   internal static let profileBgIc = ImageAsset(name: "profileBg_ic")
   internal static let profileLocationIc = ImageAsset(name: "profileLocation_ic")
   internal static let showBranchDetailsButtonIc = ImageAsset(name: "showBranchDetailsButton_ic")

@@ -18,6 +18,24 @@ internal struct Colors {
   internal let rgbaValue: UInt32
   internal var color: Color { return Color(named: self) }
 
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#0065b0"></span>
+  /// Alpha: 100% <br/> (0x0065b0ff)
+  internal static let addBranchAddBranchButtonBG = Colors(rgbaValue: 0x0065b0ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ffffff"></span>
+  /// Alpha: 100% <br/> (0xffffffff)
+  internal static let addBranchAddBranchButtonTitle = Colors(rgbaValue: 0xffffffff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ffffff"></span>
+  /// Alpha: 100% <br/> (0xffffffff)
+  internal static let addBranchTitleLabel = Colors(rgbaValue: 0xffffffff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#515151"></span>
+  /// Alpha: 100% <br/> (0x515151ff)
+  internal static let addBranchTitleLabels = Colors(rgbaValue: 0x515151ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#acacac"></span>
+  /// Alpha: 100% <br/> (0xacacacff)
+  internal static let addBranchTitleTextFields = Colors(rgbaValue: 0xacacacff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#f4f6f8"></span>
+  /// Alpha: 100% <br/> (0xf4f6f8ff)
+  internal static let addBrnachTextFieldsBG = Colors(rgbaValue: 0xf4f6f8ff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#acacac"></span>
   /// Alpha: 100% <br/> (0xacacacff)
   internal static let branchCellManagerName = Colors(rgbaValue: 0xacacacff)

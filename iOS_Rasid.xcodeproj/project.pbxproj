@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C02F7D2291CFA7800DB6636 /* PickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C02F7D1291CFA7800DB6636 /* PickerViewDelegate.swift */; };
 		3C3671EE29179FAE00DBCA4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3671ED29179FAE00DBCA4C /* AppDelegate.swift */; };
 		3C3671F029179FAE00DBCA4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3671EF29179FAE00DBCA4C /* SceneDelegate.swift */; };
 		3C3671F729179FB000DBCA4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C3671F629179FB000DBCA4C /* Assets.xcassets */; };
@@ -36,6 +37,10 @@
 		3C3672532917F0C200DBCA4C /* BranchsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3672512917F0C200DBCA4C /* BranchsViewController.xib */; };
 		3C3672592918E54300DBCA4C /* BranchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672572918E54300DBCA4C /* BranchCell.swift */; };
 		3C36725A2918E54300DBCA4C /* BranchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3672582918E54300DBCA4C /* BranchCell.xib */; };
+		3CA30317291BD60D00DCECBF /* AddBranchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA30315291BD60D00DCECBF /* AddBranchViewController.swift */; };
+		3CA30318291BD60D00DCECBF /* AddBranchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CA30316291BD60D00DCECBF /* AddBranchViewController.xib */; };
+		3CA3031D291BE3B400DCECBF /* RJPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3031C291BE3B400DCECBF /* RJPickerView.swift */; };
+		3CA30321291BF03C00DCECBF /* RJPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CA30320291BF03B00DCECBF /* RJPickerView.xib */; };
 		3CB8B1A6291A472E005E7497 /* BranchsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8B1A5291A472E005E7497 /* BranchsRouter.swift */; };
 		3CB8B1B1291A48A8005E7497 /* BranchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8B1AF291A48A8005E7497 /* BranchDetailsViewController.swift */; };
 		3CD59B3D2918ECDF005BEEF3 /* BranchsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD59B3C2918ECDF005BEEF3 /* BranchsTableViewDelegate.swift */; };
@@ -58,6 +63,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C02F7D1291CFA7800DB6636 /* PickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewDelegate.swift; sourceTree = "<group>"; };
 		3C3671EA29179FAE00DBCA4C /* iOS_Rasid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Rasid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3671ED29179FAE00DBCA4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C3671EF29179FAE00DBCA4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +95,10 @@
 		3C3672512917F0C200DBCA4C /* BranchsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BranchsViewController.xib; sourceTree = "<group>"; };
 		3C3672572918E54300DBCA4C /* BranchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchCell.swift; sourceTree = "<group>"; };
 		3C3672582918E54300DBCA4C /* BranchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BranchCell.xib; sourceTree = "<group>"; };
+		3CA30315291BD60D00DCECBF /* AddBranchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBranchViewController.swift; sourceTree = "<group>"; };
+		3CA30316291BD60D00DCECBF /* AddBranchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddBranchViewController.xib; sourceTree = "<group>"; };
+		3CA3031C291BE3B400DCECBF /* RJPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RJPickerView.swift; sourceTree = "<group>"; };
+		3CA30320291BF03B00DCECBF /* RJPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RJPickerView.xib; sourceTree = "<group>"; };
 		3CB8B1A5291A472E005E7497 /* BranchsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchsRouter.swift; sourceTree = "<group>"; };
 		3CB8B1AF291A48A8005E7497 /* BranchDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchDetailsViewController.swift; sourceTree = "<group>"; };
 		3CD59B3C2918ECDF005BEEF3 /* BranchsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsTableViewDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +135,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C02F7CF291CFA5C00DB6636 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				3C02F7D0291CFA6400DB6636 /* PickerView */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		3C02F7D0291CFA6400DB6636 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				3C02F7D1291CFA7800DB6636 /* PickerViewDelegate.swift */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
 		3C3671E129179FAE00DBCA4C = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +175,7 @@
 				3C3672122917A18000DBCA4C /* Storyboard */,
 				3CF43AB52918FC0500A4F4B5 /* Extension */,
 				3C3672092917A0E300DBCA4C /* Resources */,
+				3CA30319291BE35100DCECBF /* Custom */,
 				3C3672142917A21000DBCA4C /* Clients */,
 				3C3672132917A20700DBCA4C /* Services */,
 				3C3672072917A0C900DBCA4C /* Modules */,
@@ -251,6 +278,7 @@
 		3C3672102917A16000DBCA4C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3CA30312291BD5C800DCECBF /* AddBranch */,
 				3CB8B1A7291A4750005E7497 /* BranchDetails */,
 				3C36724F2917F0AC00DBCA4C /* Branchs */,
 			);
@@ -377,6 +405,57 @@
 				3C3672582918E54300DBCA4C /* BranchCell.xib */,
 			);
 			path = BranchCell;
+			sourceTree = "<group>";
+		};
+		3CA30312291BD5C800DCECBF /* AddBranch */ = {
+			isa = PBXGroup;
+			children = (
+				3CA30313291BD5ED00DCECBF /* View */,
+			);
+			path = AddBranch;
+			sourceTree = "<group>";
+		};
+		3CA30313291BD5ED00DCECBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3CA30314291BD5F200DCECBF /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3CA30314291BD5F200DCECBF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3C02F7CF291CFA5C00DB6636 /* Delegate */,
+				3CA30315291BD60D00DCECBF /* AddBranchViewController.swift */,
+				3CA30316291BD60D00DCECBF /* AddBranchViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3CA30319291BE35100DCECBF /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				3CA3031A291BE36100DCECBF /* View */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		3CA3031A291BE36100DCECBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3CA3031B291BE37400DCECBF /* PickerView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3CA3031B291BE37400DCECBF /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				3CA3031C291BE3B400DCECBF /* RJPickerView.swift */,
+				3CA30320291BF03B00DCECBF /* RJPickerView.xib */,
+			);
+			path = PickerView;
 			sourceTree = "<group>";
 		};
 		3CB8B1A4291A472E005E7497 /* Router */ = {
@@ -583,7 +662,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CA30318291BD60D00DCECBF /* AddBranchViewController.xib in Resources */,
 				3CF43AB729191E1C00A4F4B5 /* Colors.txt in Resources */,
+				3CA30321291BF03C00DCECBF /* RJPickerView.xib in Resources */,
 				3CF43ABB29192D2000A4F4B5 /* Localizable.strings in Resources */,
 				3C3672532917F0C200DBCA4C /* BranchsViewController.xib in Resources */,
 				3C3672302917AA7600DBCA4C /* Cairo-Medium.ttf in Resources */,
@@ -663,6 +744,7 @@
 				3CF43ACB291932A100A4F4B5 /* BranchsPresenter.swift in Sources */,
 				3CD59B3D2918ECDF005BEEF3 /* BranchsTableViewDelegate.swift in Sources */,
 				3C36721D2917A8A900DBCA4C /* Assets.swift in Sources */,
+				3C02F7D2291CFA7800DB6636 /* PickerViewDelegate.swift in Sources */,
 				3CF49012291A76D6002E55A8 /* BranchDetails.swift in Sources */,
 				3C3672472917E1CB00DBCA4C /* BranchsGateway.swift in Sources */,
 				3C3672592918E54300DBCA4C /* BranchCell.swift in Sources */,
@@ -677,10 +759,12 @@
 				3CF4900E291A7506002E55A8 /* BranchDetailsPresenter.swift in Sources */,
 				3C36723B2917ACEC00DBCA4C /* APIRouterProtocol.swift in Sources */,
 				3CB8B1A6291A472E005E7497 /* BranchsRouter.swift in Sources */,
+				3CA3031D291BE3B400DCECBF /* RJPickerView.swift in Sources */,
 				3C3672392917ACEC00DBCA4C /* APIClient.swift in Sources */,
 				3C3672442917DCBF00DBCA4C /* Branch.swift in Sources */,
 				3CF43AC7291931BF00A4F4B5 /* BranchsInteractor.swift in Sources */,
 				3CF43AC129192FC700A4F4B5 /* Strings.swift in Sources */,
+				3CA30317291BD60D00DCECBF /* AddBranchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

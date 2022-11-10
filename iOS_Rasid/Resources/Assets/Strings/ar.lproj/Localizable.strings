@@ -9,3 +9,25 @@
 "branchListHeader" = "سجل الفروع";
 "reportButtonTitleString" = "أصدار تقرير";
 "branchDetailsEditButtonTitle" = "تعديل";
+"addBranch.Title" = "إضافة فرع";
+"addBranch.ButtonTitle" = "إضافة";
+
+"addBranch.BranchNameTitle" = "اسم الفرع ";
+"addBranch.BranchManagerTitle" = "مدير الفرع ";
+"addBranch.PhoneTitle" = "رقم الجوال ";
+"addBranch.SellersCountTitle" = "عدد البائعين ";
+"addBranch.DistrectTitle" = "المنطقة ";
+"addBranch.CityTitle" = "المدينة ";
+"addBranch.StreetTitle" = "الحى ";
+"addBranch.NouborhoodTitle" = "الشارع ";
+
+"addBranch.NamePlaceholder" = "ادخل اسم الفرع ";
+"addBranch.ManagerPlaceholder" = " اختر مدير الفرع ";
+"addBranch.PhonePlaceholder" = " ادخل رقم الجوال ";
+"addBranch.SellersCountPlaceholder" = " ادخل عدد البائعين ";
+"addBranch.DistrectPlaceholder" = " اختر المنطقة ";
+"addBranch.CityPlaceholder" = "اختر المدينة ";
+"addBranch.StreetPlaceholder" = "ادخل الشارع ";
+"addBranch.NouborhoodPlaceholder" = "ادخل المنطقة ";
+
+

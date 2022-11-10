@@ -7,5 +7,9 @@ branchs.branchsListHeader: #515151
 branchDetails.TitleLabels: #515151
 branchDetails.DataLabels: #0065B0
 branchDetails.EditBranchButton: #0065B0
-
-
+addBranch.titleLabel: #ffffff
+addBranch.titleLabels: #515151
+addBranch.titleTextFields: #ACACAC
+addBranch.addBranchButtonBG: #0065B0
+addBranch.addBranchButtonTitle: #FFFFFF
+addBrnach.textFieldsBG: #F4F6F8
