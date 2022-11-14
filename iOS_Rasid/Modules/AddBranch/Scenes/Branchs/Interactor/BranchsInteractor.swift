@@ -40,24 +40,25 @@ extension BranchsInteractor: BranchsInteractorProtocol, BranchsDataStore {
             getBranchs(facilityId: self.facilityId)
         case .loadMoreBranchs:
             self.currentPage += 1
-//            guard currentPage <= totalPages ?? 1
-//            else {
-//                print("no more pages")
-//                return
-//            }
+            guard currentPage <= totalPages ?? 1
+            else {
+                print("no more pages")
+                return
+            }
             loadMoreBranchs(facilityId: self.facilityId,
                             page: self.currentPage)
-//            print("current page \(currentPage) from \(totalPages)")
-
         }
     }
     
     private func getBranchs(facilityId: Int) {
         service.getBranchs(for: facilityId, page: 1) { [weak self] result in
             switch result {
-            case .success(let branchs):
-                self?.branchs = branchs
-                self?.presenter.presentBranchs(branchs: Branch.Response(branchs: branchs))
+            case .success(let response):
+                guard let response = response else {return}
+
+                self?.branchs = response.data
+                self?.totalPages = response.meta?.total
+                self?.presenter.presentBranchs(branchs: Branch.Response(branchs: response.data))
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -66,9 +67,13 @@ extension BranchsInteractor: BranchsInteractorProtocol, BranchsDataStore {
     
     private func loadMoreBranchs(facilityId: Int, page: Int) {
         service.getBranchs(for: facilityId, page: page) { [weak self] result in
+            
+            guard let totalPages = self?.totalPages, page <= totalPages else { return }
             switch result {
-            case .success(let branchs):
-                self?.branchs = branchs
+            case .success(let response):
+                guard let response = response else {return}
+                self?.branchs?.append(contentsOf: response.data)
+                
             case .failure(let error):
                 print(error.localizedDescription)
             }

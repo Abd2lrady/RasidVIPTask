@@ -62,7 +62,7 @@ extension APIRouter: APIRouterProtocol {
     var headers: [String: String]? {
         switch self {
         case .getBranchs, .getBranchDetails, .addBranch:
-            return ["Authorization": "Bearer 358|przQmvPolZGb1z977GAdDdJliTXEJvyjXGcpZz7y",
+            return ["Authorization": "Bearer 453|phte8pcQuzOstaiclq4ASRZcFeYTFpZAxd0p47UE",
                     "Accept": "Application/json"]
         }
     }

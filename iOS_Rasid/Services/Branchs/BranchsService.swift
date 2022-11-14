@@ -8,7 +8,6 @@
 import Foundation
 
 class BranchsService {
-    var page = 1
     let remoteBranchRepository: BranchsGateway
     init(remoteBranchRepository: BranchsGateway = RemoteBranchsRepository()) {
         self.remoteBranchRepository = remoteBranchRepository
@@ -19,28 +18,28 @@ extension BranchsService: BranchsGateway {
 
     func getBranchs(for facilityId: Int,
                     page: Int,
-                    completionHandler: @escaping (Result<[BranchEntity], Error>) -> Void) {
+                    completionHandler: @escaping (Result<ServerResponse<[BranchEntity]>?, Error>) -> Void) {
 
         remoteBranchRepository.getBranchs(for: facilityId, page: page) { result in
             switch result {
-            case .success(let branchs):
-                completionHandler(.success(branchs))
+            case .success(let response):
+                completionHandler(.success(response))
 //                print(branchs)
             case .failure(let error):
                 completionHandler(.failure(error))
             }
         }
     }
-    
-    
-        
-    func getMoreBranchs(for facilityId: Int, completionHandler: @escaping (Result<[BranchEntity], Error>) -> Void) {
-        page += 1
+
+    func getMoreBranchs(for facilityId: Int,
+                        page: Int,
+                        completionHandler: @escaping (Result<ServerResponse<[BranchEntity]>?, Error>) -> Void) {
         remoteBranchRepository.getBranchs(for: facilityId,
                                           page: page) { result in
+            
             switch result {
-            case .success(let branchs):
-                completionHandler(.success(branchs))
+            case .success(let response):
+                completionHandler(.success(response))
 //                print(branchs)
             case .failure(let error):
                 completionHandler(.failure(error))
@@ -54,8 +53,8 @@ extension BranchsService: BranchsGateway {
         remoteBranchRepository.getBranchDetails(facilityId: facilityId,
                                                 branchId: branchId) { result in
             switch result {
-            case .success(let branchs):
-                completionHandler(.success(branchs))
+            case .success(let response):
+                completionHandler(.success(response))
 //                print(branchs)
             case .failure(let error):
                 completionHandler(.failure(error))

@@ -49,7 +49,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gZf-f0-hIj" userLabel="branchsTableView">
-                    <rect key="frame" x="5" y="245.33333333333334" width="380" height="296.66666666666663"/>
+                    <rect key="frame" x="5" y="245.33333333333334" width="380" height="384.66666666666663"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gg-By-WKz" userLabel="addButton">
@@ -62,7 +62,7 @@
                     <buttonConfiguration key="configuration" style="plain" title=""/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeY-CL-xhm" userLabel="reportButton">
-                    <rect key="frame" x="100" y="590" width="190" height="48"/>
+                    <rect key="frame" x="100" y="678" width="190" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="EVv-3O-qmU"/>
                         <constraint firstAttribute="width" constant="190" id="pDb-0t-hT1"/>
@@ -88,7 +88,7 @@
                 <constraint firstItem="gZf-f0-hIj" firstAttribute="top" secondItem="7st-v9-27N" secondAttribute="bottom" constant="18" id="oR4-k4-lIA"/>
                 <constraint firstItem="gZf-f0-hIj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="oTn-fW-Vdb"/>
                 <constraint firstItem="7st-v9-27N" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="toN-gO-9TV"/>
-                <constraint firstItem="5Gg-By-WKz" firstAttribute="top" secondItem="OeY-CL-xhm" secondAttribute="bottom" constant="100" id="upR-do-uCg"/>
+                <constraint firstItem="5Gg-By-WKz" firstAttribute="top" secondItem="OeY-CL-xhm" secondAttribute="bottom" constant="12" id="upR-do-uCg"/>
                 <constraint firstItem="Z8U-yg-HOl" firstAttribute="top" secondItem="iGu-Wy-7IS" secondAttribute="bottom" constant="40" id="xqM-Qk-keQ"/>
                 <constraint firstItem="V9x-Oh-4Ct" firstAttribute="bottom" secondItem="Z8U-yg-HOl" secondAttribute="bottom" id="zYI-pj-K0m"/>
             </constraints>
