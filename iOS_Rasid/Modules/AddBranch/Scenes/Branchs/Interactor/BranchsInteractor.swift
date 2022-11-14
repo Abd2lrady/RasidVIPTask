@@ -57,7 +57,7 @@ extension BranchsInteractor: BranchsInteractorProtocol, BranchsDataStore {
                 guard let response = response else {return}
 
                 self?.branchs = response.data
-                self?.totalPages = response.meta?.total
+                self?.totalPages = response.meta?.lastPage
                 self?.presenter.presentBranchs(branchs: Branch.Response(branchs: response.data))
             case .failure(let error):
                 print(error.localizedDescription)
@@ -73,7 +73,9 @@ extension BranchsInteractor: BranchsInteractorProtocol, BranchsDataStore {
             case .success(let response):
                 guard let response = response else {return}
                 self?.branchs?.append(contentsOf: response.data)
-                
+                if let branchs = self?.branchs {
+                    self?.presenter.presentBranchs(branchs: Branch.Response(branchs: branchs))
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
