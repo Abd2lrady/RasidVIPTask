@@ -59,7 +59,6 @@ extension BranchDetailsInteractor: BranchDetailsInteractorProtocol,
                 guard let response = response
                 else {return}
                 self?.presenter.presentBranchDetails(response: BranchDetails.Response(details: response))
-                self?.presenter.presentBranchDetails(response: BranchDetails.Response(details: response))
 //                print(response)
             case .failure(let error):
                 print(error.localizedDescription)

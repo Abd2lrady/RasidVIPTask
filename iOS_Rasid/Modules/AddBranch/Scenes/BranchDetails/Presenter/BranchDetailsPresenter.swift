@@ -24,11 +24,11 @@ extension BranchDetailsPresenter: BranchDetailsPresenterProtocol {
         let branchDetailsViewModel =
         BranchDetails.ViewModel(name: response.details.name,
                                 managerName: response.details.manager ?? "N/A",
-                                phoneNumber: response.details.phone,
+                                phoneNumber: response.details.phone ?? "N/A",
                                 sellersCount: "\(response.details.sellersCount ?? 0)",
-                                regoin: response.details.region.name,
-                                city: response.details.city.name,
-                                district: response.details.district.name,
+                                regoin: response.details.region?.name ?? "N/A",
+                                city: response.details.city?.name ?? "N/A",
+                                district: response.details.district?.name ?? "N/A",
                                 street: response.details.address ?? "N/A")
         
         view?.showBranchDetails(branchDetails: branchDetailsViewModel)

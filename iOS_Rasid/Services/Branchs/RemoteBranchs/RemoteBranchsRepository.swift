@@ -51,10 +51,11 @@ extension RemoteBranchsRepository: BranchsGateway {
             switch result {
             case .success(let data):
                 do {
-                    let response = try self?.decoder.decode(BranchDetailsEntity.self,
+                    let response = try self?.decoder.decode(ServerResponse<BranchDetailsEntity>.self,
                                                             from: data)
-                    completionHandler(.success(response))
+                    completionHandler(.success(response?.data))
                 } catch {
+                    print(error.localizedDescription)
                     completionHandler(.failure(error))
                 }
                 
