@@ -14,7 +14,7 @@ struct BranchDetailsEntity: Codable {
     let sellersCount: Int?
     let district, city, region: Location
     let phone, lat, lng: String
-    let address: String
+    let address: String?
     let email: String?
     let image: String?
     let employeesCount: Int?

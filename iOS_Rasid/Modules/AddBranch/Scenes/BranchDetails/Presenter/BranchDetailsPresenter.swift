@@ -29,7 +29,7 @@ extension BranchDetailsPresenter: BranchDetailsPresenterProtocol {
                                 regoin: response.details.region.name,
                                 city: response.details.city.name,
                                 district: response.details.district.name,
-                                street: response.details.address)
+                                street: response.details.address ?? "N/A")
         
         view?.showBranchDetails(branchDetails: branchDetailsViewModel)
     }
