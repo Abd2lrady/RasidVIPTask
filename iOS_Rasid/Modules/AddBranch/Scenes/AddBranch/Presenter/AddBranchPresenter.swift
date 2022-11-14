@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AddBranchPresenterProtocol {
-    
+    func present(response: AddBranch.Response)
 }
 
 class AddBranchPresenter {
@@ -21,5 +21,9 @@ class AddBranchPresenter {
 }
 
 extension AddBranchPresenter: AddBranchPresenterProtocol {
+    func present(response: AddBranch.Response) {
+        view?.dismissView()
+    }
+    
     
 }

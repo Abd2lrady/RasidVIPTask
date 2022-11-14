@@ -30,7 +30,10 @@ class BranchsViewController: UIViewController {
         configUI()
         interactor?.getBranchs(request: .loadBranchs)
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor?.getBranchs(request: .loadBranchs)
+    }
 }
 
 extension BranchsViewController {

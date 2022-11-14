@@ -8,9 +8,13 @@
 import Foundation
 
 protocol AddBranchViewControllerProtocol: AnyObject {
-    
+    func dismissView()
 }
 
 extension AddBranchViewController: AddBranchViewControllerProtocol {
+    func dismissView() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     
 }

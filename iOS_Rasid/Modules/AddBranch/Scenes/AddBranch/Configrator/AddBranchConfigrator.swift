@@ -9,12 +9,13 @@ import UIKit
 
 class AddBranchConfigrator {
     
-    static func configureconfigrate(service: BranchsGateway,
+    static func configurate(service: BranchsGateway,
                                     facilityId: Int) -> UIViewController {
         let view = AddBranchViewController()
         let presenter = AddBranchPresenter(view: view)
         let interactor = AddBranchInteractor(presenter: presenter,
-                                             service: service)
+                                             service: service,
+                                             facilityId: facilityId)
         view.interactor = interactor
         
         return view

@@ -16,6 +16,7 @@ class BranchsService {
 }
 
 extension BranchsService: BranchsGateway {
+
     func getBranchs(for facilityId: Int,
                     page: Int,
                     completionHandler: @escaping (Result<[BranchEntity], Error>) -> Void) {
@@ -30,6 +31,8 @@ extension BranchsService: BranchsGateway {
             }
         }
     }
+    
+    
         
     func getMoreBranchs(for facilityId: Int, completionHandler: @escaping (Result<[BranchEntity], Error>) -> Void) {
         page += 1
@@ -60,4 +63,14 @@ extension BranchsService: BranchsGateway {
         }
     }
     
+    func addBranch(facilityId: Int,
+                   branchDetails: AddBranch.RequestBody,
+                   completionHandler: @escaping (Result<Int?, Error>) -> Void) {
+        
+        remoteBranchRepository.addBranch(facilityId: facilityId,
+                                         branchDetails: branchDetails) { result in
+            completionHandler(.success(200))
+            
+        }
+    }
 }

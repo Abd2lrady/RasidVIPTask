@@ -14,6 +14,7 @@ protocol APIRouterProtocol {
     var method: NetworkRequestMethod { get }
     var headers: [String: String]? { get }
     var parameters: [String: Any] { get }
+    var requestBody: Data? { get }
 }
 
 enum NetworkRequestScheme: String {

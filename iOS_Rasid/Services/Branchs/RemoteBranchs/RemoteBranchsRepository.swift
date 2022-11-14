@@ -63,5 +63,21 @@ extension RemoteBranchsRepository: BranchsGateway {
             }
         }
     }
-
+    
+    func addBranch(facilityId: Int,
+                   branchDetails: AddBranch.RequestBody,
+                   completionHandler: @escaping (Result<Int?, Error>) -> Void) {
+        
+        client.request(for: .addBranch(facilityId: facilityId,
+                                       branchDetails: branchDetails.getBody())) { result in
+            switch result {
+            case .success(let success):
+                completionHandler(.success(200))
+                print("success")
+            case .failure(let failure):
+                print(failure)
+                print("failure")
+            }
+        }
+    }
 }

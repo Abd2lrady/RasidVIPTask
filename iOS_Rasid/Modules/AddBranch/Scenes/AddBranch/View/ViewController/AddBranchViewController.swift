@@ -159,8 +159,11 @@ extension AddBranchViewController {
                                          distrect: distrect,
                                          city: city,
                                          street: street,
-                                         neihbourhood: noughborhood)
-        interactor?.sendNewBranchDetailsBody(request: .addBranch(body))
+                                         neihbourhood: noughborhood,
+                                         lat: 2,
+                                         lng: 2)
+        
+        interactor?.sendNewBranchDetailsBody(request: .addBranch(details: body))
         
         print("add branch button tapped")
     }

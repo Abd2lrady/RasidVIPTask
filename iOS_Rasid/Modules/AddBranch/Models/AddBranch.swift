@@ -6,13 +6,15 @@
 //
 
 import Foundation
-
+// swiftlint: disable all
 enum AddBranch {
     enum Request {
-        case addBranch(RequestBody)
+        case addBranch(details: RequestBody)
     }
     
-    struct Response { }
+    enum Response {
+    case dismissView
+    }
     
     struct ViewModel {
         let name: String
@@ -25,7 +27,7 @@ enum AddBranch {
         let neihbourhood: String
     }
     
-    struct RequestBody {
+    struct RequestBody: Codable {
         let name: String?
         let manager: String?
         let phoneNumber: String?
@@ -34,19 +36,25 @@ enum AddBranch {
         let city: String?
         let street: String?
         let neihbourhood: String?
-        
-        func getBody() -> [String: Any?] {
-            let body: [String: Any?] = ["name": name,
-                                        "manager": manager,
-                                        "phone_number": phoneNumber,
-                                        "seller_count": sellersCount,
-                                        "distrect": distrect,
-                                        "city": city,
-                                        "street": street,
-                                        "neihbourhood": neihbourhood]
+        let lat: Double?
+        let lng: Double?
+        let address_id = 2
+        let facility_id = 53
+
+        func getBody() -> [String: Any] {
+            let body: [String: Any] = ["ar": ["name": name] ?? "",
+                                        "manager": manager ?? "",
+                                        "phone": phoneNumber ?? "",
+                                        "salers_count": sellersCount ?? "",
+                                        "distrect": distrect ?? "",
+                                        "city": city ?? "",
+                                        "street": street ?? "",
+                                        "lat": lat ?? 0,
+                                        "lng": lng ?? 0,
+                                        "neihbourhood": neihbourhood ?? "",
+                                       "address_id": 2,
+                                       "facility_id": 53]
             return body
         }
     }
 }
-
-

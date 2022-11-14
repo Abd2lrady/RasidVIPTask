@@ -35,8 +35,8 @@ extension BranchsRouter: BranchsRouterProtocol {
             guard let service = (view?.interactor as? BranchsInteractor)?.service
             else { fatalError("wrong service") }
 
-            let view = AddBranchConfigrator.configureconfigrate(service: service,
-                                                                facilityId: id)
+            let view = AddBranchConfigrator.configurate(service: service,
+                                                        facilityId: id)
             navToAddBranch(destination: view)
         }
     

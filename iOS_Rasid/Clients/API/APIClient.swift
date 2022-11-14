@@ -37,6 +37,9 @@ class APIClient {
             switch endpoint {
             case .getBranchs, .getBranchDetails:
                 return URLEncoding.default
+                
+            case .addBranch:
+                return JSONEncoding.default
             }
         }
 
@@ -46,19 +49,30 @@ class APIClient {
                    encoding: encoding,
                    headers: headers,
                    interceptor: nil,
-                   requestModifier: nil).response { response in
+                   requestModifier: nil).responseData { response in
+            
+            debugPrint(response)
+            debugPrint(url)
+            debugPrint(method)
+            debugPrint(parameters)
+            debugPrint(encoding)
+            debugPrint(headers)
 
             guard let statusCode = response.response?.statusCode
             else {
                 completionHandler(.failure(APIError.noStatusCode))
                 return
             }
+            print(statusCode)
 
-            if  (200 ..< 300) ~= statusCode,
-                let data = response.data {
-                completionHandler(.success(data))
+            if  (200 ..< 300) ~= statusCode {
+                    switch response.result {
+                    case .success(let data):
+                        completionHandler(.success(data))
+                    case .failure(let error):
+                        completionHandler(.failure(error))
+                }
             }
-
         }
     }
     
@@ -74,7 +88,7 @@ class APIClient {
         
         var encoding: ParameterEncoding {
             switch endpoint {
-            case .getBranchs, .getBranchDetails:
+            case .getBranchs, .getBranchDetails, .addBranch:
                 return URLEncoding.default
             }
         }
@@ -99,4 +113,5 @@ class APIClient {
             }
         }
     }
+    
 }
