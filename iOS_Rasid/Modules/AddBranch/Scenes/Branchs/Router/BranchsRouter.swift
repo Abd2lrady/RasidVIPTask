@@ -11,6 +11,8 @@ protocol BranchsRouterProtocol {
     func routeToBranchDetails(facilityId: Int,
                               branchId: Int)
     func routeToAddBranch(facilityID: Int?)
+    func routeToFilter()
+
     
 }
 
@@ -28,6 +30,12 @@ class BranchsRouter {
 }
 
 extension BranchsRouter: BranchsRouterProtocol {
+    func routeToFilter() {
+        let alert = UIAlertController()
+        
+        
+    }
+    
         func routeToAddBranch(facilityID: Int?) {
             guard let id = facilityID
             else { fatalError("facility ID not founded") }

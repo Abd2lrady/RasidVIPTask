@@ -7,6 +7,18 @@
 */
 
 "branchListHeader" = "سجل الفروع";
+"branchs.Filter.searchButtonTitle" = "بحث";
+"branchs.Filter.managerNameTitle" = "مدير الفرع";
+"branchs.Filter.branchNameTitle" = "اسم الفرع";
+"branchs.Filter.from" = "الفترة من";
+"branchs.Filter.to" = "الفترة إلى";
+
+"branchs.Filter.managerNamePlaceholder" = "مدير الفرع";
+"branchs.Filter.branchNamePlaceholder" = "اسم الفرع";
+"branchs.Filter.fromPlaceholder" = "يوم / شهر / سنة";
+"branchs.Filter.toPlaceholder" = "يوم / شهر / سنة";
+
+
 "reportButtonTitleString" = "أصدار تقرير";
 "branchDetailsEditButtonTitle" = "تعديل";
 "addBranch.Title" = "إضافة فرع";

@@ -7,6 +7,18 @@
 */
 
 "branchListHeader" = "Branchs";
+"branchs.Filter.searchButtonTitle" = "Search";
+"branchs.Filter.managerNameTitle" = "Manager Name";
+"branchs.Filter.branchNameTitle" = "Branch Name";
+"branchs.Filter.from" = "From";
+"branchs.Filter.to" = "To";
+
+"branchs.Filter.managerNamePlaceholder" = "Manager Name";
+"branchs.Filter.branchNamePlaceholder" = "Branch Name";
+"branchs.Filter.fromPlaceholder" = "From";
+"branchs.Filter.toPlaceholder" = "To";
+
+
 "reportButtonTitleString" = "Make Report";
 "branchDetailsEditButtonTitle" = "Edit";
 "addBranch.Title" = "Add Branch";

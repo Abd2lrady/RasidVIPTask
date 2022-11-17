@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DvY-MD-fBG"; */
+"DvY-MD-fBG.text" = "الفترة إلى";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Yau-XM-Kc0"; */
+"Yau-XM-Kc0.text" = "مدير الفرع";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gZe-oK-oIw"; */
+"gZe-oK-oIw.text" = "الفترة من";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kjM-IU-9W7"; */
+"kjM-IU-9W7.text" = "أسم الفرع";
+
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "tfh-4y-E3q"; */
+"tfh-4y-E3q.normalTitle" = "بحث";

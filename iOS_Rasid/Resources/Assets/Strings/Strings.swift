@@ -57,6 +57,28 @@ internal enum Strings {
     /// Add Branch
     internal static let title = Strings.tr("Localizable", "addBranch.Title", fallback: "Add Branch")
   }
+  internal enum Branchs {
+    internal enum Filter {
+      /// Branch Name
+      internal static let branchNamePlaceholder = Strings.tr("Localizable", "branchs.Filter.branchNamePlaceholder", fallback: "Branch Name")
+      /// Branch Name
+      internal static let branchNameTitle = Strings.tr("Localizable", "branchs.Filter.branchNameTitle", fallback: "Branch Name")
+      /// From
+      internal static let from = Strings.tr("Localizable", "branchs.Filter.from", fallback: "From")
+      /// From
+      internal static let fromPlaceholder = Strings.tr("Localizable", "branchs.Filter.fromPlaceholder", fallback: "From")
+      /// Manager Name
+      internal static let managerNamePlaceholder = Strings.tr("Localizable", "branchs.Filter.managerNamePlaceholder", fallback: "Manager Name")
+      /// Manager Name
+      internal static let managerNameTitle = Strings.tr("Localizable", "branchs.Filter.managerNameTitle", fallback: "Manager Name")
+      /// Search
+      internal static let searchButtonTitle = Strings.tr("Localizable", "branchs.Filter.searchButtonTitle", fallback: "Search")
+      /// To
+      internal static let to = Strings.tr("Localizable", "branchs.Filter.to", fallback: "To")
+      /// To
+      internal static let toPlaceholder = Strings.tr("Localizable", "branchs.Filter.toPlaceholder", fallback: "To")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

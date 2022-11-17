@@ -27,12 +27,13 @@ class BranchsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configBranchsTableView()
-        configUI()
         interactor?.getBranchs(request: .loadBranchs)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         interactor?.getBranchs(request: .loadBranchs)
+        configUI()
+
     }
 }
 
@@ -60,6 +61,9 @@ extension BranchsViewController {
     }
     
     func configUI() {
+        
+        configNavBar()
+        
         branchsTableView.backgroundColor = .clear
         
         branchsTabelViewHeaderLabel.font = Fonts.Cairo.regular.font(size: 16)
@@ -97,5 +101,53 @@ extension BranchsViewController {
     func addBranchTapped() {
         router?.routeToAddBranch(facilityID: self.router?.dataStore.facilityId)
         print("add Branch button tapped")
+    }
+    
+    func configNavBar() {
+        hideNavBar()
+        
+        let filterButton = UIButton()
+        filterButton.setImage(Images.filter.image,
+                              for: .normal)
+        filterButton.addTarget(self,
+                               action: #selector(filterButtonTapped),
+                               for: .touchUpInside)
+        
+        let rightItem = UIBarButtonItem(customView: filterButton)
+        navigationItem.rightBarButtonItem = rightItem
+    }
+    
+    func hideNavBar() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.isTranslucent = true
+        
+    }
+    
+    @objc
+    func filterButtonTapped() {
+        let frame = CGRect(x: 0,
+                           y: 0,
+                           width: UIScreen.main.bounds.width,
+                           height: UIScreen.main.bounds.height)
+        let filterView = CustomAlertView(frame: frame)
+        
+        filterView.buttonTappedCallback = {
+            hideFilterView()
+        }
+        
+        filterView.tapGestureDetected = {
+            hideFilterView()
+        }
+        
+        self.navigationItem.rightBarButtonItem?.customView?.isUserInteractionEnabled = false
+
+        view.addSubview(filterView)
+        
+        print("filter tapped")
+
+        func hideFilterView() {
+            filterView.removeFromSuperview()
+            self.navigationItem.rightBarButtonItem?.customView?.isUserInteractionEnabled = true
+        }
     }
 }

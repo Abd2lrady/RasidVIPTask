@@ -26,11 +26,14 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 internal enum Images {
   internal static let accentColor = ColorAsset(name: "AccentColor")
   internal static let addBranchButtonIc = ImageAsset(name: "addBranchButton_ic")
+  internal static let calendarIc = ImageAsset(name: "calendar_ic")
+  internal static let filter = ImageAsset(name: "filter")
   internal static let locationCellIc = ImageAsset(name: "locationCell_ic")
   internal static let logoIc = ImageAsset(name: "logo_ic")
   internal static let pickerButtonIc = ImageAsset(name: "pickerButton_ic")
   internal static let profileBgIc = ImageAsset(name: "profileBg_ic")
   internal static let profileLocationIc = ImageAsset(name: "profileLocation_ic")
+  internal static let searchIc = ImageAsset(name: "search_ic")
   internal static let showBranchDetailsButtonIc = ImageAsset(name: "showBranchDetailsButton_ic")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

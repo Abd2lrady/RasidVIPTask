@@ -42,6 +42,8 @@
 		3C3672532917F0C200DBCA4C /* BranchsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3672512917F0C200DBCA4C /* BranchsViewController.xib */; };
 		3C3672592918E54300DBCA4C /* BranchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3672572918E54300DBCA4C /* BranchCell.swift */; };
 		3C36725A2918E54300DBCA4C /* BranchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3672582918E54300DBCA4C /* BranchCell.xib */; };
+		3C3CF5C329262644007F8EDD /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CF5C229262644007F8EDD /* CustomAlertView.swift */; };
+		3C3CF5C629265C98007F8EDD /* CustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3CF5C829265C98007F8EDD /* CustomAlertView.xib */; };
 		3CA30317291BD60D00DCECBF /* AddBranchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA30315291BD60D00DCECBF /* AddBranchViewController.swift */; };
 		3CA30318291BD60D00DCECBF /* AddBranchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CA30316291BD60D00DCECBF /* AddBranchViewController.xib */; };
 		3CA3031D291BE3B400DCECBF /* RJPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3031C291BE3B400DCECBF /* RJPickerView.swift */; };
@@ -105,6 +107,9 @@
 		3C3672512917F0C200DBCA4C /* BranchsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BranchsViewController.xib; sourceTree = "<group>"; };
 		3C3672572918E54300DBCA4C /* BranchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchCell.swift; sourceTree = "<group>"; };
 		3C3672582918E54300DBCA4C /* BranchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BranchCell.xib; sourceTree = "<group>"; };
+		3C3CF5C229262644007F8EDD /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		3C3CF5C729265C98007F8EDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomAlertView.xib; sourceTree = "<group>"; };
+		3C3CF5CA29265C9B007F8EDD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CustomAlertView.strings; sourceTree = "<group>"; };
 		3CA30315291BD60D00DCECBF /* AddBranchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBranchViewController.swift; sourceTree = "<group>"; };
 		3CA30316291BD60D00DCECBF /* AddBranchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddBranchViewController.xib; sourceTree = "<group>"; };
 		3CA3031C291BE3B400DCECBF /* RJPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RJPickerView.swift; sourceTree = "<group>"; };
@@ -442,6 +447,15 @@
 			path = BranchCell;
 			sourceTree = "<group>";
 		};
+		3C3CF5C12926261C007F8EDD /* CustomAlert */ = {
+			isa = PBXGroup;
+			children = (
+				3C3CF5C229262644007F8EDD /* CustomAlertView.swift */,
+				3C3CF5C829265C98007F8EDD /* CustomAlertView.xib */,
+			);
+			path = CustomAlert;
+			sourceTree = "<group>";
+		};
 		3CA30312291BD5C800DCECBF /* AddBranch */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,6 +497,7 @@
 		3CA3031A291BE36100DCECBF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3C3CF5C12926261C007F8EDD /* CustomAlert */,
 				3CA3031B291BE37400DCECBF /* PickerView */,
 			);
 			path = View;
@@ -703,6 +718,7 @@
 			files = (
 				3CA30318291BD60D00DCECBF /* AddBranchViewController.xib in Resources */,
 				3CF43AB729191E1C00A4F4B5 /* Colors.txt in Resources */,
+				3C3CF5C629265C98007F8EDD /* CustomAlertView.xib in Resources */,
 				3CA30321291BF03C00DCECBF /* RJPickerView.xib in Resources */,
 				3CF43ABB29192D2000A4F4B5 /* Localizable.strings in Resources */,
 				3C3672532917F0C200DBCA4C /* BranchsViewController.xib in Resources */,
@@ -805,6 +821,7 @@
 				3CB8B1A6291A472E005E7497 /* BranchsRouter.swift in Sources */,
 				3CA3031D291BE3B400DCECBF /* RJPickerView.swift in Sources */,
 				3C3672392917ACEC00DBCA4C /* APIClient.swift in Sources */,
+				3C3CF5C329262644007F8EDD /* CustomAlertView.swift in Sources */,
 				3C3672442917DCBF00DBCA4C /* Branch.swift in Sources */,
 				3CF43AC7291931BF00A4F4B5 /* BranchsInteractor.swift in Sources */,
 				3CF43AC129192FC700A4F4B5 /* Strings.swift in Sources */,
@@ -822,6 +839,15 @@
 				3CF43ABE29192D4100A4F4B5 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3C3CF5C829265C98007F8EDD /* CustomAlertView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C3CF5C729265C98007F8EDD /* Base */,
+				3C3CF5CA29265C9B007F8EDD /* ar */,
+			);
+			name = CustomAlertView.xib;
 			sourceTree = "<group>";
 		};
 		3CF43ABD29192D2000A4F4B5 /* Localizable.strings */ = {
