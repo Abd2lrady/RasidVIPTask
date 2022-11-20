@@ -15,7 +15,21 @@ class BranchsService {
 }
 
 extension BranchsService: BranchsGateway {
+    func filterBranchs(facilityID: Int,
+                       filters: Branch.Filter,
+                       completionHandler: @escaping (Result<ServerResponse<[BranchEntity]>?, Error>) -> Void) {
+        remoteBranchRepository.filterBranchs(facilityID: facilityID, filters: filters) { result in
+            switch result {
+            case .success(let success):
+                completionHandler(.success(success))
+            case .failure(let failure):
+                completionHandler(.failure(failure))
+            }
+        }
 
+    }
+    
+    
     func getBranchs(for facilityId: Int,
                     page: Int,
                     completionHandler: @escaping (Result<ServerResponse<[BranchEntity]>?, Error>) -> Void) {

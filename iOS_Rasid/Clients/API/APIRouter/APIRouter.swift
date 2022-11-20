@@ -12,27 +12,28 @@ enum APIRouter {
     case getBranchs(facilityId: Int, page: Int)
     case getBranchDetails(facilityId: Int, branchId: Int)
     case addBranch(facilityId: Int, branchDetails: [String: Any])
+    case filterBranchs(facilityId: Int, filters: [String: Any])
 }
 
 extension APIRouter: APIRouterProtocol {
 
     var scheme: NetworkRequestScheme {
         switch self {
-        case .getBranchs, .getBranchDetails, .addBranch:
+        case .getBranchs, .getBranchDetails, .addBranch, .filterBranchs:
             return .HTTPS
         }
     }
     
     var baseURL: String {
         switch self {
-        case .getBranchs, .getBranchDetails, .addBranch:
+        case .getBranchs, .getBranchDetails, .addBranch, .filterBranchs:
             return Constants.API.Branches.baseURL
         }
     }
     
     var path: String {
         switch self {
-        case .getBranchs(let facilityId, _), .addBranch(let facilityId, _):
+        case .getBranchs(let facilityId, _), .addBranch(let facilityId, _), .filterBranchs(let facilityId, _):
             return "/api/vendor/facility/\(facilityId)/branches"
         case .getBranchDetails(let facilityId, let branchId):
             return "/api/vendor/facility/\(facilityId)/branches/\(branchId)"
@@ -41,7 +42,7 @@ extension APIRouter: APIRouterProtocol {
     
     var method: NetworkRequestMethod {
         switch self {
-        case .getBranchs, .getBranchDetails:
+        case .getBranchs, .getBranchDetails, .filterBranchs:
             return .get
         case .addBranch:
             return .post
@@ -54,22 +55,22 @@ extension APIRouter: APIRouterProtocol {
             return ["page": page]
         case .getBranchDetails:
             return [:]
-        case .addBranch(_, let param):
+        case .addBranch(_, let param), .filterBranchs(_, let param):
             return param
         }
     }
     
     var headers: [String: String]? {
         switch self {
-        case .getBranchs, .getBranchDetails, .addBranch:
-            return ["Authorization": "Bearer 466|2E515UX4m9qdle4AlkW2gkIu4o6RQt5uKzYS6DB9",
+        case .getBranchs, .getBranchDetails, .addBranch, .filterBranchs:
+            return ["Authorization": "Bearer 732|bTb6t01KWN3bY2OGYLM3NrXSXixUhgk6ym3zK1eX",
                     "Accept": "Application/json"]
         }
     }
     
     var requestBody: Data? {
         switch self {
-        case .getBranchDetails, .getBranchs, .addBranch:
+        case .getBranchDetails, .getBranchs, .addBranch, .filterBranchs:
             return nil
         }
     }

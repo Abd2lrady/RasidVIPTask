@@ -23,14 +23,14 @@
                 <outletCollection property="titleLabels" destination="Yau-XM-Kc0" collectionClass="NSMutableArray" id="vfY-hA-Tj2"/>
                 <outletCollection property="titleLabels" destination="gZe-oK-oIw" collectionClass="NSMutableArray" id="JvM-8y-bq7"/>
                 <outletCollection property="titleLabels" destination="DvY-MD-fBG" collectionClass="NSMutableArray" id="M73-T8-JbZ"/>
-                <outletCollection property="dataTextFields" destination="UAO-EF-Rsx" collectionClass="NSMutableArray" id="pDA-5z-rmR"/>
-                <outletCollection property="dataTextFields" destination="2Cb-2X-bnx" collectionClass="NSMutableArray" id="1d3-GZ-l6o"/>
                 <outletCollection property="dataTextFields" destination="V13-S0-9RF" collectionClass="NSMutableArray" id="HN1-D4-Wcu"/>
                 <outletCollection property="dataTextFields" destination="C72-q3-FNB" collectionClass="NSMutableArray" id="7Aw-Bz-Jqd"/>
                 <outletCollection property="textFieldContainerViews" destination="tby-Wc-Rx8" collectionClass="NSMutableArray" id="jwn-yU-Ryw"/>
                 <outletCollection property="textFieldContainerViews" destination="Pgw-q2-ldj" collectionClass="NSMutableArray" id="okf-I7-HvO"/>
                 <outletCollection property="textFieldContainerViews" destination="1AA-a3-6yV" collectionClass="NSMutableArray" id="GOf-Ai-t3P"/>
                 <outletCollection property="textFieldContainerViews" destination="in9-YY-451" collectionClass="NSMutableArray" id="BDG-TQ-ySk"/>
+                <outletCollection property="dataTextFields" destination="2Cb-2X-bnx" collectionClass="NSMutableArray" id="UvN-ca-2su"/>
+                <outletCollection property="dataTextFields" destination="UAO-EF-Rsx" collectionClass="NSMutableArray" id="h8p-Zm-eag"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -72,24 +72,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="155" height="83"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم الفرع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjM-IU-9W7">
-                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="18.666666666666668"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tby-Wc-Rx8">
-                                                    <rect key="frame" x="0.0" y="38" width="155" height="45"/>
+                                                    <rect key="frame" x="0.0" y="26.666666666666689" width="155" height="56.333333333333343"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YNI-Ff-ICC">
-                                                            <rect key="frame" x="8" y="0.0" width="139" height="45"/>
+                                                            <rect key="frame" x="8" y="0.0" width="139" height="56.333333333333336"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="اسم الفرع" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V13-S0-9RF">
-                                                                    <rect key="frame" x="0.0" y="6.6666666666666874" width="119" height="31.666666666666671"/>
+                                                                    <rect key="frame" x="0.0" y="18" width="119" height="20.333333333333329"/>
                                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pickerButton_ic" translatesAutoresizingMaskIntoConstraints="NO" id="u9g-30-97k">
-                                                                    <rect key="frame" x="127" y="19.666666666666686" width="12" height="6"/>
+                                                                    <rect key="frame" x="127" y="25.333333333333314" width="12" height="6"/>
                                                                     <color key="backgroundColor" red="0.95686274509803915" green="0.96470588235294119" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="12" id="fa5-qk-pbf"/>
@@ -113,24 +113,24 @@
                                             <rect key="frame" x="171" y="0.0" width="155" height="83"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مدير الفرع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yau-XM-Kc0">
-                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="18.666666666666668"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pgw-q2-ldj">
-                                                    <rect key="frame" x="0.0" y="38" width="155" height="45"/>
+                                                    <rect key="frame" x="0.0" y="26.666666666666689" width="155" height="56.333333333333343"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ljk-wP-wFp">
-                                                            <rect key="frame" x="8" y="0.0" width="139" height="45"/>
+                                                            <rect key="frame" x="8" y="0.0" width="139" height="56.333333333333336"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder=" مدير الفرع    " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C72-q3-FNB">
-                                                                    <rect key="frame" x="0.0" y="6.6666666666666874" width="119" height="31.666666666666671"/>
+                                                                    <rect key="frame" x="0.0" y="18" width="119" height="20.333333333333329"/>
                                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
                                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pickerButton_ic" translatesAutoresizingMaskIntoConstraints="NO" id="T4h-jO-a5c">
-                                                                    <rect key="frame" x="127" y="19.666666666666686" width="12" height="6"/>
+                                                                    <rect key="frame" x="127" y="25.333333333333314" width="12" height="6"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="12" id="QsB-pV-FQn"/>
                                                                         <constraint firstAttribute="height" constant="6" id="dNL-Xd-WxF"/>
@@ -158,24 +158,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="155" height="83"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الفترة من" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZe-oK-oIw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="18.666666666666668"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AA-a3-6yV">
-                                                    <rect key="frame" x="0.0" y="38" width="155" height="45"/>
+                                                    <rect key="frame" x="0.0" y="26.666666666666689" width="155" height="56.333333333333343"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="N0t-ni-zMY">
-                                                            <rect key="frame" x="8" y="0.0" width="139" height="45"/>
+                                                            <rect key="frame" x="8" y="0.0" width="139" height="56.333333333333336"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="يوم / شهر / سنة" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Cb-2X-bnx">
-                                                                    <rect key="frame" x="0.0" y="6.6666666666666874" width="115" height="31.666666666666671"/>
+                                                                    <rect key="frame" x="0.0" y="18" width="115" height="20.333333333333329"/>
                                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar_ic" translatesAutoresizingMaskIntoConstraints="NO" id="35W-nr-72J">
-                                                                    <rect key="frame" x="123" y="15.666666666666686" width="16" height="14"/>
+                                                                    <rect key="frame" x="123" y="21.333333333333314" width="16" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="16" id="KZe-jd-Ew5"/>
                                                                         <constraint firstAttribute="height" constant="14" id="kb7-OC-VEP"/>
@@ -198,24 +198,24 @@
                                             <rect key="frame" x="171" y="0.0" width="155" height="83"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الفترة الى" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvY-MD-fBG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="18.666666666666668"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="in9-YY-451">
-                                                    <rect key="frame" x="0.0" y="38" width="155" height="45"/>
+                                                    <rect key="frame" x="0.0" y="26.666666666666689" width="155" height="56.333333333333343"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DhE-Ga-Fno">
-                                                            <rect key="frame" x="8" y="0.0" width="139" height="45"/>
+                                                            <rect key="frame" x="8" y="0.0" width="139" height="56.333333333333336"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="يوم / شهر / سنة " textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UAO-EF-Rsx">
-                                                                    <rect key="frame" x="0.0" y="6.6666666666666874" width="115" height="31.666666666666671"/>
+                                                                    <rect key="frame" x="0.0" y="18" width="115" height="20.333333333333329"/>
                                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
                                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Gvf-Tf-Ufv">
-                                                                    <rect key="frame" x="123" y="15.666666666666686" width="16" height="14"/>
+                                                                    <rect key="frame" x="123" y="21.333333333333314" width="16" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="16" id="Rxb-NE-EoT"/>
                                                                         <constraint firstAttribute="height" constant="14" id="oSW-qt-bbX"/>

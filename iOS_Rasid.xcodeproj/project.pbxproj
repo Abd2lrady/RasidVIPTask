@@ -50,6 +50,9 @@
 		3CA30321291BF03C00DCECBF /* RJPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CA30320291BF03B00DCECBF /* RJPickerView.xib */; };
 		3CB8B1A6291A472E005E7497 /* BranchsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8B1A5291A472E005E7497 /* BranchsRouter.swift */; };
 		3CB8B1B1291A48A8005E7497 /* BranchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8B1AF291A48A8005E7497 /* BranchDetailsViewController.swift */; };
+		3CC55DAC292A27C100BB059D /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC55DAA292A27C100BB059D /* FilterCell.swift */; };
+		3CC55DAD292A27C100BB059D /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC55DAB292A27C100BB059D /* FilterCell.xib */; };
+		3CC55DB0292A2DAD00BB059D /* DynamicCollectionViewHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC55DAF292A2DAD00BB059D /* DynamicCollectionViewHeight.swift */; };
 		3CD59B3D2918ECDF005BEEF3 /* BranchsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD59B3C2918ECDF005BEEF3 /* BranchsTableViewDelegate.swift */; };
 		3CD59B412918F39D005BEEF3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD59B402918F39D005BEEF3 /* Colors.swift */; };
 		3CF43AB729191E1C00A4F4B5 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3CF43AB629191E1C00A4F4B5 /* Colors.txt */; };
@@ -116,6 +119,9 @@
 		3CA30320291BF03B00DCECBF /* RJPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RJPickerView.xib; sourceTree = "<group>"; };
 		3CB8B1A5291A472E005E7497 /* BranchsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchsRouter.swift; sourceTree = "<group>"; };
 		3CB8B1AF291A48A8005E7497 /* BranchDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchDetailsViewController.swift; sourceTree = "<group>"; };
+		3CC55DAA292A27C100BB059D /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		3CC55DAB292A27C100BB059D /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
+		3CC55DAF292A2DAD00BB059D /* DynamicCollectionViewHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCollectionViewHeight.swift; sourceTree = "<group>"; };
 		3CD59B3C2918ECDF005BEEF3 /* BranchsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsTableViewDelegate.swift; sourceTree = "<group>"; };
 		3CD59B402918F39D005BEEF3 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3CF43AB629191E1C00A4F4B5 /* Colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
@@ -432,6 +438,7 @@
 		3C3672542917F6BB00DBCA4C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3CC55DA5292A1E2B00BB059D /* FilterCell */,
 				3CD59B3A2918ECAF005BEEF3 /* BranchsTableView */,
 				3CF43AC52919319300A4F4B5 /* ViewController */,
 			);
@@ -489,6 +496,7 @@
 		3CA30319291BE35100DCECBF /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				3CC55DAE292A2D9200BB059D /* DynamicCV */,
 				3CA3031A291BE36100DCECBF /* View */,
 			);
 			path = Custom;
@@ -556,6 +564,23 @@
 				3CF4900F291A7665002E55A8 /* BranchDetailsViewControllerProtocol.swift */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		3CC55DA5292A1E2B00BB059D /* FilterCell */ = {
+			isa = PBXGroup;
+			children = (
+				3CC55DAA292A27C100BB059D /* FilterCell.swift */,
+				3CC55DAB292A27C100BB059D /* FilterCell.xib */,
+			);
+			path = FilterCell;
+			sourceTree = "<group>";
+		};
+		3CC55DAE292A2D9200BB059D /* DynamicCV */ = {
+			isa = PBXGroup;
+			children = (
+				3CC55DAF292A2DAD00BB059D /* DynamicCollectionViewHeight.swift */,
+			);
+			path = DynamicCV;
 			sourceTree = "<group>";
 		};
 		3CD59B3A2918ECAF005BEEF3 /* BranchsTableView */ = {
@@ -720,6 +745,7 @@
 				3CF43AB729191E1C00A4F4B5 /* Colors.txt in Resources */,
 				3C3CF5C629265C98007F8EDD /* CustomAlertView.xib in Resources */,
 				3CA30321291BF03C00DCECBF /* RJPickerView.xib in Resources */,
+				3CC55DAD292A27C100BB059D /* FilterCell.xib in Resources */,
 				3CF43ABB29192D2000A4F4B5 /* Localizable.strings in Resources */,
 				3C3672532917F0C200DBCA4C /* BranchsViewController.xib in Resources */,
 				3C3672302917AA7600DBCA4C /* Cairo-Medium.ttf in Resources */,
@@ -796,6 +822,7 @@
 				3C3672402917DB8200DBCA4C /* ServerResponse.swift in Sources */,
 				3CF43ACE29194A6400A4F4B5 /* BranchsConfigrator.swift in Sources */,
 				3C3672032917A08800DBCA4C /* AppDelegate + Extension.swift in Sources */,
+				3CC55DAC292A27C100BB059D /* FilterCell.swift in Sources */,
 				3C02F7D6291D230600DB6636 /* AddBranchPresenter.swift in Sources */,
 				3C02F7D8291D231600DB6636 /* AddBranchInteractor.swift in Sources */,
 				3CF49010291A7665002E55A8 /* BranchDetailsViewControllerProtocol.swift in Sources */,
@@ -814,6 +841,7 @@
 				3C3671F029179FAE00DBCA4C /* SceneDelegate.swift in Sources */,
 				3C36724A2917E29800DBCA4C /* RemoteBranchsRepository.swift in Sources */,
 				3C3672162917A40A00DBCA4C /* Constants.swift in Sources */,
+				3CC55DB0292A2DAD00BB059D /* DynamicCollectionViewHeight.swift in Sources */,
 				3C36724C2917E2F200DBCA4C /* BranchsService.swift in Sources */,
 				3CF4901D291A8B1B002E55A8 /* BranchDetailsConfigrator.swift in Sources */,
 				3CF4900E291A7506002E55A8 /* BranchDetailsPresenter.swift in Sources */,

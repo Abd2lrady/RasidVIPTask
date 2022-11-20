@@ -15,6 +15,18 @@ class BranchsViewController: UIViewController {
     @IBOutlet weak var branchsTabelViewHeaderLabel: UILabel!
     var interactor: BranchsInteractorProtocol?
     var router: BranchsRouter?
+    @IBOutlet weak var filterCollectionView: DynamicHeightCollectionView!
+    
+    @IBOutlet weak var filterLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var filtersHeightConstrain: NSLayoutConstraint!
+    var filterView: CustomAlertView?
+
+    var filters = [String]() {
+        didSet {
+            self.showFilters()
+        }
+    }
+    
     lazy var branchsTableViewDelegate = BranchsTableViewDelegate(branchs: [Branch.ViewModel(branchName: "السعودية",
                                                                                             managerName: "احمد",
                                                                                             sellersCount: "5"),
@@ -27,11 +39,12 @@ class BranchsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configBranchsTableView()
-        interactor?.getBranchs(request: .loadBranchs)
+        configFilterCollectionView()
+        interactor?.request(request: .loadBranchs)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        interactor?.getBranchs(request: .loadBranchs)
+        interactor?.request(request: .loadBranchs)
         configUI()
 
     }
@@ -47,7 +60,7 @@ extension BranchsViewController {
         branchsTableView.dataSource = branchsTableViewDelegate
         branchsTableView.delegate = branchsTableViewDelegate
         branchsTableViewDelegate.loadMoreRequest = {
-            self.interactor?.getBranchs(request: .loadMoreBranchs)
+            self.interactor?.request(request: .loadMoreBranchs)
             print("load more branchs")
         }
         branchsTableViewDelegate.showBranchDetails = { [weak self] indx in
@@ -58,6 +71,24 @@ extension BranchsViewController {
             self?.router?.routeToBranchDetails(facilityId: self?.router?.dataStore.facilityId ?? 0,
                                                branchId: branchId ?? 0)
         }
+    }
+    
+    func configFilterCollectionView() {
+//        let size = CGSize(width: 120, height: 32)
+//        filterLayout.itemSize = size
+//        filterLayout.estimatedItemSize = size
+        
+//        filterCollectionView.translatesAutoresizingMaskIntoConstraints = false
+
+        let cellNib = UINib(nibName: "\(FilterCell.self)",
+                            bundle: .main)
+        
+        filterCollectionView.register(cellNib,
+                                      forCellWithReuseIdentifier: FilterCell.reuseID)
+        filterCollectionView.semanticContentAttribute = .forceRightToLeft
+         
+//        filtersHeightConstrain.constant = 1
+        filterCollectionView.dataSource = self
     }
     
     func configUI() {
@@ -131,8 +162,14 @@ extension BranchsViewController {
                            height: UIScreen.main.bounds.height)
         let filterView = CustomAlertView(frame: frame)
         
-        filterView.buttonTappedCallback = {
+        filterView.buttonTappedCallback = { filters in
+            print("search tapped")
+
+            self.filters = filters.getFilters()
+            print(self.filters)
             hideFilterView()
+            
+            self.filterBranchs(filters: filters)
         }
         
         filterView.tapGestureDetected = {
@@ -141,6 +178,7 @@ extension BranchsViewController {
         
         self.navigationItem.rightBarButtonItem?.customView?.isUserInteractionEnabled = false
 
+        self.filterView = filterView
         view.addSubview(filterView)
         
         print("filter tapped")
@@ -149,5 +187,39 @@ extension BranchsViewController {
             filterView.removeFromSuperview()
             self.navigationItem.rightBarButtonItem?.customView?.isUserInteractionEnabled = true
         }
+    }
+    
+    func showFilters() {
+        self.filterCollectionView.reloadData()
+        filterCollectionView.isScrollEnabled = false
+        self.filterCollectionView.invalidateIntrinsicContentSize()
+        self.filtersHeightConstrain.constant = self.filterCollectionView.contentSize.height
+        self.filterCollectionView.layoutSubviews()
+
+    }
+    
+    func filterBranchs(filters: Branch.Filter) {
+        interactor?.request(request: .filterBranchs(filters: filters))
+    }
+}
+
+// swiftlint: disable all
+extension BranchsViewController: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("filter count from delegate", filters.count)
+        return filters.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("dequeue filter cell")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCell.reuseID,
+                                                      for: indexPath) as! FilterCell
+//        else { fatalError("can`t  dequeue filter cell") }
+        cell.filterLabel.text = filters[indexPath.row]
+        
+        return cell
+
     }
 }

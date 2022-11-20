@@ -8,7 +8,7 @@
 import Foundation
 
 protocol BranchsInteractorProtocol {
-    func getBranchs(request: Branch.Request)
+    func request(request: Branch.Request)
 }
 
 protocol BranchsDataStore {
@@ -34,7 +34,8 @@ class BranchsInteractor {
 }
 
 extension BranchsInteractor: BranchsInteractorProtocol, BranchsDataStore {
-    func getBranchs(request: Branch.Request) {
+    
+    func request(request: Branch.Request) {
         switch request {
         case .loadBranchs:
             getBranchs(facilityId: self.facilityId)
@@ -47,6 +48,11 @@ extension BranchsInteractor: BranchsInteractorProtocol, BranchsDataStore {
             }
             loadMoreBranchs(facilityId: self.facilityId,
                             page: self.currentPage)
+            
+        case .filterBranchs(let filters):
+            filterBranchs(facilityId: self.facilityId,
+                          filters: filters)
+            print(filters.getBody())
         }
     }
     
@@ -58,7 +64,7 @@ extension BranchsInteractor: BranchsInteractorProtocol, BranchsDataStore {
 
                 self?.branchs = response.data
                 self?.totalPages = response.meta?.lastPage
-                self?.presenter.presentBranchs(branchs: Branch.Response(branchs: response.data))
+                self?.presenter.presentBranchs(branchs: Branch.Response(branchs: response.data ?? [BranchEntity]()))
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -72,7 +78,7 @@ extension BranchsInteractor: BranchsInteractorProtocol, BranchsDataStore {
             switch result {
             case .success(let response):
                 guard let response = response else {return}
-                self?.branchs?.append(contentsOf: response.data)
+                self?.branchs?.append(contentsOf: response.data ?? [BranchEntity]())
                 if let branchs = self?.branchs {
                     self?.presenter.presentBranchs(branchs: Branch.Response(branchs: branchs))
                 }
@@ -81,5 +87,23 @@ extension BranchsInteractor: BranchsInteractorProtocol, BranchsDataStore {
             }
         }
 
+    }
+    
+    private func filterBranchs(facilityId: Int,
+                               filters: Branch.Filter) {
+        service.filterBranchs(facilityID: facilityId,
+                              filters: filters) { [weak self] result in
+            
+            switch result {
+            case .success(let response):
+                guard let response = response else {return}
+                self?.branchs = response.data 
+                if let branchs = self?.branchs {
+                    self?.presenter.presentBranchs(branchs: Branch.Response(branchs: branchs))
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }

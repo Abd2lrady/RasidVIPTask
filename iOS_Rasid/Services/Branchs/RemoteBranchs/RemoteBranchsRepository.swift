@@ -22,6 +22,27 @@ class RemoteBranchsRepository {
 }
 
 extension RemoteBranchsRepository: BranchsGateway {
+    func filterBranchs(facilityID: Int,
+                       filters: Branch.Filter,
+                       completionHandler: @escaping (Result<ServerResponse<[BranchEntity]>?, Error>) -> Void) {
+        client.request(for: .filterBranchs(facilityId: facilityID, filters: filters.getBody())) { [weak self ] result in
+            switch result {
+            case .success(let data):
+                print(data.count)
+                do {
+                    let response = try self?.decoder.decode(ServerResponse<[BranchEntity]>.self,
+                                                            from: data)
+                    completionHandler(.success(response))
+                    self?.setTotalPages?(response?.meta?.total)
+                } catch {
+                    completionHandler(.failure(error))
+                }
+                
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+        }
+    }
     
     func getBranchs(for facilityId: Int,
                     page: Int = 1,

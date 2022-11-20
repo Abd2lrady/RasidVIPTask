@@ -26,6 +26,7 @@ extension BranchsPresenter: BranchsPresenterProtocol {
                              managerName: branch.manager ?? "",
                              sellersCount: "\(branch.salersCount ?? 0)")
         }
+        print(branchsViewModels)
         view?.showBranchs(branchs: branchsViewModels)
     }
 }

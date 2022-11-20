@@ -20,10 +20,10 @@ class CustomAlertView: UIView {
     
     @IBOutlet var textFieldContainerViews: [UIView]!
     
-    
-    var buttonTappedCallback: (() -> Void)?
+    var buttonTappedCallback: ((Branch.Filter) -> Void)?
     var tapGestureDetected: (() -> Void)?
     let pickerView = UIPickerView()
+    let datePickerView = UIDatePicker()
     let pickerDelegate = PickerViewDelegate(titles: [])
 
     override init(frame: CGRect) {
@@ -115,10 +115,19 @@ extension CustomAlertView {
         configSearchButton()
         
         configTitleLabelsAndTextFieldPlaceholderStrings()
-        
+
         pickerDelegate.selectedTitle = { selected in
             
-            
+            if self.dataTextFields[Fields.branchName.rawValue].isFirstResponder {
+                
+                self.dataTextFields[Fields.branchName.rawValue].text = selected
+                self.dataTextFields[Fields.branchName.rawValue].resignFirstResponder()
+            } else if self.dataTextFields[Fields.branchManger.rawValue].isFirstResponder {
+                
+                self.dataTextFields[Fields.branchManger.rawValue].text = selected
+                self.dataTextFields[Fields.branchManger.rawValue].resignFirstResponder()
+            }
+
 //            switch self.pickerField {
 //            case .branchName:
 //                self.dataTextFields[Fields.branchName.rawValue].text = selected
@@ -137,6 +146,9 @@ extension CustomAlertView {
 //            }
             
         }
+        
+        configDatePickerView()
+        configManagerAndBranchPickerView()
     }
     
     private func configSearchButton() {
@@ -157,6 +169,78 @@ extension CustomAlertView {
         
     }
     
+    private func configManagerAndBranchPickerView() {
+        
+        pickerView.delegate = pickerDelegate
+//        dataTextFields[Fields.branchManger.rawValue].addTarget(self,
+//                                                               action: #selector(namePickerAction),
+//                                                               for: .allEditingEvents)
+//
+//        dataTextFields[Fields.branchName.rawValue].addTarget(self,
+//                                                             action: #selector(namePickerAction),
+//                                                             for: .allEditingEvents)
+
+    }
+    
+    @objc
+    private func namePickerAction() {
+        
+        if dataTextFields[Fields.branchName.rawValue].isFirstResponder {
+            
+            pickerDelegate.titles = ["cairo", "alex"]
+            pickerView.reloadAllComponents()
+            
+        } else if dataTextFields[Fields.branchManger.rawValue].isFirstResponder {
+            
+            pickerDelegate.titles = pickerDelegate.managers
+            pickerView.reloadAllComponents()
+        }
+    }
+    
+    private func configDatePickerView() {
+        datePickerView.datePickerMode = .date
+        datePickerView.preferredDatePickerStyle = .wheels
+
+        datePickerView.addTarget(self,
+                                 action: #selector(datePickerAction),
+                                 for: .valueChanged)
+
+    }
+    
+    @objc
+    private func datePickerAction() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        
+        if dataTextFields[Fields.from.rawValue].isFirstResponder {
+
+            dataTextFields[Fields.from.rawValue].text = dateFormatter.string(from: datePickerView.date)
+            dataTextFields[Fields.from.rawValue].resignFirstResponder()
+        } else if dataTextFields[Fields.to.rawValue].isFirstResponder {
+            
+            dataTextFields[Fields.to.rawValue].text = dateFormatter.string(from: datePickerView.date)
+            dataTextFields[Fields.to.rawValue].resignFirstResponder()
+
+        }
+    }
+
+//    @objc
+//    private func namePickerAction() {
+//
+//        if dataTextFields[Fields.branchName.rawValue].isFirstResponder {
+//
+//            pickerDelegate.titles = ["alex", "cairo"]
+//            pickerView.reloadAllComponents()
+//            dataTextFields[Fields.branchName.rawValue].resignFirstResponder()
+//
+//        } else if dataTextFields[Fields.branchManger.rawValue].isFirstResponder {
+//
+//            pickerDelegate.titles = pickerDelegate.managers
+//            pickerView.reloadAllComponents()
+//            dataTextFields[Fields.branchManger.rawValue].resignFirstResponder()
+//        }
+//    }
+    
     private func configTitleLabelsAndTextFieldPlaceholderStrings() {
 //        titleLabels[Fields.branchName.rawValue].text = Strings.Branchs.Filter.branchNameTitle
 //        titleLabels[Fields.branchManger.rawValue].text = Strings.Branchs.Filter.managerNameTitle
@@ -167,18 +251,24 @@ extension CustomAlertView {
 //        dataTextFields[Fields.branchManger.rawValue].placeholder = Strings.Branchs.Filter.managerNamePlaceholder
 //        dataTextFields[Fields.from.rawValue].placeholder = Strings.Branchs.Filter.fromPlaceholder
 //        dataTextFields[Fields.to.rawValue].placeholder = Strings.Branchs.Filter.toPlaceholder
-        
+        dataTextFields[Fields.branchManger.rawValue].delegate = self
+        dataTextFields[Fields.branchName.rawValue].delegate = self
+
         dataTextFields[Fields.branchManger.rawValue].inputView = pickerView
-        dataTextFields[Fields.branchName.rawValue].inputView = pickerView
-        dataTextFields[Fields.from.rawValue].inputView = pickerView
-        dataTextFields[Fields.to.rawValue].inputView = pickerView
+//        dataTextFields[Fields.branchName.rawValue].inputView = pickerView
+        dataTextFields[Fields.from.rawValue].inputView = datePickerView
+        dataTextFields[Fields.to.rawValue].inputView = datePickerView
     }
     
     @objc
     func searchButtonAction() {
         print("buttonTapped")
-        buttonTappedCallback?()
-        self.removeFromSuperview()
+        
+        let data = Branch.Filter(branchName: dataTextFields[Fields.branchName.rawValue].text ?? "",
+                                 managerName: dataTextFields[Fields.branchManger.rawValue].text ?? "",
+                                 from: dataTextFields[Fields.from.rawValue].text ?? "",
+                                 to: dataTextFields[Fields.to.rawValue].text ?? "")
+        buttonTappedCallback?(data)
     }
 
     private enum Fields: Int {
@@ -187,4 +277,21 @@ extension CustomAlertView {
         case from
         case to
     }
+}
+
+extension CustomAlertView: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if dataTextFields[Fields.branchName.rawValue].isFirstResponder {
+            
+            pickerDelegate.titles = ["cairo", "alex"]
+            pickerView.reloadAllComponents()
+            
+        } else if dataTextFields[Fields.branchManger.rawValue].isFirstResponder {
+            
+            pickerDelegate.titles = pickerDelegate.managers
+            pickerView.reloadAllComponents()
+        }
+
+    }
+    
 }

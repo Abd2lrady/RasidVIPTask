@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cairo-Regular.ttf">
+            <string>Cairo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FilterCell" customModule="iOS_Rasid" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="174" height="41"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="174" height="41"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nok-Id-7gN">
+                        <rect key="frame" x="0.0" y="0.0" width="174" height="41"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQW-GW-4UI">
+                                <rect key="frame" x="12" y="0.0" width="150" height="41"/>
+                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="fQW-GW-4UI" firstAttribute="leading" secondItem="nok-Id-7gN" secondAttribute="leading" constant="12" id="Wu1-Gh-nN1"/>
+                            <constraint firstAttribute="trailing" secondItem="fQW-GW-4UI" secondAttribute="trailing" constant="12" id="ao5-qC-jbC"/>
+                            <constraint firstItem="fQW-GW-4UI" firstAttribute="top" secondItem="nok-Id-7gN" secondAttribute="top" id="c7J-sd-1EI"/>
+                            <constraint firstAttribute="bottom" secondItem="fQW-GW-4UI" secondAttribute="bottom" id="ePV-Bc-Ql6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="nok-Id-7gN" secondAttribute="bottom" id="L9i-Hn-PLI"/>
+                <constraint firstAttribute="trailing" secondItem="nok-Id-7gN" secondAttribute="trailing" id="aG1-dA-fjE"/>
+                <constraint firstAttribute="bottom" secondItem="nok-Id-7gN" secondAttribute="bottom" id="cPP-p8-Xrh"/>
+                <constraint firstItem="nok-Id-7gN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ckH-ys-Gsf"/>
+                <constraint firstAttribute="trailing" secondItem="nok-Id-7gN" secondAttribute="trailing" id="jcv-Te-5jC"/>
+                <constraint firstItem="nok-Id-7gN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wmb-z7-qM8"/>
+            </constraints>
+            <size key="customSize" width="174" height="41"/>
+            <connections>
+                <outlet property="backView" destination="nok-Id-7gN" id="IZz-xA-JKV"/>
+                <outlet property="filterLabel" destination="fQW-GW-4UI" id="azS-Sb-g7W"/>
+            </connections>
+            <point key="canvasLocation" x="18.46153846153846" y="13.151658767772512"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -42,7 +42,7 @@ enum AddBranch {
         let facility_id = 53
 
         func getBody() -> [String: Any] {
-            let body: [String: Any] = ["ar": ["name": name] ?? "",
+            let body: [String: Any] = ["ar": ["name": name] ,
                                         "manager": manager ?? "",
                                         "phone": phoneNumber ?? "",
                                         "salers_count": sellersCount ?? "",

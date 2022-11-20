@@ -35,7 +35,7 @@ class APIClient {
 
         var encoding: ParameterEncoding {
             switch endpoint {
-            case .getBranchs, .getBranchDetails:
+            case .getBranchs, .getBranchDetails, .filterBranchs:
                 return URLEncoding.default
                 
             case .addBranch:
@@ -88,8 +88,10 @@ class APIClient {
         
         var encoding: ParameterEncoding {
             switch endpoint {
-            case .getBranchs, .getBranchDetails, .addBranch:
+            case .getBranchs, .getBranchDetails:
                 return URLEncoding.default
+            case .addBranch, .filterBranchs:
+                return JSONEncoding.default
             }
         }
         return try await withCheckedThrowingContinuation { continuation in

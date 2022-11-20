@@ -18,4 +18,10 @@ protocol BranchsGateway {
     
     func addBranch(facilityId: Int,
                    branchDetails: AddBranch.RequestBody,
-                   completionHandler: @escaping (Result<Int?, Error>) -> Void)}
+                   completionHandler: @escaping (Result<Int?, Error>) -> Void)
+    
+    func filterBranchs(facilityID: Int,
+                       filters: Branch.Filter,
+                       completionHandler: @escaping (Result<ServerResponse<[BranchEntity]>?, Error>) -> Void)
+    
+}
