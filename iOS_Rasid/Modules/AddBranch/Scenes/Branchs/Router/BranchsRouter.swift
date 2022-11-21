@@ -12,8 +12,6 @@ protocol BranchsRouterProtocol {
                               branchId: Int)
     func routeToAddBranch(facilityID: Int?)
     func routeToFilter()
-
-    
 }
 
 class BranchsRouter {
@@ -31,9 +29,13 @@ class BranchsRouter {
 
 extension BranchsRouter: BranchsRouterProtocol {
     func routeToFilter() {
-        let alert = UIAlertController()
-        
-        
+        let view = FilterCustomViewController()
+        view.buttonTappedCallback = { [weak self] in
+            self?.view?.filters = $0.getFilters()
+            self?.view?.showFilters()
+            self?.view?.filterBranchs(filters: $0)
+        }
+        navToFilter(destination: view)
     }
     
         func routeToAddBranch(facilityID: Int?) {
@@ -66,6 +68,14 @@ extension BranchsRouter: BranchsRouterProtocol {
     
     private func navToAddBranch(destination: UIViewController) {
         view?.navigationController?.pushViewController(destination, animated: true)
+    }
+    
+    private func navToFilter(destination: UIViewController) {
+
+        destination.modalPresentationStyle = .overFullScreen
+        
+        view?.present(destination, animated: true)
+        
     }
 
 }

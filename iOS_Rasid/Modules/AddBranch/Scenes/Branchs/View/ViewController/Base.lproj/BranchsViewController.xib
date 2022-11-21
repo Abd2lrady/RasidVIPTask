@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cairo-Regular.ttf">
+            <string>Cairo-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BranchsViewController" customModule="iOS_Rasid" customModuleProvider="target">
             <connections>
@@ -14,9 +19,9 @@
                 <outlet property="branchsTabelViewHeaderLabel" destination="7st-v9-27N" id="XNo-MA-A8p"/>
                 <outlet property="branchsTableView" destination="gZf-f0-hIj" id="ziR-Nt-MHD"/>
                 <outlet property="filterCollectionView" destination="0ZR-Oz-79G" id="DD5-77-Wyq"/>
-                <outlet property="filterLayout" destination="P9V-8J-ZFm" id="Cwe-FW-prK"/>
                 <outlet property="filtersHeightConstrain" destination="ENK-FS-yr6" id="EbX-UF-D0a"/>
                 <outlet property="reportButton" destination="OeY-CL-xhm" id="eYl-m5-Ggx"/>
+                <outlet property="stackView" destination="Gue-tZ-N4Z" id="hor-8w-bqN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -45,16 +50,41 @@
                         <constraint firstAttribute="height" constant="105" id="nkD-YN-D9e"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7st-v9-27N" userLabel="branchsTabelHeaderLabel">
-                    <rect key="frame" x="16" y="217" width="42" height="20.333333333333343"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gZf-f0-hIj" userLabel="branchsTableView">
-                    <rect key="frame" x="5" y="255.33333333333334" width="380" height="374.66666666666663"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Gue-tZ-N4Z">
+                    <rect key="frame" x="16" y="177" width="358" height="451"/>
+                    <subviews>
+                        <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0ZR-Oz-79G">
+                            <rect key="frame" x="0.0" y="-62" width="358" height="62"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="62" id="ENK-FS-yr6"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="P9V-8J-ZFm">
+                                <size key="itemSize" width="120" height="32"/>
+                                <size key="estimatedItemSize" width="120" height="32"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سجل الفروع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7st-v9-27N" userLabel="branchsTabelHeaderLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="358" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="a69-bN-dT3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gZf-f0-hIj" userLabel="branchsTableView">
+                            <rect key="frame" x="0.0" y="106" width="358" height="345"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="345" id="jJG-Ls-i8q"/>
+                            </constraints>
+                        </tableView>
+                    </subviews>
+                </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gg-By-WKz" userLabel="addButton">
                     <rect key="frame" x="16" y="738" width="56" height="56"/>
                     <constraints>
@@ -66,48 +96,33 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeY-CL-xhm" userLabel="reportButton">
                     <rect key="frame" x="100" y="678" width="190" height="48"/>
+                    <color key="backgroundColor" red="0.0" green="0.396078431372549" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="EVv-3O-qmU"/>
                         <constraint firstAttribute="width" constant="190" id="pDb-0t-hT1"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="اصدار تقرير">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                 </button>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0ZR-Oz-79G" customClass="DynamicHeightCollectionView" customModule="iOS_Rasid" customModuleProvider="target">
-                    <rect key="frame" x="16" y="177" width="358" height="42"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="42" id="ENK-FS-yr6"/>
-                    </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="P9V-8J-ZFm">
-                        <size key="itemSize" width="120" height="32"/>
-                        <size key="estimatedItemSize" width="120" height="32"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="iGu-Wy-7IS" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="0qE-zG-B0a"/>
-                <constraint firstItem="0ZR-Oz-79G" firstAttribute="top" secondItem="Z8U-yg-HOl" secondAttribute="bottom" constant="2" id="61e-XB-4Rk"/>
                 <constraint firstItem="5Gg-By-WKz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="9PT-sj-nhm"/>
+                <constraint firstItem="OeY-CL-xhm" firstAttribute="top" secondItem="Gue-tZ-N4Z" secondAttribute="bottom" constant="50" id="CbA-ry-3Q7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Z8U-yg-HOl" secondAttribute="trailing" constant="16" id="Dne-ON-aFQ"/>
-                <constraint firstItem="0ZR-Oz-79G" firstAttribute="bottom" secondItem="7st-v9-27N" secondAttribute="top" constant="2" id="KuM-kj-hJd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5Gg-By-WKz" secondAttribute="bottom" constant="16" id="MSK-PS-fZ4"/>
-                <constraint firstItem="OeY-CL-xhm" firstAttribute="top" secondItem="gZf-f0-hIj" secondAttribute="bottom" constant="48" id="RJ8-fd-BcT"/>
-                <constraint firstItem="0ZR-Oz-79G" firstAttribute="leading" secondItem="Z8U-yg-HOl" secondAttribute="leading" id="UpS-X4-wUQ"/>
-                <constraint firstItem="0ZR-Oz-79G" firstAttribute="trailing" secondItem="Z8U-yg-HOl" secondAttribute="trailing" id="aIj-Nt-76N"/>
+                <constraint firstItem="Gue-tZ-N4Z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="NPk-Wr-wEz"/>
                 <constraint firstItem="iGu-Wy-7IS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cNI-qG-xhn"/>
                 <constraint firstItem="OeY-CL-xhm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cdj-sv-Na3"/>
+                <constraint firstItem="Gue-tZ-N4Z" firstAttribute="top" secondItem="Z8U-yg-HOl" secondAttribute="bottom" constant="2" id="fY1-yy-l7i"/>
                 <constraint firstItem="Z8U-yg-HOl" firstAttribute="leading" secondItem="V9x-Oh-4Ct" secondAttribute="leading" constant="-24" id="lLY-3l-Ekh"/>
                 <constraint firstItem="Z8U-yg-HOl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ms0-Wy-3hv"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gZf-f0-hIj" secondAttribute="trailing" constant="5" id="nQE-t8-4x3"/>
-                <constraint firstItem="gZf-f0-hIj" firstAttribute="top" secondItem="7st-v9-27N" secondAttribute="bottom" constant="18" id="oR4-k4-lIA"/>
-                <constraint firstItem="gZf-f0-hIj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="oTn-fW-Vdb"/>
-                <constraint firstItem="7st-v9-27N" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="toN-gO-9TV"/>
+                <constraint firstItem="Gue-tZ-N4Z" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-16" id="og6-iZ-IV5"/>
                 <constraint firstItem="5Gg-By-WKz" firstAttribute="top" secondItem="OeY-CL-xhm" secondAttribute="bottom" constant="12" id="upR-do-uCg"/>
                 <constraint firstItem="Z8U-yg-HOl" firstAttribute="top" secondItem="iGu-Wy-7IS" secondAttribute="bottom" constant="40" id="xqM-Qk-keQ"/>
                 <constraint firstItem="V9x-Oh-4Ct" firstAttribute="bottom" secondItem="Z8U-yg-HOl" secondAttribute="bottom" id="zYI-pj-K0m"/>

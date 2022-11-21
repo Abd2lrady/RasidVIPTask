@@ -15,17 +15,11 @@ class BranchsViewController: UIViewController {
     @IBOutlet weak var branchsTabelViewHeaderLabel: UILabel!
     var interactor: BranchsInteractorProtocol?
     var router: BranchsRouter?
-    @IBOutlet weak var filterCollectionView: DynamicHeightCollectionView!
-    
-    @IBOutlet weak var filterLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var filterCollectionView: UICollectionView!
     @IBOutlet weak var filtersHeightConstrain: NSLayoutConstraint!
-    var filterView: CustomAlertView?
+    @IBOutlet weak var stackView: UIStackView!
 
-    var filters = [String]() {
-        didSet {
-            self.showFilters()
-        }
-    }
+    var filters = [String]()
     
     lazy var branchsTableViewDelegate = BranchsTableViewDelegate(branchs: [Branch.ViewModel(branchName: "السعودية",
                                                                                             managerName: "احمد",
@@ -44,9 +38,13 @@ class BranchsViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        interactor?.request(request: .loadBranchs)
+        //        interactor?.request(request: .loadBranchs)
         configUI()
 
+    }
+    
+    @IBAction func tryButton(_ sender: Any) {
+        router?.routeToFilter()
     }
 }
 
@@ -64,7 +62,6 @@ extension BranchsViewController {
             print("load more branchs")
         }
         branchsTableViewDelegate.showBranchDetails = { [weak self] indx in
-            print("needs to show details for cell index \(indx)")
             // 1- get branch id from interactor
             let branchId = self?.router?.dataStore.branchs?[indx ?? 0].id
             // 2- navigate to details with id
@@ -74,11 +71,6 @@ extension BranchsViewController {
     }
     
     func configFilterCollectionView() {
-//        let size = CGSize(width: 120, height: 32)
-//        filterLayout.itemSize = size
-//        filterLayout.estimatedItemSize = size
-        
-//        filterCollectionView.translatesAutoresizingMaskIntoConstraints = false
 
         let cellNib = UINib(nibName: "\(FilterCell.self)",
                             bundle: .main)
@@ -87,8 +79,8 @@ extension BranchsViewController {
                                       forCellWithReuseIdentifier: FilterCell.reuseID)
         filterCollectionView.semanticContentAttribute = .forceRightToLeft
          
-//        filtersHeightConstrain.constant = 1
         filterCollectionView.dataSource = self
+        
     }
     
     func configUI() {
@@ -96,10 +88,9 @@ extension BranchsViewController {
         configNavBar()
         
         branchsTableView.backgroundColor = .clear
-        
-        branchsTabelViewHeaderLabel.font = Fonts.Cairo.regular.font(size: 16)
-        branchsTabelViewHeaderLabel.textColor = Colors.branchsBranchsListHeader.color
-        branchsTabelViewHeaderLabel.text = Strings.branchListHeader
+//        branchsTabelViewHeaderLabel.font = Fonts.Cairo.regular.font(size: 16)
+//        branchsTabelViewHeaderLabel.textColor = Colors.branchsBranchsListHeader.color
+//        branchsTabelViewHeaderLabel.text = Strings.branchListHeader
 
         addBranchButton.setImage(Images.addBranchButtonIc.image,
                                  for: .normal)
@@ -108,16 +99,16 @@ extension BranchsViewController {
                                   for: .touchUpInside)
         
         reportButton.layer.cornerRadius = 5
-        reportButton.backgroundColor = Colors.branchsReportButtonBG.color
-        let reportButtonTitleString = Strings.reportButtonTitleString
-        let reportButtonTitleAtrributes = [NSAttributedString.Key.font:
-                                            Fonts.Cairo.regular.font(size: 16),
-                                           NSAttributedString.Key.foregroundColor:
-                                            Colors.branchsReportButtonTitle.color]
-        let reportButtonAttributedTitle = NSAttributedString(string: reportButtonTitleString,
-                                                             attributes: reportButtonTitleAtrributes)
-        reportButton.setAttributedTitle(reportButtonAttributedTitle,
-                                        for: .normal)
+//        reportButton.backgroundColor = Colors.branchsReportButtonBG.color
+//        let reportButtonTitleString = Strings.reportButtonTitleString
+//        let reportButtonTitleAtrributes = [NSAttributedString.Key.font:
+//                                            Fonts.Cairo.regular.font(size: 16),
+//                                           NSAttributedString.Key.foregroundColor:
+//                                            Colors.branchsReportButtonTitle.color]
+//        let reportButtonAttributedTitle = NSAttributedString(string: reportButtonTitleString,
+//                                                             attributes: reportButtonTitleAtrributes)
+//        reportButton.setAttributedTitle(reportButtonAttributedTitle,
+//                                        for: .normal)
         reportButton.addTarget(self,
                                action: #selector(reportTapped),
                                for: .touchUpInside)
@@ -156,50 +147,29 @@ extension BranchsViewController {
     
     @objc
     func filterButtonTapped() {
-        let frame = CGRect(x: 0,
-                           y: 0,
-                           width: UIScreen.main.bounds.width,
-                           height: UIScreen.main.bounds.height)
-        let filterView = CustomAlertView(frame: frame)
-        
-        filterView.buttonTappedCallback = { filters in
-            print("search tapped")
+        router?.routeToFilter()
 
-            self.filters = filters.getFilters()
-            print(self.filters)
-            hideFilterView()
-            
-            self.filterBranchs(filters: filters)
-        }
-        
-        filterView.tapGestureDetected = {
-            hideFilterView()
-        }
-        
-        self.navigationItem.rightBarButtonItem?.customView?.isUserInteractionEnabled = false
-
-        self.filterView = filterView
-        view.addSubview(filterView)
-        
-        print("filter tapped")
-
-        func hideFilterView() {
-            filterView.removeFromSuperview()
-            self.navigationItem.rightBarButtonItem?.customView?.isUserInteractionEnabled = true
-        }
     }
     
     func showFilters() {
         self.filterCollectionView.reloadData()
-        filterCollectionView.isScrollEnabled = false
-        self.filterCollectionView.invalidateIntrinsicContentSize()
-        self.filtersHeightConstrain.constant = self.filterCollectionView.contentSize.height
-        self.filterCollectionView.layoutSubviews()
-
+        self.filterCollectionView.isHidden = false
+//        let height = filterCollectionView.contentSize.height
+//        self.filtersHeightConstrain.constant = height
+        self.filterCollectionView.layoutIfNeeded()
+    }
+        
+    func filterBranchs(filters: Branch.Filter) {
+        print("filters", filters)
+        interactor?.request(request: .filterBranchs(filters: filters))
     }
     
-    func filterBranchs(filters: Branch.Filter) {
-        interactor?.request(request: .filterBranchs(filters: filters))
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        let height = filterCollectionView.collectionViewLayout.collectionViewContentSize.height
+        filtersHeightConstrain.constant = height
+        self.view.layoutIfNeeded()
+
     }
 }
 
@@ -218,7 +188,6 @@ extension BranchsViewController: UICollectionViewDataSource {
                                                       for: indexPath) as! FilterCell
 //        else { fatalError("can`t  dequeue filter cell") }
         cell.filterLabel.text = filters[indexPath.row]
-        
         return cell
 
     }

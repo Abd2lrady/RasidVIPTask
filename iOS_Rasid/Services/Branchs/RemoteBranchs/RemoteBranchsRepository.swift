@@ -56,6 +56,7 @@ extension RemoteBranchsRepository: BranchsGateway {
                     completionHandler(.success(response))
                     self?.setTotalPages?(response?.meta?.total)
                 } catch {
+                    print(error)
                     completionHandler(.failure(error))
                 }
                 
