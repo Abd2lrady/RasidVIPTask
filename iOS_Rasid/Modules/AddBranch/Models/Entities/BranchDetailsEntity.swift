@@ -10,7 +10,7 @@ import Foundation
 struct BranchDetailsEntity: Codable {
     let id: Int
     let name: String
-    let manager: String?
+    let manager: Manager?
     let sellersCount: Int?
     let district, city, region: Location?
     let phone, lat, lng: String?

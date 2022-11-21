@@ -8,8 +8,7 @@
 import UIKit
 
 protocol BranchsRouterProtocol {
-    func routeToBranchDetails(facilityId: Int,
-                              branchId: Int)
+    func routeToBranchDetails(at index: Int)
     func routeToAddBranch(facilityID: Int?)
     func routeToFilter()
 }
@@ -28,6 +27,13 @@ class BranchsRouter {
 }
 
 extension BranchsRouter: BranchsRouterProtocol {
+    func routeToBranchDetails(at index: Int) {
+        guard let branchId = dataStore.branchs?[index].id
+        else { return }
+        navToBranchDetails(facilityId: dataStore.facilityId,
+                           branchId: branchId)
+    }
+    
     func routeToFilter() {
         let view = FilterCustomViewController()
         view.buttonTappedCallback = { [weak self] in
@@ -50,22 +56,6 @@ extension BranchsRouter: BranchsRouterProtocol {
             navToAddBranch(destination: view)
         }
     
-    func routeToBranchDetails(facilityId: Int,
-                              branchId: Int) {
-        guard let service = (view?.interactor as? BranchsInteractor)?.service
-        else { fatalError("wrong service") }
-        let view = BranchDetailsConfigrator.configrate(service: service,
-                                                       facilityId: facilityId,
-                                                       branchId: branchId)
-        navToBranchDetails(destination: view)
-        
-    }
-    
-    private func navToBranchDetails(destination: UIViewController) {
-        view?.navigationController?.pushViewController(destination,
-                                                       animated: true)
-    }
-    
     private func navToAddBranch(destination: UIViewController) {
         view?.navigationController?.pushViewController(destination, animated: true)
     }
@@ -76,6 +66,18 @@ extension BranchsRouter: BranchsRouterProtocol {
         
         view?.present(destination, animated: true)
         
+    }
+    
+    private func navToBranchDetails(facilityId: Int,
+                                    branchId: Int) {
+        
+        guard let service = (view?.interactor as? BranchsInteractor)?.service
+        else { fatalError("wrong service") }
+        let destination = BranchDetailsConfigrator.configrate(service: service,
+                                                              facilityId: facilityId,
+                                                              branchId: branchId)
+        view?.navigationController?.pushViewController(destination,
+                                                       animated: true)
     }
 
 }

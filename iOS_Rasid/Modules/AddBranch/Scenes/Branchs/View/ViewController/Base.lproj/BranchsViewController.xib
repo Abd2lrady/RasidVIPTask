@@ -50,7 +50,7 @@
                         <constraint firstAttribute="height" constant="105" id="nkD-YN-D9e"/>
                     </constraints>
                 </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Gue-tZ-N4Z">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Gue-tZ-N4Z">
                     <rect key="frame" x="16" y="177" width="358" height="451"/>
                     <subviews>
                         <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0ZR-Oz-79G">
@@ -61,7 +61,6 @@
                             </constraints>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="P9V-8J-ZFm">
                                 <size key="itemSize" width="120" height="32"/>
-                                <size key="estimatedItemSize" width="120" height="32"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -69,19 +68,13 @@
                         </collectionView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سجل الفروع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7st-v9-27N" userLabel="branchsTabelHeaderLabel">
                             <rect key="frame" x="0.0" y="0.0" width="358" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="a69-bN-dT3"/>
-                            </constraints>
                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gZf-f0-hIj" userLabel="branchsTableView">
-                            <rect key="frame" x="0.0" y="106" width="358" height="345"/>
+                            <rect key="frame" x="0.0" y="42" width="358" height="409"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="345" id="jJG-Ls-i8q"/>
-                            </constraints>
                         </tableView>
                     </subviews>
                 </stackView>

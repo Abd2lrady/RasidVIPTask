@@ -19,35 +19,16 @@ class BranchsTableViewDelegate: NSObject {
 
 extension BranchsTableViewDelegate: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return branchs.count
+         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: BranchCell.reuseID,
-                                                       for: indexPath) as? BranchCell
-        else { fatalError("can`t dequeue branch cell") }
-        
-        cell.configCell(with: branchs[indexPath.row],
-                        at: indexPath.row)
-
-        cell.viewDetailsTapped = { index in
-            self.showBranchDetails?(index)
-        }
-        
-      return cell
+         return UITableViewCell()
     }
+    
+    
 }
 
 extension BranchsTableViewDelegate: UITableViewDelegate {
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        let dragOffestY = scrollView.contentOffset.y
-        let totalContentHeight = scrollView.contentSize.height
-        let container = scrollView.frame.size.height
-        
-        if dragOffestY > ((totalContentHeight - container) + 50) {
-            loadMoreRequest?()
-        }
-
-    }
     
 }

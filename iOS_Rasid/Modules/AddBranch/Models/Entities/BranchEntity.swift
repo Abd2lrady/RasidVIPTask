@@ -24,11 +24,6 @@ struct BranchEntity: Codable {
         case transactionsCount = "transactions_count"
         case createdAt = "created_at"
     }
-    
-    struct Manager: Codable {
-        let id: Int
-        let name: String
-    }
 }
 
 struct Meta: Codable {
@@ -41,4 +36,9 @@ struct Meta: Codable {
         case currentPage = "current_page"
         case lastPage = "last_page"
     }
+}
+
+struct Manager: Codable {
+    let id: Int
+    let name: String
 }

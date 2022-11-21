@@ -22,11 +22,9 @@ class BranchsPresenter {
 extension BranchsPresenter: BranchsPresenterProtocol {
     func presentBranchs(branchs: Branch.Response) {
         let branchsViewModels = branchs.branchs.map { branch in
-            Branch.ViewModel(branchName: branch.name ?? "",
-                             managerName: branch.manager?.name ?? "",
-                             sellersCount: "\(branch.salersCount ?? 0)")
+            Branch.ViewModel(model: branch)
         }
-        print(branchsViewModels)
+//        print(branchsViewModels)
         view?.showBranchs(branchs: branchsViewModels)
     }
 }

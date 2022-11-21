@@ -52,7 +52,6 @@ extension BranchCell {
     func configCellUI() {
         branchNameLabel.font = Fonts.Cairo.regular.font(size: 12)
         branchNameLabel.textColor = Colors.branchCellBranchName.color
-        
         managerNameLabel.font = Fonts.Cairo.regular.font(size: 16)
         managerNameLabel.textColor = Colors.branchCellManagerName.color
         

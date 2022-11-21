@@ -7,29 +7,25 @@
 
 import UIKit
 
+protocol BranchsViewControllerProtocol: AnyObject {
+    func showBranchs(branchs: [Branch.ViewModel])
+}
+
 class BranchsViewController: UIViewController {
 
     @IBOutlet weak var branchsTableView: UITableView!
     @IBOutlet weak var reportButton: UIButton!
     @IBOutlet weak var addBranchButton: UIButton!
     @IBOutlet weak var branchsTabelViewHeaderLabel: UILabel!
-    var interactor: BranchsInteractorProtocol?
-    var router: BranchsRouter?
     @IBOutlet weak var filterCollectionView: UICollectionView!
     @IBOutlet weak var filtersHeightConstrain: NSLayoutConstraint!
     @IBOutlet weak var stackView: UIStackView!
 
     var filters = [String]()
-    
-    lazy var branchsTableViewDelegate = BranchsTableViewDelegate(branchs: [Branch.ViewModel(branchName: "السعودية",
-                                                                                            managerName: "احمد",
-                                                                                            sellersCount: "5"),
-                                                                          Branch.ViewModel(branchName: "fintech",
-                                                                                           managerName: "abdelrady",
-                                                                                           sellersCount: "5"),
-                                                                          Branch.ViewModel(branchName: "fintech",
-                                                                                           managerName: "abdelrady",
-                                                                                           sellersCount: "5")])
+    var interactor: BranchsInteractorProtocol?
+    var router: BranchsRouter?
+    var branchViewModels = [Branch.ViewModel]()
+    lazy var branchsTableViewDelegate = BranchsTableViewDelegate(branchs: [Branch.ViewModel]())
     override func viewDidLoad() {
         super.viewDidLoad()
         configBranchsTableView()
@@ -55,19 +51,19 @@ extension BranchsViewController {
         branchsTableView.register(cellNib,
                                   forCellReuseIdentifier: BranchCell.reuseID)
         
-        branchsTableView.dataSource = branchsTableViewDelegate
-        branchsTableView.delegate = branchsTableViewDelegate
+        branchsTableView.dataSource = self
+        branchsTableView.delegate = self
         branchsTableViewDelegate.loadMoreRequest = {
             self.interactor?.request(request: .loadMoreBranchs)
             print("load more branchs")
         }
-        branchsTableViewDelegate.showBranchDetails = { [weak self] indx in
-            // 1- get branch id from interactor
-            let branchId = self?.router?.dataStore.branchs?[indx ?? 0].id
-            // 2- navigate to details with id
-            self?.router?.routeToBranchDetails(facilityId: self?.router?.dataStore.facilityId ?? 0,
-                                               branchId: branchId ?? 0)
-        }
+//        branchsTableViewDelegate.showBranchDetails = { [weak self] indx in
+//            // 1- get branch id from interactor
+//            let branchId = self?.router?.dataStore.branchs?[indx ?? 0].id
+//            // 2- navigate to details with id
+//            self?.router?.routeToBranchDetails(facilityId: self?.router?.dataStore.facilityId ?? 0,
+//                                               branchId: branchId ?? 0)
+//        }
     }
     
     func configFilterCollectionView() {
@@ -173,7 +169,6 @@ extension BranchsViewController {
     }
 }
 
-// swiftlint: disable all
 extension BranchsViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -184,11 +179,58 @@ extension BranchsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         print("dequeue filter cell")
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCell.reuseID,
-                                                      for: indexPath) as! FilterCell
-//        else { fatalError("can`t  dequeue filter cell") }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCell.reuseID,
+                                                            for: indexPath) as? FilterCell
+        else { fatalError("can`t  dequeue filter cell") }
         cell.filterLabel.text = filters[indexPath.row]
         return cell
 
     }
 }
+
+extension BranchsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return branchViewModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: BranchCell.reuseID,
+                                                       for: indexPath) as? BranchCell
+        else { return UITableViewCell() }
+        
+        
+        cell.configCell(with: branchViewModels[indexPath.row],
+                        at: indexPath.row)
+
+        cell.viewDetailsTapped = { [weak self] _ in
+            self?.router?.routeToBranchDetails(at: indexPath.row)
+//            self.showBranchDetails?(index)
+        }
+      return cell
+    }
+    
+}
+
+extension BranchsViewController: UITableViewDelegate {
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let dragOffestY = scrollView.contentOffset.y
+        let totalContentHeight = scrollView.contentSize.height
+        let container = scrollView.frame.size.height
+        
+        if dragOffestY > ((totalContentHeight - container) + 50) {
+//            loadMoreRequest?()
+            print("load more")
+        }
+    }
+
+}
+
+extension BranchsViewController: BranchsViewControllerProtocol {
+    func showBranchs(branchs: [Branch.ViewModel]) {
+        self.branchViewModels = branchs
+        branchsTableView.reloadData()
+    }
+}
+

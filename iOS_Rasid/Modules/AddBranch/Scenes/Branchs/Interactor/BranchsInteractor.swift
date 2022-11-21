@@ -9,6 +9,8 @@ import Foundation
 
 protocol BranchsInteractorProtocol {
     func request(request: Branch.Request)
+    func getBranchsCount() -> Int?
+    func getBranch(at index: Int) -> BranchEntity?
 }
 
 protocol BranchsDataStore {
@@ -34,6 +36,13 @@ class BranchsInteractor {
 }
 
 extension BranchsInteractor: BranchsInteractorProtocol, BranchsDataStore {
+    func getBranchsCount() -> Int? {
+        branchs?.count
+    }
+    
+    func getBranch(at index: Int) -> BranchEntity? {
+        branchs?[index]
+    }
     
     func request(request: Branch.Request) {
         switch request {

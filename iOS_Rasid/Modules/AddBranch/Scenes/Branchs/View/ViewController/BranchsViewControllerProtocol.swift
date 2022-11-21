@@ -7,13 +7,3 @@
 
 import Foundation
 
-protocol BranchsViewControllerProtocol: AnyObject {
-    func showBranchs(branchs: [Branch.ViewModel])
-}
-
-extension BranchsViewController: BranchsViewControllerProtocol {
-    func showBranchs(branchs: [Branch.ViewModel]) {
-        branchsTableViewDelegate.branchs = branchs
-        branchsTableView.reloadData()
-    }
-}

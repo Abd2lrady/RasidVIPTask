@@ -22,6 +22,19 @@ enum Branch {
         let branchName: String
         let managerName: String
         let sellersCount: String
+        
+        init(branchName: String, managerName: String, sellersCount: String) {
+            self.branchName = branchName
+            self.managerName = managerName
+            self.sellersCount = sellersCount
+        }
+        
+        init(model: BranchEntity) {
+            self.branchName = model.name ?? ""
+            self.managerName = model.manager?.name ?? ""
+            self.sellersCount = "\(model.salersCount ?? 0)"
+        }
+        
     }
     
     struct Filter {
