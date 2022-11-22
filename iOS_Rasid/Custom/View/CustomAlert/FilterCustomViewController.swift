@@ -9,34 +9,37 @@ import UIKit
 
 class FilterCustomViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-     }
-
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var alertView: UIView!
     @IBOutlet weak var searchButton: UIButton!
-    
     @IBOutlet weak var branchNameTextField: UITextField!
     @IBOutlet weak var branchManagerTextField: UITextField!
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
-    
+    @IBOutlet var tapGesture: UITapGestureRecognizer!
     @IBOutlet var textFieldContainerViews: [UIView]!
     
     var buttonTappedCallback: ((Branch.Filter) -> Void)?
     let pickerView = UIPickerView()
     let datePickerView = UIDatePicker()
-    let pickerDelegate = PickerViewDelegate(titles: [])
+    var pickerTitles = [String]()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        pickerView.delegate = self
+        tapGesture.delegate = self
+        
+     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configUI()
     }
     
-    @IBAction func tapGestureDetected(_ sender: Any) {
+    @IBAction func tapGestureAction(_ sender: UITapGestureRecognizer) {
         dismiss(animated: true)
     }
+    
 }
 
 extension FilterCustomViewController {
@@ -51,22 +54,8 @@ extension FilterCustomViewController {
         configSearchButton()
         
         configTitleLabelsAndTextFieldPlaceholderStrings()
-        
-        pickerDelegate.selectedTitle = { selected in
-            
-            if self.branchNameTextField.isFirstResponder {
                 
-                self.branchNameTextField.text = selected
-                self.branchNameTextField.resignFirstResponder()
-            } else if self.branchManagerTextField.isFirstResponder {
-                
-                self.branchManagerTextField.text = selected
-                self.branchManagerTextField.resignFirstResponder()
-            }
-        }
-        
         configDatePickerView()
-        configManagerAndBranchPickerView()
     }
     
     private func configSearchButton() {
@@ -78,12 +67,6 @@ extension FilterCustomViewController {
         
     }
     
-    private func configManagerAndBranchPickerView() {
-        
-        pickerView.delegate = pickerDelegate
-        
-    }
-        
     private func configDatePickerView() {
         datePickerView.datePickerMode = .date
         datePickerView.preferredDatePickerStyle = .wheels
@@ -100,14 +83,11 @@ extension FilterCustomViewController {
         dateFormatter.dateFormat = "dd-MM-yyyy"
         
         if fromTextField.isFirstResponder {
-            
             fromTextField.text = dateFormatter.string(from: datePickerView.date)
             fromTextField.resignFirstResponder()
         } else if toTextField.isFirstResponder {
-            
             toTextField.text = dateFormatter.string(from: datePickerView.date)
             toTextField.resignFirstResponder()
-            
         }
     }
     
@@ -140,15 +120,60 @@ extension FilterCustomViewController {
 extension FilterCustomViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if branchNameTextField.isFirstResponder {
-            
-            pickerDelegate.titles = ["cairo", "alex"]
+            pickerTitles = ["الفرع الاول", "الفرع الثانى"]
             pickerView.reloadAllComponents()
             
         } else if branchManagerTextField.isFirstResponder {
-            
-            pickerDelegate.titles = pickerDelegate.managers
+        
+            pickerTitles = ["محمد", "احمد"]
             pickerView.reloadAllComponents()
         }
 
+    }
+}
+
+extension FilterCustomViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView,
+                    numberOfRowsInComponent component: Int) -> Int {
+        return pickerTitles.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView,
+                    attributedTitleForRow row: Int,
+                    forComponent component: Int) -> NSAttributedString? {
+        let atrributes: [NSAttributedString.Key: Any] = [.font:
+                                                            Fonts.Cairo.regular.font(size: 16),
+                                                         .foregroundColor: Colors.addBranchTitleLabels.color.cgColor]
+        return NSAttributedString(string: pickerTitles[row], attributes: atrributes)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if branchManagerTextField.isFirstResponder {
+            branchManagerTextField.text = pickerTitles[row]
+            branchManagerTextField.resignFirstResponder()
+        } else if branchNameTextField.isFirstResponder {
+            branchNameTextField.text = pickerTitles[row]
+            branchNameTextField.resignFirstResponder()
+        }
+        pickerView.endEditing(true)
+    }
+    
+}
+
+extension FilterCustomViewController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        let touchLocation = touch.location(in: view)
+        
+        if !alertView.frame.contains(touchLocation) {
+            return true
+        }
+        return false
     }
 }

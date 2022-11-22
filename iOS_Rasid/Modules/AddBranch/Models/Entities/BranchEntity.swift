@@ -12,13 +12,13 @@ struct BranchEntity: Codable {
     let name: String?
     let salersCount: Int?
     let manager: Manager?
-//    let image: String?
+    let image: String?
     let employeesCount: Int?
     let transactionsCount: String?
     let createdAt: String?
 
     enum CodingKeys: String, CodingKey {
-        case id, name, manager//, image
+        case id, name, manager, image
         case salersCount = "salers_count"
         case employeesCount = "employees_count"
         case transactionsCount = "transactions_count"

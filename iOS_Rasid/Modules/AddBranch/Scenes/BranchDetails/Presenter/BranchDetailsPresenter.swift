@@ -33,5 +33,4 @@ extension BranchDetailsPresenter: BranchDetailsPresenterProtocol {
         
         view?.showBranchDetails(branchDetails: branchDetailsViewModel)
     }
-    
 }

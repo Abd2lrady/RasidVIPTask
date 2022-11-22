@@ -25,5 +25,4 @@ extension AddBranchPresenter: AddBranchPresenterProtocol {
         view?.dismissView()
     }
     
-    
 }

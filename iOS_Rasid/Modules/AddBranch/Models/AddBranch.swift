@@ -38,8 +38,8 @@ enum AddBranch {
         let neihbourhood: String?
         let lat: Double?
         let lng: Double?
-        let address_id = 2
-        let facility_id = 53
+        var address_id = 2
+        var facility_id = 53
 
         func getBody() -> [String: Any] {
             let body: [String: Any] = ["ar": ["name": name] ,

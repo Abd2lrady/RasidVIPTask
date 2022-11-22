@@ -15,17 +15,15 @@ class BranchsViewController: UIViewController {
 
     @IBOutlet weak var branchsTableView: UITableView!
     @IBOutlet weak var reportButton: UIButton!
-    @IBOutlet weak var addBranchButton: UIButton!
     @IBOutlet weak var branchsTabelViewHeaderLabel: UILabel!
     @IBOutlet weak var filterCollectionView: UICollectionView!
     @IBOutlet weak var filtersHeightConstrain: NSLayoutConstraint!
-    @IBOutlet weak var stackView: UIStackView!
 
     var filters = [String]()
     var interactor: BranchsInteractorProtocol?
     var router: BranchsRouter?
     var branchViewModels = [Branch.ViewModel]()
-    lazy var branchsTableViewDelegate = BranchsTableViewDelegate(branchs: [Branch.ViewModel]())
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configBranchsTableView()
@@ -34,14 +32,19 @@ class BranchsViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //        interactor?.request(request: .loadBranchs)
         configUI()
+    }
+    
+    @IBAction func reportButtonTapped(_ sender: Any) {
+        print("report button tapped")
 
     }
     
-    @IBAction func tryButton(_ sender: Any) {
-        router?.routeToFilter()
+    @IBAction func addBranchButtonTapped(_ sender: Any) {
+        print("add Branch button tapped")
+        router?.routeToAddBranch(facilityID: self.router?.dataStore.facilityId)
     }
+    
 }
 
 extension BranchsViewController {
@@ -53,17 +56,6 @@ extension BranchsViewController {
         
         branchsTableView.dataSource = self
         branchsTableView.delegate = self
-        branchsTableViewDelegate.loadMoreRequest = {
-            self.interactor?.request(request: .loadMoreBranchs)
-            print("load more branchs")
-        }
-//        branchsTableViewDelegate.showBranchDetails = { [weak self] indx in
-//            // 1- get branch id from interactor
-//            let branchId = self?.router?.dataStore.branchs?[indx ?? 0].id
-//            // 2- navigate to details with id
-//            self?.router?.routeToBranchDetails(facilityId: self?.router?.dataStore.facilityId ?? 0,
-//                                               branchId: branchId ?? 0)
-//        }
     }
     
     func configFilterCollectionView() {
@@ -73,7 +65,6 @@ extension BranchsViewController {
         
         filterCollectionView.register(cellNib,
                                       forCellWithReuseIdentifier: FilterCell.reuseID)
-        filterCollectionView.semanticContentAttribute = .forceRightToLeft
          
         filterCollectionView.dataSource = self
         
@@ -82,55 +73,18 @@ extension BranchsViewController {
     func configUI() {
         
         configNavBar()
-        
         branchsTableView.backgroundColor = .clear
-//        branchsTabelViewHeaderLabel.font = Fonts.Cairo.regular.font(size: 16)
-//        branchsTabelViewHeaderLabel.textColor = Colors.branchsBranchsListHeader.color
-//        branchsTabelViewHeaderLabel.text = Strings.branchListHeader
-
-        addBranchButton.setImage(Images.addBranchButtonIc.image,
-                                 for: .normal)
-        addBranchButton.addTarget(self,
-                                  action: #selector(addBranchTapped),
-                                  for: .touchUpInside)
-        
         reportButton.layer.cornerRadius = 5
-//        reportButton.backgroundColor = Colors.branchsReportButtonBG.color
-//        let reportButtonTitleString = Strings.reportButtonTitleString
-//        let reportButtonTitleAtrributes = [NSAttributedString.Key.font:
-//                                            Fonts.Cairo.regular.font(size: 16),
-//                                           NSAttributedString.Key.foregroundColor:
-//                                            Colors.branchsReportButtonTitle.color]
-//        let reportButtonAttributedTitle = NSAttributedString(string: reportButtonTitleString,
-//                                                             attributes: reportButtonTitleAtrributes)
-//        reportButton.setAttributedTitle(reportButtonAttributedTitle,
-//                                        for: .normal)
-        reportButton.addTarget(self,
-                               action: #selector(reportTapped),
-                               for: .touchUpInside)
-    }
-    
-    @objc
-    func reportTapped() {
-        print("report button tapped")
-    }
-    
-    @objc
-    func addBranchTapped() {
-        router?.routeToAddBranch(facilityID: self.router?.dataStore.facilityId)
-        print("add Branch button tapped")
     }
     
     func configNavBar() {
         hideNavBar()
-        
         let filterButton = UIButton()
         filterButton.setImage(Images.filter.image,
                               for: .normal)
         filterButton.addTarget(self,
                                action: #selector(filterButtonTapped),
                                for: .touchUpInside)
-        
         let rightItem = UIBarButtonItem(customView: filterButton)
         navigationItem.rightBarButtonItem = rightItem
     }
@@ -138,21 +92,19 @@ extension BranchsViewController {
     func hideNavBar() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.isTranslucent = true
-        
     }
     
     @objc
     func filterButtonTapped() {
         router?.routeToFilter()
-
     }
     
     func showFilters() {
         self.filterCollectionView.reloadData()
         self.filterCollectionView.isHidden = false
-//        let height = filterCollectionView.contentSize.height
-//        self.filtersHeightConstrain.constant = height
         self.filterCollectionView.layoutIfNeeded()
+        let height = filterCollectionView.contentSize.height
+        self.filtersHeightConstrain.constant = height
     }
         
     func filterBranchs(filters: Branch.Filter) {
@@ -160,13 +112,6 @@ extension BranchsViewController {
         interactor?.request(request: .filterBranchs(filters: filters))
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        let height = filterCollectionView.collectionViewLayout.collectionViewContentSize.height
-        filtersHeightConstrain.constant = height
-        self.view.layoutIfNeeded()
-
-    }
 }
 
 extension BranchsViewController: UICollectionViewDataSource {
@@ -198,14 +143,9 @@ extension BranchsViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BranchCell.reuseID,
                                                        for: indexPath) as? BranchCell
         else { return UITableViewCell() }
-        
-        
-        cell.configCell(with: branchViewModels[indexPath.row],
-                        at: indexPath.row)
-
-        cell.viewDetailsTapped = { [weak self] _ in
+        cell.configCell(with: branchViewModels[indexPath.row])
+        cell.viewDetailsTapped = { [weak self] in
             self?.router?.routeToBranchDetails(at: indexPath.row)
-//            self.showBranchDetails?(index)
         }
       return cell
     }
@@ -218,10 +158,10 @@ extension BranchsViewController: UITableViewDelegate {
         let dragOffestY = scrollView.contentOffset.y
         let totalContentHeight = scrollView.contentSize.height
         let container = scrollView.frame.size.height
-        
+    
         if dragOffestY > ((totalContentHeight - container) + 50) {
-//            loadMoreRequest?()
             print("load more")
+            self.interactor?.request(request: .loadMoreBranchs)
         }
     }
 
@@ -233,4 +173,3 @@ extension BranchsViewController: BranchsViewControllerProtocol {
         branchsTableView.reloadData()
     }
 }
-

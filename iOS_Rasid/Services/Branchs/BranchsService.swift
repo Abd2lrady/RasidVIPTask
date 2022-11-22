@@ -29,7 +29,6 @@ extension BranchsService: BranchsGateway {
 
     }
     
-    
     func getBranchs(for facilityId: Int,
                     page: Int,
                     completionHandler: @escaping (Result<ServerResponse<[BranchEntity]>?, Error>) -> Void) {
