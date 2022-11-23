@@ -33,7 +33,6 @@ class AddBranchViewController: UIViewController {
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
-        
         configUI()
     }
     
@@ -69,11 +68,12 @@ extension AddBranchViewController {
     private func configUI() {
         configAddBranchButton()
         configTitleLabelsAndTextFieldPlaceholderStrings()
-        
         dataTextField.forEach { textField in
+            let baddingView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: textField.bounds.height))
             textField.layer.cornerRadius = 7
+            textField.leftView = baddingView
+            textField.leftViewMode = UITextField.ViewMode.always
         }
-        
         textFieldBGViews.forEach { view in
             view.layer.cornerRadius = 7
         }
@@ -160,7 +160,6 @@ extension AddBranchViewController: UIPickerViewDelegate, UIPickerViewDataSource 
         }
         pickerView.endEditing(true)
     }
-    
 }
 
 extension AddBranchViewController: AddBranchViewControllerProtocol {

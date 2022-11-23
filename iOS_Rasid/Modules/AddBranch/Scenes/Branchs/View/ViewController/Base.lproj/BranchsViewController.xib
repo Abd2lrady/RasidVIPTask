@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -25,21 +25,21 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_ic" translatesAutoresizingMaskIntoConstraints="NO" id="iGu-Wy-7IS">
-                    <rect key="frame" x="155" y="55" width="80" height="22"/>
+                    <rect key="frame" x="156.66666666666666" y="67" width="80" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="aXu-MB-rGC"/>
                         <constraint firstAttribute="height" constant="22" id="rRO-yZ-XsA"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fE4-VO-uMd">
-                    <rect key="frame" x="16" y="85" width="358" height="105"/>
+                    <rect key="frame" x="16" y="97" width="361" height="105"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileBg_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Z8U-yg-HOl">
-                            <rect key="frame" x="0.0" y="39" width="358" height="66"/>
+                            <rect key="frame" x="0.0" y="39" width="361" height="66"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="66" id="WtE-dw-mYx"/>
                             </constraints>
@@ -48,8 +48,15 @@
                             <rect key="frame" x="24" y="0.0" width="80" height="105"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="KZR-ab-9Kj"/>
+                                <constraint firstAttribute="height" constant="105" id="rmd-Zm-c8F"/>
                             </constraints>
                         </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الفروع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7X-ph-wWd">
+                            <rect key="frame" x="303.66666666666669" y="57" width="41.333333333333314" height="30"/>
+                            <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
+                            <color key="textColor" red="0.95686274510000002" green="0.96470588239999999" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -57,16 +64,17 @@
                         <constraint firstItem="V9x-Oh-4Ct" firstAttribute="leading" secondItem="fE4-VO-uMd" secondAttribute="leading" constant="24" id="I36-6M-zMn"/>
                         <constraint firstItem="V9x-Oh-4Ct" firstAttribute="top" secondItem="fE4-VO-uMd" secondAttribute="top" id="Rqf-zT-PdG"/>
                         <constraint firstAttribute="height" constant="105" id="Smn-na-dKm"/>
-                        <constraint firstItem="V9x-Oh-4Ct" firstAttribute="height" secondItem="fE4-VO-uMd" secondAttribute="height" id="mMG-VL-ZWa"/>
+                        <constraint firstItem="n7X-ph-wWd" firstAttribute="centerY" secondItem="Z8U-yg-HOl" secondAttribute="centerY" id="jXr-Yo-FfU"/>
+                        <constraint firstItem="n7X-ph-wWd" firstAttribute="trailing" secondItem="Z8U-yg-HOl" secondAttribute="trailing" constant="-16" id="o0F-a2-zCm"/>
                         <constraint firstItem="Z8U-yg-HOl" firstAttribute="leading" secondItem="fE4-VO-uMd" secondAttribute="leading" id="qzh-Jk-jCZ"/>
                         <constraint firstAttribute="trailing" secondItem="Z8U-yg-HOl" secondAttribute="trailing" id="x9p-4M-xjO"/>
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Gue-tZ-N4Z">
-                    <rect key="frame" x="16" y="198" width="358" height="432"/>
+                    <rect key="frame" x="16" y="210" width="361" height="428"/>
                     <subviews>
                         <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0ZR-Oz-79G">
-                            <rect key="frame" x="0.0" y="-62" width="358" height="62"/>
+                            <rect key="frame" x="0.0" y="-62" width="361" height="62"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="62" id="ENK-FS-yr6"/>
@@ -79,22 +87,19 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سجل الفروع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7st-v9-27N" userLabel="branchsTabelHeaderLabel">
-                            <rect key="frame" x="0.0" y="0.0" width="358" height="28.666666666666668"/>
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="30"/>
                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gZf-f0-hIj" userLabel="branchsTableView">
-                            <rect key="frame" x="0.0" y="34.666666666666657" width="358" height="397.33333333333337"/>
+                            <rect key="frame" x="0.0" y="36" width="361" height="392"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="gZf-f0-hIj" firstAttribute="height" secondItem="Gue-tZ-N4Z" secondAttribute="height" multiplier="0.919643" id="YKx-bu-n5W"/>
-                    </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gg-By-WKz" userLabel="addButton">
-                    <rect key="frame" x="16" y="738" width="56" height="56"/>
+                    <rect key="frame" x="16" y="746" width="56" height="56"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="Uvd-gO-ulN"/>
                         <constraint firstAttribute="width" constant="56" id="ohT-2c-NL6"/>
@@ -106,7 +111,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeY-CL-xhm" userLabel="reportButton">
-                    <rect key="frame" x="100" y="678" width="190" height="48"/>
+                    <rect key="frame" x="101.66666666666669" y="686" width="190" height="48"/>
                     <color key="backgroundColor" red="0.0" green="0.396078431372549" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="EVv-3O-qmU"/>
@@ -139,7 +144,7 @@
                 <constraint firstItem="5Gg-By-WKz" firstAttribute="top" secondItem="OeY-CL-xhm" secondAttribute="bottom" constant="12" id="upR-do-uCg"/>
                 <constraint firstItem="Gue-tZ-N4Z" firstAttribute="top" secondItem="fE4-VO-uMd" secondAttribute="bottom" constant="8" id="vGs-3B-rr6"/>
             </constraints>
-            <point key="canvasLocation" x="27.69230769230769" y="20.616113744075829"/>
+            <point key="canvasLocation" x="26.717557251908396" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>

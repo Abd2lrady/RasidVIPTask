@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,50 +18,48 @@
                 <outlet property="addBranchButton" destination="zsJ-Zq-WAJ" id="8SP-MV-MxZ"/>
                 <outlet property="titleLabel" destination="HIq-YA-TwX" id="Xjo-om-9aZ"/>
                 <outlet property="view" destination="jH8-xy-e9S" id="8C5-RT-Gtx"/>
-                <outletCollection property="titleLabels" destination="JYG-Md-HsQ" collectionClass="NSMutableArray" id="g14-6B-Nkb"/>
-                <outletCollection property="titleLabels" destination="R4s-v8-Smw" collectionClass="NSMutableArray" id="T10-w0-E22"/>
                 <outletCollection property="titleLabels" destination="Ig9-6K-YjD" collectionClass="NSMutableArray" id="dwN-rh-Hq1"/>
                 <outletCollection property="titleLabels" destination="x9X-a8-gQ5" collectionClass="NSMutableArray" id="EAc-PL-sd8"/>
                 <outletCollection property="titleLabels" destination="2qg-Vj-lmy" collectionClass="NSMutableArray" id="8Vj-EU-Tja"/>
                 <outletCollection property="titleLabels" destination="QZS-U9-3Gb" collectionClass="NSMutableArray" id="1p0-oi-cS9"/>
                 <outletCollection property="titleLabels" destination="UtB-Re-lsZ" collectionClass="NSMutableArray" id="IJK-cv-aan"/>
                 <outletCollection property="titleLabels" destination="MhV-xR-2c3" collectionClass="NSMutableArray" id="4Ed-71-smq"/>
-                <outletCollection property="dataTextField" destination="s85-jw-h3A" collectionClass="NSMutableArray" id="sWq-NM-8Mb"/>
-                <outletCollection property="dataTextField" destination="f5K-jJ-rvk" collectionClass="NSMutableArray" id="83p-xI-InJ"/>
-                <outletCollection property="dataTextField" destination="jqW-5x-pON" collectionClass="NSMutableArray" id="vh5-0c-Thd"/>
-                <outletCollection property="dataTextField" destination="e5l-QO-0an" collectionClass="NSMutableArray" id="Z6T-QS-7QA"/>
-                <outletCollection property="dataTextField" destination="jya-e0-KBB" collectionClass="NSMutableArray" id="hlT-lL-kBT"/>
-                <outletCollection property="dataTextField" destination="hGx-mM-rRy" collectionClass="NSMutableArray" id="ald-o5-ItT"/>
-                <outletCollection property="dataTextField" destination="HI9-5t-DOD" collectionClass="NSMutableArray" id="0oq-JQ-6NT"/>
-                <outletCollection property="dataTextField" destination="V1y-Le-Hdi" collectionClass="NSMutableArray" id="ay3-YE-gpi"/>
                 <outletCollection property="textFieldBGViews" destination="Y4x-ts-8VO" collectionClass="NSMutableArray" id="sBK-2X-RWx"/>
                 <outletCollection property="textFieldBGViews" destination="WQW-fq-KbN" collectionClass="NSMutableArray" id="0HH-mt-Q0i"/>
                 <outletCollection property="textFieldBGViews" destination="5zu-j7-Yfl" collectionClass="NSMutableArray" id="PjG-je-bl2"/>
+                <outletCollection property="dataTextField" destination="jqW-5x-pON" collectionClass="NSMutableArray" id="jow-dJ-aCz"/>
+                <outletCollection property="dataTextField" destination="f5K-jJ-rvk" collectionClass="NSMutableArray" id="gir-Zf-IwW"/>
+                <outletCollection property="dataTextField" destination="e5l-QO-0an" collectionClass="NSMutableArray" id="4hF-tv-yG4"/>
+                <outletCollection property="dataTextField" destination="s85-jw-h3A" collectionClass="NSMutableArray" id="O1p-yQ-FkV"/>
+                <outletCollection property="dataTextField" destination="jya-e0-KBB" collectionClass="NSMutableArray" id="feH-gY-XnJ"/>
+                <outletCollection property="dataTextField" destination="hGx-mM-rRy" collectionClass="NSMutableArray" id="Mjs-e8-EqF"/>
+                <outletCollection property="dataTextField" destination="HI9-5t-DOD" collectionClass="NSMutableArray" id="2n3-mX-XQb"/>
+                <outletCollection property="dataTextField" destination="V1y-Le-Hdi" collectionClass="NSMutableArray" id="CrA-vy-9Uc"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="jH8-xy-e9S">
-            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_ic" translatesAutoresizingMaskIntoConstraints="NO" id="MQc-OA-sCl">
-                    <rect key="frame" x="155" y="59" width="80" height="22"/>
+                    <rect key="frame" x="156.66666666666666" y="71" width="80" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="BU0-g0-5Z8"/>
                         <constraint firstAttribute="width" constant="80" id="qYr-2D-XW2"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TtV-GX-qpF">
-                    <rect key="frame" x="16" y="89" width="358" height="105"/>
+                    <rect key="frame" x="16" y="101" width="361" height="105"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileBg_ic" translatesAutoresizingMaskIntoConstraints="NO" id="RDu-dY-VHx">
-                            <rect key="frame" x="0.0" y="39" width="358" height="66"/>
+                            <rect key="frame" x="0.0" y="39" width="361" height="66"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="66" id="KQ3-pY-7Q1"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إضافة فرع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIq-YA-TwX" userLabel="TitleLabel">
-                            <rect key="frame" x="274" y="57" width="68" height="30"/>
+                            <rect key="frame" x="277" y="57" width="68" height="30"/>
                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -80,20 +78,20 @@
                         <constraint firstItem="eSe-bq-dJc" firstAttribute="height" secondItem="TtV-GX-qpF" secondAttribute="height" id="M4I-Uk-Tw8"/>
                         <constraint firstItem="eSe-bq-dJc" firstAttribute="top" secondItem="TtV-GX-qpF" secondAttribute="top" id="OgU-uV-RRu"/>
                         <constraint firstItem="RDu-dY-VHx" firstAttribute="bottom" secondItem="TtV-GX-qpF" secondAttribute="bottom" id="bJD-GO-0GA"/>
-                        <constraint firstAttribute="trailing" secondItem="RDu-dY-VHx" secondAttribute="trailing" id="dRC-pS-cuY"/>
+                        <constraint firstItem="RDu-dY-VHx" firstAttribute="trailing" secondItem="TtV-GX-qpF" secondAttribute="trailing" id="dRC-pS-cuY"/>
                         <constraint firstItem="RDu-dY-VHx" firstAttribute="leading" secondItem="TtV-GX-qpF" secondAttribute="leading" id="eCZ-zv-yjc"/>
                         <constraint firstAttribute="height" constant="105" id="lxz-f0-75T"/>
                         <constraint firstItem="HIq-YA-TwX" firstAttribute="centerY" secondItem="RDu-dY-VHx" secondAttribute="centerY" id="stk-2w-JMK"/>
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="med-Lb-4Yp">
-                    <rect key="frame" x="0.0" y="202" width="390" height="608"/>
+                    <rect key="frame" x="0.0" y="214" width="393" height="604"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yJ-4x-xQf" userLabel="ContentView">
-                            <rect key="frame" x="0.0" y="0.0" width="390" height="838"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="732"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsJ-Zq-WAJ">
-                                    <rect key="frame" x="100" y="774" width="190" height="48"/>
+                                    <rect key="frame" x="101.66666666666669" y="668" width="190" height="48"/>
                                     <color key="backgroundColor" red="0.0" green="0.39607843139999999" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="K4M-h4-Ahb"/>
@@ -109,44 +107,66 @@
                                     </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Slf-2e-dml">
-                                    <rect key="frame" x="16" y="32" width="358" height="726"/>
+                                    <rect key="frame" x="16" y="8" width="361" height="644"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Eca-pL-9oZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="358" height="107.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="94"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم الفرع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ig9-6K-YjD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="38"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" placeholder="ادخل اسم الفرع" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqW-5x-pON">
-                                                    <rect key="frame" x="0.0" y="38.000000000000007" width="358" height="69.666666666666686"/>
+                                                    <rect key="frame" x="0.0" y="46" width="361" height="48"/>
                                                     <color key="backgroundColor" red="0.95686274509803915" green="0.96470588235294119" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="gsW-mc-9zY"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                            <real key="value" value="7"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="insetX">
+                                                            <real key="value" value="50"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="insetY">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textField>
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RdQ-HI-wHo">
-                                            <rect key="frame" x="0.0" y="123.66666666666669" width="358" height="107.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="110" width="361" height="94"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مدير الفرع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4s-v8-Smw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="38"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zu-j7-Yfl">
-                                                    <rect key="frame" x="0.0" y="38.000000000000007" width="358" height="69.666666666666686"/>
+                                                    <rect key="frame" x="0.0" y="46" width="361" height="48"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" placeholder="اختر مدير الفرع" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f5K-jJ-rvk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="358" height="69.666666666666671"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="48" id="CfO-QI-hDU"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                                    <real key="value" value="7"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </textField>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pickerButton_ic" translatesAutoresizingMaskIntoConstraints="NO" id="gbI-c1-cq1">
-                                                            <rect key="frame" x="334" y="32" width="12" height="6"/>
+                                                            <rect key="frame" x="337" y="21" width="12" height="6"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="6" id="6aA-Gw-uLc"/>
                                                                 <constraint firstAttribute="width" constant="12" id="6wU-Ue-PD7"/>
@@ -166,61 +186,87 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w7b-VF-mYO">
-                                            <rect key="frame" x="0.0" y="247.33333333333329" width="358" height="107.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="220" width="361" height="94"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم الجوال" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9X-a8-gQ5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="38"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ادخل رقم الجوال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e5l-QO-0an">
-                                                    <rect key="frame" x="0.0" y="38.000000000000064" width="358" height="69.666666666666686"/>
+                                                    <rect key="frame" x="0.0" y="46" width="361" height="48"/>
                                                     <color key="backgroundColor" red="0.95686274509803915" green="0.96470588235294119" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="nES-12-XTk"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                            <real key="value" value="7"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textField>
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XWH-5g-qGK">
-                                            <rect key="frame" x="0.0" y="371" width="358" height="107.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="330" width="361" height="94"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عدد البائعين" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYG-Md-HsQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="30"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" placeholder="ادخل عدد البائعين" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s85-jw-h3A">
-                                                    <rect key="frame" x="0.0" y="46" width="358" height="61.666666666666657"/>
+                                                    <rect key="frame" x="0.0" y="46" width="361" height="48"/>
                                                     <color key="backgroundColor" red="0.95686274509803915" green="0.96470588235294119" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="xCx-ZO-91r"/>
+                                                    </constraints>
+                                                    <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                            <real key="value" value="7"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textField>
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8xw-ao-iel">
-                                            <rect key="frame" x="0.0" y="494.66666666666669" width="358" height="107.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="440" width="361" height="94"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Hsr-sf-Oke">
-                                                    <rect key="frame" x="0.0" y="0.0" width="171" height="107.66666666666667"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="94"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المنطفة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qg-Vj-lmy">
-                                                            <rect key="frame" x="0.0" y="0.0" width="171" height="30"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="38"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQW-fq-KbN">
-                                                            <rect key="frame" x="0.0" y="38.000000000000007" width="171" height="69.666666666666686"/>
+                                                            <rect key="frame" x="0.0" y="46" width="172.66666666666666" height="48"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="اختر المنطقة" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jya-e0-KBB">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="171" height="69.666666666666671"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="48"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="48" id="qha-xZ-zBX"/>
+                                                                    </constraints>
+                                                                    <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
                                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                                     <textInputTraits key="textInputTraits"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                                            <real key="value" value="7"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </textField>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pickerButton_ic" translatesAutoresizingMaskIntoConstraints="NO" id="NRN-kk-fs8">
-                                                                    <rect key="frame" x="147" y="32" width="12" height="6"/>
+                                                                    <rect key="frame" x="148.66666666666666" y="21" width="12" height="6"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="6" id="iLf-gu-hP0"/>
                                                                         <constraint firstAttribute="width" constant="12" id="o5V-eb-vOr"/>
@@ -240,24 +286,33 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rvk-lF-2Ve">
-                                                    <rect key="frame" x="187" y="0.0" width="171" height="107.66666666666667"/>
+                                                    <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="94"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المدينة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZS-U9-3Gb">
-                                                            <rect key="frame" x="0.0" y="0.0" width="171" height="30"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="172.33333333333334" height="38"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4x-ts-8VO">
-                                                            <rect key="frame" x="0.0" y="38.000000000000007" width="171" height="69.666666666666686"/>
+                                                            <rect key="frame" x="0.0" y="46" width="172.33333333333334" height="48"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="اختر المدينة" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGx-mM-rRy">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="171" height="69.666666666666671"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="172.33333333333334" height="48"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="48" id="3wm-v0-h4s"/>
+                                                                    </constraints>
+                                                                    <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
                                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                                     <textInputTraits key="textInputTraits"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                                            <real key="value" value="7"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </textField>
                                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pickerButton_ic" translatesAutoresizingMaskIntoConstraints="NO" id="kv4-9Q-uLx">
-                                                                    <rect key="frame" x="147" y="32" width="12" height="6"/>
+                                                                    <rect key="frame" x="148.33333333333334" y="21" width="12" height="6"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="6" id="cHM-3T-eo4"/>
                                                                         <constraint firstAttribute="width" constant="12" id="zWL-nl-5Zv"/>
@@ -279,39 +334,57 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4IX-jH-igG">
-                                            <rect key="frame" x="0.0" y="618.33333333333337" width="358" height="107.66666666666663"/>
+                                            <rect key="frame" x="0.0" y="550" width="361" height="94"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="akR-gu-MCX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="171" height="107.66666666666667"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="94"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الحى" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtB-Re-lsZ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="171" height="30"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="38"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="ادخل الحى" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HI9-5t-DOD">
-                                                            <rect key="frame" x="0.0" y="38.000000000000007" width="171" height="69.666666666666686"/>
+                                                            <rect key="frame" x="0.0" y="46" width="172.66666666666666" height="48"/>
                                                             <color key="backgroundColor" red="0.95686274509803915" green="0.96470588235294119" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="48" id="FxB-GW-sZO"/>
+                                                            </constraints>
+                                                            <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                                    <real key="value" value="7"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b0P-rL-VlX">
-                                                    <rect key="frame" x="187" y="0.0" width="171" height="107.66666666666667"/>
+                                                    <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="94"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الشارع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhV-xR-2c3">
-                                                            <rect key="frame" x="0.0" y="0.0" width="171" height="30"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="172.33333333333334" height="38"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="ادخل الشارع" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V1y-Le-Hdi">
-                                                            <rect key="frame" x="0.0" y="38.000000000000007" width="171" height="69.666666666666686"/>
+                                                            <rect key="frame" x="0.0" y="46" width="172.33333333333334" height="48"/>
                                                             <color key="backgroundColor" red="0.95686274509803915" green="0.96470588235294119" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="48" id="MWR-96-fCX"/>
+                                                            </constraints>
+                                                            <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                                    <real key="value" value="7"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -327,7 +400,7 @@
                                 <constraint firstAttribute="trailing" secondItem="Slf-2e-dml" secondAttribute="trailing" constant="16" id="Fvy-bm-D7h"/>
                                 <constraint firstItem="zsJ-Zq-WAJ" firstAttribute="top" secondItem="Slf-2e-dml" secondAttribute="bottom" constant="16" id="KfJ-Sr-XGi"/>
                                 <constraint firstItem="Slf-2e-dml" firstAttribute="leading" secondItem="2yJ-4x-xQf" secondAttribute="leading" constant="16.000000000000004" id="UUh-rD-RM1"/>
-                                <constraint firstItem="Slf-2e-dml" firstAttribute="top" secondItem="2yJ-4x-xQf" secondAttribute="top" constant="32" id="X4s-dh-GHR"/>
+                                <constraint firstItem="Slf-2e-dml" firstAttribute="top" secondItem="2yJ-4x-xQf" secondAttribute="top" constant="8" id="X4s-dh-GHR"/>
                             </constraints>
                         </view>
                     </subviews>

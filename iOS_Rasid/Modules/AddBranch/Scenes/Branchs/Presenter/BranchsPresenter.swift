@@ -8,7 +8,7 @@
 import Foundation
 
 protocol BranchsPresenterProtocol {
-    func presentBranchs(branchs: Branch.Response)
+    func presentBranchs(branchs: [Branch.ViewModel])
 }
 
 class BranchsPresenter {
@@ -20,11 +20,7 @@ class BranchsPresenter {
 }
 
 extension BranchsPresenter: BranchsPresenterProtocol {
-    func presentBranchs(branchs: Branch.Response) {
-        let branchsViewModels = branchs.branchs.map { branch in
-            Branch.ViewModel(model: branch)
-        }
-//        print(branchsViewModels)
-        view?.showBranchs(branchs: branchsViewModels)
+    func presentBranchs(branchs: [Branch.ViewModel]) {
+        view?.showBranchs(branchs: branchs)
     }
 }

@@ -73,7 +73,11 @@ extension BranchsInteractor: BranchsInteractorProtocol, BranchsDataStore {
 
                 self?.branchs = response.data
                 self?.totalPages = response.meta?.lastPage
-                self?.presenter.presentBranchs(branchs: Branch.Response(branchs: response.data ?? [BranchEntity]()))
+                guard let  data = response.data else { return }
+                let viewModels = data.map { branchData in
+                    Branch.ViewModel(model: branchData)
+                }
+                self?.presenter.presentBranchs(branchs: viewModels)
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -86,10 +90,14 @@ extension BranchsInteractor: BranchsInteractorProtocol, BranchsDataStore {
             guard let totalPages = self?.totalPages, page <= totalPages else { return }
             switch result {
             case .success(let response):
-                guard let response = response else {return}
-                self?.branchs?.append(contentsOf: response.data ?? [BranchEntity]())
+                guard let response = response?.data else {return}
+                self?.branchs?.append(contentsOf: response)
                 if let branchs = self?.branchs {
-                    self?.presenter.presentBranchs(branchs: Branch.Response(branchs: branchs))
+                    let viewModels = branchs.map { branchData in
+                        Branch.ViewModel(model: branchData)
+                    }
+
+                    self?.presenter.presentBranchs(branchs: viewModels)
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -105,10 +113,13 @@ extension BranchsInteractor: BranchsInteractorProtocol, BranchsDataStore {
             
             switch result {
             case .success(let response):
-                guard let response = response else {return}
-                self?.branchs = response.data 
+                guard let response = response?.data else {return}
+                self?.branchs = response
                 if let branchs = self?.branchs {
-                    self?.presenter.presentBranchs(branchs: Branch.Response(branchs: branchs))
+                    let viewModels = branchs.map { branchData in
+                        Branch.ViewModel(model: branchData)
+                    }
+                    self?.presenter.presentBranchs(branchs: viewModels)
                 }
             case .failure(let error):
                 print(error.localizedDescription)

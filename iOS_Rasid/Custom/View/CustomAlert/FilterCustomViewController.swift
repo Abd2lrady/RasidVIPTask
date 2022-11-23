@@ -95,9 +95,8 @@ extension FilterCustomViewController {
         
         branchManagerTextField.delegate = self
         branchNameTextField.delegate = self
-        
         branchManagerTextField.inputView = pickerView
-        //        dataTextFields[Fields.branchName.rawValue].inputView = pickerView
+//                dataTextFields[Fields.branchName.rawValue].inputView = pickerView
         fromTextField.inputView = datePickerView
         toTextField.inputView = datePickerView
     }

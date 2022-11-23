@@ -100,10 +100,10 @@ extension BranchsViewController {
     }
     
     func showFilters() {
-        self.filterCollectionView.reloadData()
         self.filterCollectionView.isHidden = false
-        self.filterCollectionView.layoutIfNeeded()
-        let height = filterCollectionView.contentSize.height
+        self.filterCollectionView.reloadData()
+        filterCollectionView.layoutIfNeeded()
+        let height = filterCollectionView.contentSize.height + 20
         self.filtersHeightConstrain.constant = height
     }
         
@@ -111,12 +111,12 @@ extension BranchsViewController {
         print("filters", filters)
         interactor?.request(request: .filterBranchs(filters: filters))
     }
-    
 }
 
 extension BranchsViewController: UICollectionViewDataSource {
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         print("filter count from delegate", filters.count)
         return filters.count
     }
@@ -135,11 +135,13 @@ extension BranchsViewController: UICollectionViewDataSource {
 
 extension BranchsViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
         return branchViewModels.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BranchCell.reuseID,
                                                        for: indexPath) as? BranchCell
         else { return UITableViewCell() }
@@ -154,7 +156,8 @@ extension BranchsViewController: UITableViewDataSource {
 
 extension BranchsViewController: UITableViewDelegate {
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView,
+                                  willDecelerate decelerate: Bool) {
         let dragOffestY = scrollView.contentOffset.y
         let totalContentHeight = scrollView.contentSize.height
         let container = scrollView.frame.size.height
